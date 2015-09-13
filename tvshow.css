@@ -14,10 +14,6 @@
     position:absolute;
 }
 
-#actor{
-    display:inline-block;
-}
-
 .hbo-cover{
     background: url("Images/community_image_1428691468.jpg") no-repeat center center;
     -webkit-background-size: cover;
@@ -28,7 +24,9 @@
 
 #episode-section{
     text-align:left;
-    display:inline-block;
+    max-width:220px;
+    height:100%;
+    vertical-align: text-bottom;
 
 }
 
