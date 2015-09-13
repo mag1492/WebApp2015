@@ -1,0 +1,33 @@
+#not-bootstrap-background{
+    width:100%;
+    height:100%;
+    background-color:rgba(255, 255, 255, 0.72);
+}
+
+.span{
+    margin-right:20px;
+    display:inline-block;
+
+}
+
+.div{
+    display:block;
+    margin:5px;
+}
+
+.season{
+    position:absolute;
+    opacity:0;
+}
+.default{
+    opacity:100;
+}
+#youtube-container{
+    max-width:400px;
+    width:100%;
+}
+
+#actor{
+    max-width:200px;
+    display:inline-block;
+}

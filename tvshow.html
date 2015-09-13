@@ -2,9 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="jquery.min.js"></script>
+    <script src="tvshow.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="tvshow.css">
+
 </head>
 <body>
+
+<div class="container-fluid">
+    <div>
+        <div><h5>Silicon Valley</h5></div>
+        <span>Comedy</span>
+        <span>/</span>
+        <span>April 6, 2014</span>
+        <span>/</span>
+        <div>The story is about six men who found a startup company in silicon valley.</div>
+        <div class="span" id="youtube-container">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" id="trailer" width="560" height="315" src="https://www.youtube.com/embed/69V__a49xtw" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div id="actor">
+            Starring
+            <div>Thomas Middleditch</div>
+            <div>T. J. Miller</div>
+            <div>Josh Brener</div>
+            <div>Martin Starr</div>
+            <div>Kumail Nanjiani</div>
+            <div>Christopher Evan Welch</div>
+            <div>Amanda Crew</div>
+            <div>Zach Woods</div>
+            <div>Matt Ross</div>
+            <div>Suzanne Cryer</div>
+            <div>Jimmy O. Yang</div>
+        </div>
+    </div>
+
+    <div>
+        <div class="span">
+            <div class="btn btn-primary div" onclick="loadEpisodeFromSeason(1)">Season 1</div>
+            <div class="btn btn-primary div"  onclick="loadEpisodeFromSeason(2)">Season 2</div>
+            <div class="span season seasonOne">
+                <a href="https://geo.itunes.apple.com/ca/tv-season/silicon-valley-saison-1-vf/id898246539?mt=4" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;width:110px;height:40px;"></a>
+            </div>
+            <div class="span season seasonTwo">
+                <a href="https://geo.itunes.apple.com/ca/tv-season/silicon-valley-season-2/id998746676?mt=4" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;width:110px;height:40px;"></a>            </div>
+        </div>
+        <div class="span season seasonOne">
+            <div>1. Minimum Viable Product</div>
+            <div>2. The Cap Table</div>
+            <div>3. Articles of Incorporation</div>
+            <div>4. Fiduciary Duties</div>
+            <div>5. Signaling Risk</div>
+            <div>6. Third Party Insourcing</div>
+            <div>7. Proof of Concept</div>
+            <div>8. Optimal Tip-to-Tip Efficiency</div>
+        </div>
+        <div class="span season seasonTwo">
+            <div>1. Sand Hill Shuffle</div>
+            <div>2. Runaway Devaluation</div>
+            <div>3. Bad Money</div>
+            <div>4. The Lady</div>
+            <div>5. Server Space</div>
+            <div>6. Homicide</div>
+            <div>7. Adult Content</div>
+            <div>8. White Hat/Black Hat</div>
+            <div>9. Binding Arbitration</div>
+            <div>10. Two Days of the Condor</div>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
