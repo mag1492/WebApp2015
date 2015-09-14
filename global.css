@@ -1,11 +1,7 @@
-#body{
-    
+body{
     background-color:#666666;
 }
 
-html{
-    background-color:#666666;
-}
 
 .light-gray-background{
     background-color:#8C8C8C;
@@ -30,4 +26,8 @@ html{
 .button{
     margin:5px;
     width:110px;
+}
+
+.shadowing{
+    box-shadow: 0 0 70px 15px;
 }
