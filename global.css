@@ -1,5 +1,4 @@
 #body{
-
     background-color:#666666;
 }
 
@@ -27,6 +26,7 @@ html{
 .div{
     display:block;
 }
+
 .button{
     margin:5px;
     width:110px;
