@@ -1,0 +1,33 @@
+body{
+    background-color:#666666;
+}
+
+
+.light-gray-background{
+    background-color:#8C8C8C;
+}
+
+.centered{
+    text-align:center;
+}
+
+.span{
+    display:inline-block;
+}
+
+.white-text{
+    color:white;
+    font-family: 'Oswald', sans-serif;
+}
+
+.div{
+    display:block;
+}
+.button{
+    margin:5px;
+    width:110px;
+}
+
+.shadowing{
+    box-shadow: 0 0 70px 15px;
+}

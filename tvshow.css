@@ -1,0 +1,47 @@
+
+#youtube-container{
+    padding:40px;
+    width:100%;
+    max-width:800px;
+    margin:auto;
+}
+.season{
+    opacity:0;
+}
+
+.absolute{
+    position:absolute;
+}
+
+.hbo-cover{
+    background: url("Images/community_image_1428691468.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#episode-section{
+    text-align:left;
+    max-width:220px;
+    height:100%;
+    vertical-align: text-bottom;
+    margin-bottom:0;
+
+}
+
+.right{
+    float:right;
+}
+
+.left{
+    float:left;
+}
+
+#itune-button{
+    display:inline-block;
+    overflow:hidden;
+    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
+    width:110px;
+    height:40px;
+}
