@@ -1,5 +1,5 @@
 .light-gray-background{
-    background-color: #8C8C8C;
+    background-color: #2B2B2B;
 }
 
 .centered{
@@ -34,4 +34,5 @@
 
 .footer{
     padding-bottom: 30px;
+    background: #2B2B2B;
 }
