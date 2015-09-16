@@ -1,10 +1,5 @@
-body{
-    background-color:#666666;
-}
-
-
 .light-gray-background{
-    background-color:#8C8C8C;
+    background-color: #8C8C8C;
 }
 
 .centered{
@@ -17,7 +12,12 @@ body{
 
 .white-text{
     color:white;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+
+.black-text{
+    color: black;
+    font-family: 'Raleway', sans-serif;
 }
 
 .div{
@@ -30,4 +30,8 @@ body{
 
 .shadowing{
     box-shadow: 0 0 70px 15px;
+}
+
+.footer{
+    padding-bottom: 30px;
 }
