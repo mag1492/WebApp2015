@@ -4,6 +4,11 @@
     padding-bottom: 50px;
 }
 
+#actors-section{
+    background: #E74C3C;
+    padding-bottom: 20px;
+}
+
 .movie-image{
     width: 100%;
     max-width: 200px;
@@ -11,20 +16,39 @@
     padding: 5px;
     border: solid 1px #EFEFEF;
 }
-.movie-image:hover {
+
+.index-section{
+    padding-bottom: 20px;
+}
+
+#actors-carousel .item{
+    margin: 5px;
+}
+#actors-carousel .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+}
+#actors-carousel .item:hover {
     border: solid 1px #CCC;
     -moz-box-shadow: 1px 1px 5px #999;
     -webkit-box-shadow: 1px 1px 5px #999;
     box-shadow: 1px 1px 5px #999;
 }
 
-
-
-#actors-section{
-    background: #E74C3C;
-    padding-bottom: 20px;
+#recently-added-carousel .item{
+    margin: 5px;
 }
-
-.index-section{
-    padding-bottom: 20px;
+#recently-added-carousel .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+}
+#recently-added-carousel .item:hover {
+    border: solid 1px #CCC;
+    -moz-box-shadow: 1px 1px 5px #999;
+    -webkit-box-shadow: 1px 1px 5px #999;
+    box-shadow: 1px 1px 5px #999;
 }
