@@ -14,7 +14,7 @@
 }
 
 .hbo-cover{
-    background: url("Images/community_image_1428691468.jpg") no-repeat center center;
+    background: url("../Images/sillicon-valley.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -44,4 +44,16 @@
     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
     width:110px;
     height:40px;
+}
+
+#header{
+    margin-bottom:20px;
+    background-color:  #E74C3C;
+    border-radius: 0px 0px 6px 6px;
+    margin-top:-20px;
+}
+
+.season-title{
+    padding-top:10px;
+    padding-bottom:2px;
 }

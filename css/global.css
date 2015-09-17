@@ -1,0 +1,38 @@
+.dark-gray-background {
+    background-color: #2B2B2B;
+}
+
+.centered{
+    text-align:center;
+}
+
+.span{
+    display:inline-block;
+}
+
+.white-text{
+    color:white;
+    font-family: 'Raleway', sans-serif;
+}
+
+.black-text{
+    color: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+.div{
+    display:block;
+}
+.button{
+    margin:5px;
+    width:110px;
+}
+
+.shadowing{
+    box-shadow: 0 0 70px 15px;
+}
+
+.footer{
+    padding-bottom: 30px;
+    background: #2B2B2B;
+}
