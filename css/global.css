@@ -36,3 +36,15 @@
     padding-bottom: 30px;
     background: #2B2B2B;
 }
+
+.navbar {
+    border: 0;
+}
+
+#itune-button{
+    display:inline-block;
+    overflow:hidden;
+    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
+    width:110px;
+    height:40px;
+}

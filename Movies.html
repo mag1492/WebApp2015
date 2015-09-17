@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Ze Movie (Year) - UM</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link href="css/Animation.css" rel="stylesheet">
+    <link href="css/Movies.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <!--Custom font-->
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+
+</head>
+<nav class="navbar navbar-inverse" style="margin: 0px; border-radius: 0;">
+
+    <!--Container with the page width-->
+    <div class="contrain-fluid">
+        <div class="navbar-header">
+            <!--Button for the menu when the width is too small and span for the bar in the bar box.-->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#">Team06</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home<span class="sr-only"></span></a></li>
+                <li ><a href="#">WatchLists</a></li>
+            </ul>
+
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Log out</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Parameters<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div><!-- navbar-collapse -->
+
+    </div><!--contrain-fluid -->
+
+</nav>
+<body class="movie-theme">
+    <div id="main">
+        <div id="trailer-background" class="col-md-4">
+            <div class="row">
+                <div class="movie-title col-md-12">
+                    <h1>Inception (2010)</h1>
+                </div>
+                <div class="trailer col-md-12" style="visibility: visible; animation: fadeIn;">
+                    <div class="trailer-box embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/YoHD9XEInc0" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row top-buffer">
+                <div class="specs col-md-12">
+                    <p>Genre : Action, Mystery, Sci-Fi |
+                    Length : 148 min |
+                    Date : 16 July 2010 (USA) |
+                    Rated : PG-13 |
+                    Rating (IMDb) 8.8/10 |
+                    </p>
+                </div>
+            </div>
+            <div class="row bottom-buffer">
+                <div class="links col-md-12">
+                    <p>
+                        <button class="btn-links" >Similar movies</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Content Section-->
+        <div id="trailer" class="col-md-8 col-md-offset-4">
+            <div id="movie-info">
+                <!-- Navigation -->
+                <ul class="panels">
+                    <li class="active">
+                        <a href="#summary">Summary</a>
+                    </li>
+                    <li>
+                        <a href="#plot">Plot Summary</a>
+                    </li>
+                    <li>
+                        <a href="#review">Review</a>
+                    </li>
+                </ul>
+                <!-- Panel Choices -->
+                <div class="panel-ctnt">
+                    <!-- Panel Choice 1 -->
+                    <div class="panel active" id="summary">
+                        <!-- Section summary content -->
+                        <section class="Summary">
+                            <header>
+                                <h3 class="info-title">Inception</h3>
+                            </header>
+                            <div class="Info">
+                                <p class="principal-info" style="margin-top: 5px;">
+                                <h5 style="font-weight: bold">Director: Christopher Nolan</h5>
+                                <h5 style="font-weight: bold">Writer: Christopher Nolan</h5>
+                                <h5 style="font-weight: bold">Starring:Leonardo DiCaprio, Joseph Gordon-Levitt,
+                                    Ellen Page & others.</h5>
+                                </p>
+                                <p style="margin-top: 40px;">
+                                    A thief who steals corporate secrets through use of dream-sharing technology
+                                    is given the inverse task of planting an idea into the mind of a CEO.
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <!-- Panel Choice 2-->
+                    <div class="panel" id="plot">
+                        <!-- Section summary content -->
+                       <p>SPOILER SPOILER</p>
+                    </div>
+                    <div class="btn-itunes">
+                        <a href="https://itunes.apple.com/ca/movie/inception/id400763833" id="itune-button"></a>
+                    </div>
+                    </div>
+                </div>  <!-- End panel-ctnt-->
+            </div> <!-- End movie-info-->
+        </div> <!-- End movie-ctnt-->
+    </div>
+</body>
+</html>

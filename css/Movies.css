@@ -1,0 +1,162 @@
+body.movie-theme {
+    font-family: 'Raleway', sans-serif;
+}
+
+.movie-theme #trailer-background {
+    background: url(../Images/Inception-bgd.jpg) no-repeat center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+#trailer-background {
+    color: white;
+    margin: 0;
+}
+
+#trailer-background header {
+    height: 100%;
+}
+
+@media (min-width: 992px) {
+    #trailer-background {
+        height: 100%;
+        position: fixed;
+        overflow: hidden;
+        margin: 0;
+        -webkit-transition: all 200ms;
+        transition: all 1000ms;
+    }
+    #trailer-background header .movie-ctnt {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 20px 40px;
+    }
+
+    .links {
+        position: absolute;
+        bottom: 10%;
+    }
+
+    .specs {
+        position: absolute;
+        bottom: 30%;
+    }
+}
+
+.movie-title {
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.info-title {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.trailer {
+    bottom: 10%
+}
+
+.specs {
+    font-size: medium;
+    position: static;
+}
+
+.top-buffer {
+    margin-top: 35px;
+}
+
+.bottom-buffer {
+    margin-bottom: 20px;
+}
+
+.links {
+    color: white;
+    position: static;
+}
+
+.btn-links{
+    background-color: transparent;
+    border-color: white;
+    border-width: 3px;
+    border-radius: 30px;
+    border: 3px solid;
+    padding: 5px 9px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.btn-links:hover {
+    -webkit-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s;
+    background-color: white;
+    border-color: inherit;
+    background: url(../Images/moreMovies.png) no-repeat center center;
+    background-color: white;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-itunes {
+    position:absolute;
+    bottom:10px;
+    right:10px;
+}
+
+.movie-info {
+    width: 100%;
+    display: inline-block;
+}
+
+.panels {
+    padding: 0;
+}
+
+.panels:after {
+    display: block;
+    clear: both;
+    content:"";
+}
+
+.panels li {
+    margin: 10px 3px;
+    float: left;
+    list-style:none;
+}
+
+.panels a {
+    padding: 10px 17px;
+    display: inline-block;
+    border-radius:3px 3px 0px 0px;
+    background:#E74C3C;
+    font-size:16px;
+    font-weight:600;
+    color: black;
+    transition:all linear 0.15s;
+}
+
+.panels a:hover {
+    background:#E99C93;
+    text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+    background: white;
+    color:black;
+    border-bottom: solid;
+    border-bottom-style: solid;
+    border-bottom-color: #E74C3C;
+}
+
+.panel-ctnt {
+    padding:15px;
+    background:#fff;
+}
+
+.panel {
+    display:none;
+}
+
+.panel.active {
+    display: block;
+}
