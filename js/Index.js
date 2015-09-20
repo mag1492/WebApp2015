@@ -34,3 +34,7 @@ $(document).ready(function() {
         transitionStyle : "fade"
     });
 });
+
+function redirect(){
+    document.location.href="Index.html";
+}
