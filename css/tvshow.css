@@ -5,6 +5,14 @@
     max-width:800px;
     margin:auto;
 }
+@media (max-width: 640px) {
+    #youtube-container{
+        padding:10px;
+        width:100%;
+        max-width:800px;
+        margin:auto;
+    }
+}
 .season{
     opacity:0;
 }
@@ -31,23 +39,16 @@
 
 }
 
-.right{
-    float:right;
-}
-
-.left{
-    float:left;
-}
-
 #header{
-    margin-bottom:20px;
+    margin-top:-20px;
     background-color:  #E74C3C;
     border-radius: 0px 0px 6px 6px;
-    margin-top:-20px;
+    margin-bottom:10px;
+
 }
 
 .season-title{
-    padding-top:10px;
+    margin-top:-40px;
     padding-bottom:2px;
 }
 
