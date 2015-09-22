@@ -1,4 +1,70 @@
+.navbar-inverse {
+    color:  #E74C3C;
+    background-color: black;
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: white;
+  background-color: transparent;
+}
+
 .navbar-inverse .navbar-brand {
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    color:  white;
+  color: #E74C3C;
+}
+
+.navbar-inverse .navbar-text {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #E74C3C;
+}
+
+
+.glyphicon-search {
+	color: #E74C3C;
+}
+
+
+.form-control {
+	border-color: #E74C3C;
+}
+
+.form-control:hover,
+.form-control:focus {
+	border-color: #E74C3C;
+}
+
+.form-control::-webkit-input-placeholder { 
+	color:  #E74C3C;
+}
+
+.btn-default {
+	border-color: #E74C3C;
+}
+
+.btn-default:hover {
+	background-color:black;
+	border-color: #E74C3C;
+}
+
+.navbar-header .navbar-toggle {
+	border-color: #E74C3C;
+}
+
+.navbar-header .navbar-toggle:hover {
+	background-color: #E74C3C;
+}
+
+.dropdown-menu a{
+	color:#E74C3C;
+}
+.dropdown-toggle > span,
+.dropdown-menu > li{
+	color:#E74C3C;
+}
+
+.dropdown-toggle > span:hover {
+	color:white;
 }
