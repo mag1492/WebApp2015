@@ -51,11 +51,3 @@
     margin-top:-40px;
     padding-bottom:2px;
 }
-
-#itune-button{
-    display:inline-block;
-    overflow:hidden;
-    background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
-    width:110px;
-    height:40px;
-}
