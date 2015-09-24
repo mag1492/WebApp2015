@@ -1,4 +1,4 @@
-.movie-theme #trailer-background {
+.media-theme #trailer-background {
     background: url(../Images/sillicon-valley-dvd.jpg) no-repeat center center;
     background-size: cover;
     -webkit-background-size: cover;
@@ -9,7 +9,7 @@
     margin: 0;
 }
 
-.movie-title {
+.media-title {
     color:black;
     letter-spacing: 2px;
     margin-bottom: 16px;

@@ -1,4 +1,4 @@
-body.movie-theme {
+body.media-theme {
     font-family: 'Raleway', sans-serif;
 }
 
@@ -38,7 +38,7 @@ body.movie-theme {
     }
 }
 
-.movie-title {
+.media-title {
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
@@ -96,7 +96,7 @@ body.movie-theme {
     position:static;
 }
 
-.movie-info {
+.media-info {
     width: 100%;
     font-family: 'Raleway', sans-serif;
 }
