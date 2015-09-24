@@ -1,52 +1,16 @@
-
-#youtube-container{
-    padding:40px;
-    width:100%;
-    max-width:800px;
-    margin:auto;
-}
-.season{
-    opacity:0;
-}
-
-
-.absolute{
-    position:absolute;
-}
-
-.hbo-cover{
-    background: url("../Images/sillicon-valley.jpg") no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+.media-theme #trailer-background {
+    background: url(../Images/sillicon-valley-dvd.jpg) no-repeat center center;
     background-size: cover;
+    -webkit-background-size: cover;
 }
 
-#episode-section{
-    text-align:left;
-    max-width:220px;
-    height:100%;
-    vertical-align: text-bottom;
-    margin-bottom:0;
-
+#trailer-background {
+    color:White;
+    margin: 0;
 }
 
-.right{
-    float:right;
-}
-
-.left{
-    float:left;
-}
-
-#header{
-    margin-bottom:20px;
-    background-color:  #E74C3C;
-    border-radius: 0px 0px 6px 6px;
-    margin-top:-20px;
-}
-
-.season-title{
-    padding-top:10px;
-    padding-bottom:2px;
+.media-title {
+    color:black;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
 }
