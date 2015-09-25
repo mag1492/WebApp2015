@@ -10,6 +10,10 @@
     display:inline-block;
 }
 
+.orange-background{
+    background-color:  #E74C3C;
+}
+
 .white-text{
     color:white;
     font-family: 'Raleway', sans-serif;
@@ -36,7 +40,9 @@
     padding-bottom: 30px;
     background: #2B2B2B;
 }
-
+.bold{
+    font-weight: bold;
+}
 .pointer{
     cursor:pointer;
 }
