@@ -4,6 +4,12 @@
     padding-bottom: 50px;
 }
 
+.image-button{
+    position: absolute;
+    top: 60%;
+    right: 40%;
+}
+
 #actors-section{
     background: #E74C3C;
     padding-bottom: 20px;
@@ -51,4 +57,14 @@
     -moz-box-shadow: 1px 1px 5px #999;
     -webkit-box-shadow: 1px 1px 5px #999;
     box-shadow: 1px 1px 5px #999;
+}
+
+.content{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+a#recently-added:target {
+    -webkit-transform: translateY( -500px );
+    transform: translateY( -500px );
 }
