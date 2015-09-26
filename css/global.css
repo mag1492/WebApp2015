@@ -6,6 +6,11 @@ body {
     background-color: #2B2B2B;
 }
 
+.navbar-main{
+    margin: 0px;
+    border-radius: 0px
+}
+
 .centered{
     text-align:center;
 }
