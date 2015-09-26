@@ -46,31 +46,7 @@
 #header {
     background-color: #E74C3C;
     padding-left: 10px;
-}
-
-/*.movie-image {*/
-    /*width: 100%;*/
-    /*max-width: 200px;*/
-    /*height: 200px;*/
-    /*padding: 5px;*/
-    /*border: solid 1px #EFEFEF;*/
-/*}*/
-
-/*#movies-section {*/
-    /*margin-top: 10px;*/
-    /*background: #E74C3C;*/
-    /*padding-bottom: 20px;*/
-/*}*/
-
-/*#movies-list {*/
-    /*width: 100%;*/
-    /*display:block;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-/*}*/
-
-#itunes-div{
-    text-align: center;
+    max-height:20%;
 }
 
 #movies-carousel{
@@ -81,66 +57,9 @@
     display: block;
     max-width: 100%;
     height: auto;
+    max-height:750px;
     margin-top: 5px;
     margin-botton: 5px;
     margin-left: auto;
     margin-right: auto;
 }
-
-.caption {
-    display: inline-block;
-    position: relative;
-    margin: 10px;
-    overflow: hidden;
-    background: rgba(0,0,0,0.2);
-    transition: background 0.3s ease-in-out;
-}
-
-.caption:hover {
-    background: rgba(0,0,0,0);
-}
-
-.caption img {
-    display: block;
-    max-width: 100%;
-    transition: transform 0.3s ease-in-out;
-}
-
-.caption:hover img {
-    transform: translateX(100%);
-}
-
-.caption::before,
-.caption::after {
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    background: #cecece;
-    transform: translateX(-30%);
-    transition: transform 0.3s ease-in-out;
-}
-
-.caption::before {
-    content: attr(data-title);
-    height: 30%;
-    color: #05b19a;
-    font-size: 40px;
-    font-weight: 300;
-    padding: 30px;
-}
-
-.caption::after {
-    content: '\201C' attr(data-description) '\201D';
-    top: 30%;
-    height: 70%;
-    color: #fff;
-    font-size: 14px;
-    padding: 20px 30px;
-}
-
-.caption:hover::before,
-.caption:hover::after  {
-    transform: translateX(0%);
-}
-
-
