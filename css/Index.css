@@ -1,7 +1,43 @@
 .header-image {
     width: 100%;
-    max-height: 600px;
-    padding-bottom: 50px;
+    height: 100%;
+    padding-bottom: 100px;
+    padding-top: 30px;
+}
+
+.image-button{
+    position: absolute;
+    top: 60%;
+    right: 65%;
+    font-family: 'Raleway', sans-serif;
+}
+
+@media screen and (min-width:1000px) {
+    .image-button { visibility:visible }
+}
+@media screen and (max-width:999px) {
+    .image-button { visibility:hidden }
+}
+
+.btn-outline {
+    background: none;
+    color: inherit;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #E74C3C;
+    border-color: #E74C3C;
+}
+
+.btn-primary.btn-outline:hover {
+    color: white;
+    background: #E74C3C;
+}
+
+
+.container{
+    padding-top: 50px;
 }
 
 #actors-section{
@@ -51,4 +87,9 @@
     -moz-box-shadow: 1px 1px 5px #999;
     -webkit-box-shadow: 1px 1px 5px #999;
     box-shadow: 1px 1px 5px #999;
+}
+
+.content{
+    padding-left: 0;
+    padding-right: 0;
 }
