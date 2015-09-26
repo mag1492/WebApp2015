@@ -14,3 +14,10 @@
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
+
+.specs {
+    background-color: rgba(249, 255, 246, 0.22));
+    border: 3px transparent;
+    padding: 2px 5px;
+    color: white;
+}
