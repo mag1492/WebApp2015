@@ -5,7 +5,21 @@ body {
 .dark-gray-background {
     background-color: #2B2B2B;
 }
+.btn-outline {
+    background: none;
+    color: inherit;
+    transition: all .5s;
+}
 
+.btn-primary.btn-outline {
+    color: #E74C3C;
+    border-color: #E74C3C;
+}
+
+.btn-primary.btn-outline:hover {
+    color: white;
+    background: #E74C3C;
+}
 .navbar-main{
     margin: 0px;
     border-radius: 0px
