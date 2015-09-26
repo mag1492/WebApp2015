@@ -1,3 +1,7 @@
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
 .dark-gray-background {
     background-color: #2B2B2B;
 }
@@ -12,6 +16,10 @@
 
 .orange-background{
     background-color:  #E74C3C;
+}
+
+.orange-color{
+    color:  #E74C3C;
 }
 
 .white-text{
@@ -46,11 +54,65 @@
 .pointer{
     cursor:pointer;
 }
-
+.form-control:hover,
+.form-control:focus {
+    border-color: #E74C3C;
+}
 #itune-button{
     display:inline-block;
     overflow:hidden;
     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
     width:110px;
     height:40px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #E74C3C;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+    background-color: #E74C3C;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus{
+    color: #E74C3C;
+
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #E74C3C;
+}
+
+h5{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+h1{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+h2{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+h3{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+h4{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+h6{
+    font-family: 'Raleway', sans-serif;
+
+}
+
+h7{
+    font-family: 'Raleway', sans-serif;
+
 }
