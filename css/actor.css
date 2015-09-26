@@ -1,65 +1,34 @@
-
-.actor-title {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-#actor-name {
-    width: 49%;
-    text-align: left;
-    display: inline-block;
-}
-#actor-genre {
-    width: 49%;
-    text-align: right;
-    display: inline-block;
-}
-
-#actor-image {
+.media-theme #trailer-background {
     background: url(../Images/chuck-norris.jpg) no-repeat center center;
     background-size: cover;
     -webkit-background-size: cover;
 }
 
-#actor-image header {
-    height: 100%;
+#trailer-background {
+    color:White;
+    margin: 0;
 }
 
-@media (min-width: 992px) {
-    #actor-image {
-        height: 100%;
-        position: fixed;
-        overflow: hidden;
-        margin: 0;
-        -webkit-transition: all 200ms;
-        transition: all 1000ms;
-    }
-
-    #actor-image header .movie-ctnt {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 20px 40px;
-    }
-}
-
-#header {
-    background-color: #E74C3C;
-    padding-left: 10px;
-    max-height:20%;
+.media-title {
+    color:black;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
 }
 
 #movies-carousel{
     margin-top: 5px;
-    background-color: #2B2B2B;
 }
 #movies-carousel .item img{
     display: block;
     max-width: 100%;
     height: auto;
-    max-height:750px;
+    max-height:550px;
     margin-top: 5px;
     margin-botton: 5px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.actor-info{
+    text-align:Center;
 }

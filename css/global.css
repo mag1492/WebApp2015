@@ -47,7 +47,7 @@
     cursor:pointer;
 }
 
-#itune-button{
+.itune-button{
     display:inline-block;
     overflow:hidden;
     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
