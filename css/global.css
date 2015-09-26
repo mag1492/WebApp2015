@@ -5,6 +5,25 @@ body {
 .dark-gray-background {
     background-color: #2B2B2B;
 }
+.btn-outline {
+    background: none;
+    color: inherit;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #E74C3C;
+    border-color: #E74C3C;
+}
+
+.btn-primary.btn-outline:hover {
+    color: white;
+    background: #E74C3C;
+}
+.navbar-main{
+    margin: 0px;
+    border-radius: 0px
+}
 
 .centered{
     text-align:center;
@@ -54,11 +73,12 @@ body {
 .pointer{
     cursor:pointer;
 }
+
 .form-control:hover,
 .form-control:focus {
     border-color: #E74C3C;
 }
-#itune-button{
+.itune-button{
     display:inline-block;
     overflow:hidden;
     background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
@@ -108,11 +128,6 @@ h4{
 }
 
 h6{
-    font-family: 'Raleway', sans-serif;
-
-}
-
-h7{
     font-family: 'Raleway', sans-serif;
 
 }
