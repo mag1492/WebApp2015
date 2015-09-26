@@ -4,26 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Chuck Norris - UM</title>
+
+    <!-- Bootstrap Core CSS -->
     <script src="../jquery.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/spacelab/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
-    <!-- Latest compiled and minified JavaScript -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="../jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/actor.css">
-    <link rel="stylesheet" href="../css/global.css">
+
+    <!-- Custom CSS -->
+    <link href="../css/Animation.css" rel="stylesheet">
+    <link href="../css/actor.css" rel="stylesheet">
+    <link href="../css/media.css" rel="stylesheet">
+    <link href="../css/global.css" rel="stylesheet">
+    <!--Custom font-->
+
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="../owl-carousel/owl.theme.css">
+    <script src="../owl-carousel/owl.carousel.js"></script>
+    <script src="../js/actor.js"></script>
+
+
 </head>
-<body>
-<div id="body">
-    <nav class="navbar navbar-default" style="margin: 0px; border-radius: 0px">
-    <!--Container with the page width-->
+<nav class="navbar navbar-default navbar-main">
     <div class="container-fluid">
         <div class="navbar-header">
-            <!--Button for the menu when the width is too small and span for the bar in the bar box.-->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                     data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -31,14 +42,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand pointer" onclick="document.location.href='Index.html'"><span class="orange-color">u</span>Movie</a>
+            <a class="navbar-brand pointer" onclick="document.location.href='Index.html'"><span
+                    class="orange-color">u</span>Movie</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">WatchLists</a></li>
+            </ul>
             <div class="col-sm-3 col-md-3 pull-left">
                 <form class="navbar-form" role="search">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
                             </button>
@@ -64,62 +78,86 @@
     </div>
     <!--contrain-fluid -->
 </nav>
-    <div class="container centered">
-        <div id="header">
-            <div class="white-text actor-title" id="actor-name"><h2>Chuck Norris</h2></div>
-            <div class="white-text actor-title" id="actor-genre"><h2>Primary genre: Action</h2></div>
+<body class="media-theme">
+<div id="main">
+    <div id="trailer-background" class="col-md-4">
+        <div class="row">
+            <div class="media-title col-md-12 white-text">
+                <h1>Chuck Norris</h1>
+                <p class="span">Genre : Action</p>
+                <button class="btn-links span">Similar actors</button>
+            </div>
         </div>
-        <div class=" centered dark-gray-background">
-            <img src="../Images/chuck-norris.jpg" id="actor-image" alt="Chuck Norris">
-        </div>
-        <section id="movies-section">
-            <div class="container" id="movies-list">
-                <div class="col-md-12">
-                    <h1 class="white-text centered">Movies</h1>
-                </div>
-                <div class="col-sm-2">
-                    <a href=""><img class="movie-image" src="../Images/delta-force.png"></a>
-                    <p>Title: Delta Force
-                        Release Date: February 14, 1986
-                        <br><a href="https://www.youtube.com/watch?v=r-UCFBS4a5I">Click HERE for preview</a></p>
-                    <div class="button">
-                        <a href="https://geo.itunes.apple.com/ca/movie/delta-force/id306030988?mt=6"
-                           class="itunes-button"></a>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <a href=""><img class="movie-image" src="../Images/expendables.png"></a>
-                    <p>Title: Expendables 2
-                        Release Date: August 15, 2012
-                        <br><a href="https://www.youtube.com/watch?v=r-UCFBS4a5I">Click HERE for preview</a></p>
-                    <div class="button">
-                        <a href="https://geo.itunes.apple.com/ca/movie/delta-force/id306030988?mt=6"
-                           class="itunes-button"></a>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <a href=""><img class="movie-image" src="../Images/lone-wolf-mc-quade.png"></a>
-                    <p>Title: Lone Wolf McQuade
-                        Release Date: April 15, 1983
-                        <br><a href="https://www.youtube.com/watch?v=r-UCFBS4a5I">Click HERE for preview</a></p>
-                    <div class="button">
-                        <a href="https://geo.itunes.apple.com/ca/movie/delta-force/id306030988?mt=6"
-                           class="itunes-button"></a>
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <a href=""><img class="movie-image" src="../Images/missing-in-action.png"></a>
+    </div>
+    <div id="trailer" class="col-md-8 col-md-offset-4">
+        <header>
+            <h3 class="info-title">Movies</h3>
+        </header>
+        <div class="row">
+            <div class="span12">
+                <div id="movies-carousel" class="owl-carousel owl-theme">
+                    <div class="item"><img src="../Images/delta-force.png">
 
-                    <p>Title: Missing in Action
-                        Release Date: April 15, 1984
-                        <br><a href="https://www.youtube.com/watch?v=r-UCFBS4a5I">Click HERE for preview</a></p>
-                    <div class="button">
-                        <a href="https://geo.itunes.apple.com/ca/movie/delta-force/id306030988?mt=6"
-                           class="itunes-button"></a>
+                        <div class="actor-info">
+                            <p>Title: Delta Force
+                                <br>Release Date: February 14, 1986<br>
+                                <button type="button" class="btn btn-primary btn-outline btn-lg"
+                                        onclick="document.location.href='https://www.youtube.com/watch?v=r-UCFBS4a5I'">Preview</button>
+                            <div class="btn-itunes">
+                                <a href="https://itunes.apple.com/ca/movie/inception/id400763833"
+                                   class="itune-button"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"><img src="../Images/expendables.png">
+
+                        <div class="actor-info">
+                            <p>Title: Expendables 2
+                                <br>Release Date: August 15, 2012<br>
+                                <button type="button" class="btn btn-primary btn-outline btn-lg"
+                                        onclick="document.location.href='https://www.youtube.com/watch?v=ip_CYHdyUBs'">Preview</button>
+                            <div class="btn-itunes">
+                                <a href="https://itunes.apple.com/us/movie/the-expendables-2/id558163259" class="itune-button"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"><img src="../Images/lone-wolf-mc-quade.png">
+
+                        <div class="actor-info">
+                            <p>Title: Lone Wolf McQuade
+                                <br>Release Date: April 15, 1983<br>
+                                <button type="button" class="btn btn-primary btn-outline btn-lg"
+                                        onclick="document.location.href='https://www.youtube.com/watch?v=GGIUcDSyU88'">Preview</button>
+                            <div class="btn-itunes">
+                                <a href="https://itunes.apple.com/us/movie/lone-wolf-mcquade/id280316485" class="itune-button"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"><img src="../Images/missing-in-action.png">
+                        <div class="actor-info">
+                            <p>Title: Missing in Action
+                                <br>Release Date: April 15, 1984<br>
+                                <button type="button" class="btn btn-primary btn-outline btn-lg"
+                                        onclick="document.location.href='https://www.youtube.com/watch?v=CgmADv4tkLQ'">Preview</button>
+                            <div class="btn-itunes">
+                                <a href="https://itunes.apple.com/us/movie/missing-in-action/id366932868" class="itune-button"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"><img src="../Images/delta-force2.png">
+                        <div class="actor-info">
+                            <p>Title: Delta Force 2
+                                <br>Release Date: August 24, 1990<br>
+                                <button type="button" class="btn btn-primary btn-outline btn-lg"
+                                        onclick="document.location.href='https://www.youtube.com/watch?v=q-8LgRGZ5hI'">Preview</button>
+                            <div class="btn-itunes">
+                                <a href="https://itunes.apple.com/us/movie/delta-force-2/id351824397" class="itune-button"></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </div>
 </body>
