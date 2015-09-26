@@ -1,6 +1,7 @@
+
 .actor-title {
-    padding-top: 10px;
-    padding-bottom: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #actor-name {
@@ -15,43 +16,131 @@
 }
 
 #actor-image {
-    margin-bottom: 20px;
-    margin-top: 20px;
+    background: url(../Images/chuck-norris.jpg) no-repeat center center;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+#actor-image header {
+    height: 100%;
+}
+
+@media (min-width: 992px) {
+    #actor-image {
+        height: 100%;
+        position: fixed;
+        overflow: hidden;
+        margin: 0;
+        -webkit-transition: all 200ms;
+        transition: all 1000ms;
+    }
+
+    #actor-image header .movie-ctnt {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 20px 40px;
+    }
 }
 
 #header {
-    margin-bottom: 10px;
     background-color: #E74C3C;
-    border-radius: 0px 0px 6px 6px;
-    margin-top: -20px;
+    padding-left: 10px;
 }
 
-.movie-image {
-    width: 100%;
-    max-width: 200px;
-    height: 200px;
-    padding: 5px;
-    border: solid 1px #EFEFEF;
-}
+/*.movie-image {*/
+    /*width: 100%;*/
+    /*max-width: 200px;*/
+    /*height: 200px;*/
+    /*padding: 5px;*/
+    /*border: solid 1px #EFEFEF;*/
+/*}*/
 
-#movies-section {
-    margin-top: 10px;
-    background: #E74C3C;
-    padding-bottom: 20px;
-}
+/*#movies-section {*/
+    /*margin-top: 10px;*/
+    /*background: #E74C3C;*/
+    /*padding-bottom: 20px;*/
+/*}*/
 
-#movies-list {
-
-}
+/*#movies-list {*/
+    /*width: 100%;*/
+    /*display:block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+/*}*/
 
 #itunes-div{
     text-align: center;
 }
-.itunes-button {
-    display: inline-block;
-    overflow: hidden;
-    background: url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_itunes-lrg.svg) no-repeat;
-    width: 110px;
-    height: 40px;
+
+#movies-carousel{
+    margin-top: 5px;
+    background-color: #2B2B2B;
 }
+#movies-carousel .item img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 5px;
+    margin-botton: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caption {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    background: rgba(0,0,0,0.2);
+    transition: background 0.3s ease-in-out;
+}
+
+.caption:hover {
+    background: rgba(0,0,0,0);
+}
+
+.caption img {
+    display: block;
+    max-width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.caption:hover img {
+    transform: translateX(100%);
+}
+
+.caption::before,
+.caption::after {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    background: #cecece;
+    transform: translateX(-30%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.caption::before {
+    content: attr(data-title);
+    height: 30%;
+    color: #05b19a;
+    font-size: 40px;
+    font-weight: 300;
+    padding: 30px;
+}
+
+.caption::after {
+    content: '\201C' attr(data-description) '\201D';
+    top: 30%;
+    height: 70%;
+    color: #fff;
+    font-size: 14px;
+    padding: 20px 30px;
+}
+
+.caption:hover::before,
+.caption:hover::after  {
+    transform: translateX(0%);
+}
+
 
