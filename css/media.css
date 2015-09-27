@@ -7,6 +7,11 @@
     height: 100%;
 }
 
+.iframe{
+    visibility: visible;
+    animation: fadeIn;
+}
+
 @media (min-width: 992px) {
     #trailer-background {
         height: 100%;
@@ -105,7 +110,7 @@
     transition: all 0.25s ease 0s;
     background-color: white;
     border-color: inherit;
-    background: url(../Images/moreMovies.png) no-repeat center center;
+    background: url(../Images/moreMedias.png) no-repeat center center;
     background-color: white;
     -webkit-text-fill-color: transparent;
 }

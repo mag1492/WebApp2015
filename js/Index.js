@@ -35,10 +35,6 @@ $(document).ready(function() {
     });
 });
 
-function redirect(){
-    document.location.href="index.html";
-}
-
 function goToRecentlyAdded(){
     document.location.href="#recently-added";
 }
