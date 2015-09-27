@@ -24,7 +24,10 @@ body {
     margin: 0px;
     border-radius: 0px
 }
-
+.paragraphs{
+    margin-top: 40px;
+    text-align:justify;
+}
 .centered{
     text-align:center;
 }
