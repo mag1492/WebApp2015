@@ -3,18 +3,18 @@
     background-size: cover;
     -webkit-background-size: cover;
 }
-
 #trailer-background {
     color:White;
     margin: 0;
 }
-
+.actor-info{
+    text-align:Center;
+}
 .media-title {
     color:black;
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
-
 #movies-carousel{
     margin-top: 5px;
 }
@@ -27,8 +27,4 @@
     margin-botton: 5px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.actor-info{
-    text-align:Center;
 }

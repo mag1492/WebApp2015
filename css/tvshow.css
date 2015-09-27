@@ -3,25 +3,21 @@
     background-size: cover;
     -webkit-background-size: cover;
 }
-
 #trailer-background {
     color:White;
     margin: 0;
 }
-
 .media-title {
     color:black;
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
-
 .specs {
     background-color: rgba(0, 6, 0, 0.9));
     border: 3px transparent;
     padding: 2px 5px;
     color: white;
 }
-
 @media (min-width: 992px) {
     .specs:hover {
         -webkit-animation: fadeIn;

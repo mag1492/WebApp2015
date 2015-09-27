@@ -4,42 +4,23 @@
     padding-bottom: 100px;
     padding-top: 30px;
 }
-
 .image-button{
     position: absolute;
     top: 60%;
     right: 65%;
     font-family: 'Raleway', sans-serif;
 }
-
-@media screen and (min-width:1000px) {
-    .image-button { visibility:visible }
-}
-@media screen and (max-width:999px) {
-    .image-button { visibility:hidden }
-}
-
 .container{
     padding-top: 50px;
 }
-
+.content{
+    padding-left: 0;
+    padding-right: 0;
+}
 #actors-section{
     background: #E74C3C;
     padding-bottom: 20px;
 }
-
-.movie-image{
-    width: 100%;
-    max-width: 200px;
-    height: 200px;
-    padding: 5px;
-    border: solid 1px #EFEFEF;
-}
-
-.index-section{
-    padding-bottom: 20px;
-}
-
 #actors-carousel .item{
     margin: 5px;
 }
@@ -55,7 +36,6 @@
     -webkit-box-shadow: 1px 1px 5px #999;
     box-shadow: 1px 1px 5px #999;
 }
-
 #recently-added-carousel .item{
     margin: 5px;
 }
@@ -71,8 +51,9 @@
     -webkit-box-shadow: 1px 1px 5px #999;
     box-shadow: 1px 1px 5px #999;
 }
-
-.content{
-    padding-left: 0;
-    padding-right: 0;
+@media screen and (min-width:1000px) {
+    .image-button { visibility:visible }
+}
+@media screen and (max-width:999px) {
+    .image-button { visibility:hidden }
 }
