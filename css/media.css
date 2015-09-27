@@ -1,34 +1,8 @@
-#trailer-background {
-    color: white;
-    margin: 0;
-}
-
-#trailer-background header {
-    height: 100%;
-}
-
 @media (min-width: 992px) {
-    #trailer-background {
-        height: 100%;
-        position: fixed;
-        overflow: hidden;
-        margin: 0;
-        -webkit-transition: all 200ms;
-        transition: all 1000ms;
-    }
-
-    #trailer-background header {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 20px 40px;
-    }
-
     .links {
         position: absolute;
         bottom: 10%;
     }
-
     #info {
         height: 100%;
         position: fixed;
@@ -38,35 +12,44 @@
         background-size: 300px;
         -webkit-background-size: 300px;
     }
-
     .specs {
         color: black;
         position: absolute;
         bottom: 30%;
     }
-
     .specs:hover {
         -webkit-animation: fadeIn;
         -webkit-animation-delay: 50ms;
         background-color:rgba(255, 255, 255, 0.9);
     }
+    #trailer-background {
+        height: 100%;
+        position: fixed;
+        overflow: hidden;
+        margin: 0;
+        -webkit-transition: all 200ms;
+        transition: all 1000ms;
+    }
+    #trailer-background header {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 20px 40px;
+    }
 }
-
+.media-info {
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+}
 .media-title {
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
-
 .info-title {
     font-size: 32px;
     font-weight: bold;
     letter-spacing: 2px;
 }
-
-.trailer {
-    bottom: 10%
-}
-
 .specs {
     margin-left: 20px;
     margin-right: 20px;
@@ -75,20 +58,30 @@
     font-weight: bold;
     position: static;
 }
-
 .top-buffer {
     margin-top: 35px;
 }
-
 .bottom-buffer {
     margin-bottom: 20px;
 }
-
+.iframe{
+    visibility: visible;
+    animation: fadeIn;
+}
+#trailer-background {
+    color: white;
+    margin: 0;
+}
+#trailer-background header {
+    height: 100%;
+}
+.trailer {
+    bottom: 10%
+}
 .links {
     color: white;
     position: static;
 }
-
 .btn-links{
     background-color: transparent;
     border-color: white;
@@ -99,45 +92,33 @@
     font-weight: bold;
     font-size: 12px;
 }
-
 .btn-links:hover {
     -webkit-transition: all 0.25s ease 0s;
     transition: all 0.25s ease 0s;
     background-color: white;
     border-color: inherit;
-    background: url(../Images/moreMovies.png) no-repeat center center;
+    background: url(../Images/moreMedias.png) no-repeat center center;
     background-color: white;
     -webkit-text-fill-color: transparent;
 }
-
 .btn-itunes {
     position:static;
 }
-
-.media-info {
-    width: 100%;
-    font-family: 'Raleway', sans-serif;
-}
-
 .nav-tabs {
     background-color: white;
     border-color: transparent;
 }
-
 .tab-content {
     background-color: transparent;
 }
-
 .nav-tabs > li > a {
     background-color: #E74C3C;
     color: black;
     font-weight: bold;
 }
-
 .nav-tabs > li > a:hover {
     background-color: #EA8074;
 }
-
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus{

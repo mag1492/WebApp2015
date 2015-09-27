@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Silicon Valley Season One - UM</title>
-
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/spacelab/bootstrap.min.css">
     <!-- jQuery -->
@@ -13,28 +11,29 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- Custom CSS -->
-    <link href="../css/Animation.css" rel="stylesheet">
-    <link href="../css/tvshow.css" rel="stylesheet">
+    <link href="../css/animation.css" rel="stylesheet">
     <link href="../css/media.css" rel="stylesheet">
     <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/tvshow.css" rel="stylesheet">
     <!--Custom font-->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Ledger' rel='stylesheet' type='text/css'>
+    <!--Custom JS-->
+    <script src="../js/global.js"></script>
 
 </head>
-<nav class="navbar navbar-default" style="margin: 0px; border-radius: 0px">
-    <!--Container with the page width-->
+<nav class="navbar navbar-default navbar-main">
     <div class="container-fluid">
         <div class="navbar-header">
-            <!--Button for the menu when the width is too small and span for the bar in the bar box.-->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand pointer" onclick="document.location.href='Index.html'"><span class="orange-color">u</span>Movie</a>
+            <a class="navbar-brand pointer" onclick="home()">
+                <span class="orange-color">u</span>Movie
+            </a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="col-sm-3 col-md-3 pull-left">
@@ -42,8 +41,7 @@
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
                         <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
-                            </button>
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                         </div>
                     </div>
                 </form>
@@ -52,9 +50,10 @@
                 <li><a href="#">WatchLists</a></li>
                 <li><a href="#">user1234</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false"><span class="glyphicon glyphicon-cog"></span><span
-                            class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-cog"></span>
+                        <span class="caret"></span>
+                    </a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Settings</a></li>
                         <li><a href="#">Log out</a></li>
@@ -62,9 +61,7 @@
                 </li>
             </ul>
         </div>
-        <!-- navbar-collapse -->
     </div>
-    <!--contrain-fluid -->
 </nav>
 <body class="media-theme">
 <div id="main">
@@ -72,16 +69,15 @@
         <div class="row">
             <div class="media-title col-md-12">
                 <h1>Silicon Valley</h1>
-
             </div>
-            <div class="trailer col-md-12">
-                    <div class="trailer-box embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/69V__a49xtw" frameborder="0" allowfullscreen></iframe>
-                    </div>
+            <div class="trailer col-md-12 iframe">
+                <div class="trailer-box embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/69V__a49xtw" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
         <div class="row top-buffer">
-            <div class="specs bottom-buffer">
+            <div class="specs bottom-buffer white-text">
                 <p>Genre : Comedy |
                     Date : April 6, 2014 (USA)
                 </p>
@@ -113,69 +109,66 @@
                     <!-- Panel Choice 1 -->
                     <div id="summary" class="tab-pane fade in active">
                         <!-- Section summary content -->
-                        <p class="summary">
-                            <header>
-                                <h3 class="info-title">Season One</h3>
-                            </header>
-                        <div>
-                            <h5 class="bold">Creators : Mike Judge, John Altschuler, Dave Krinsky</h5>
-                            <h5 class="bold">Producer : Jim Kleverweis</h5>
-                            <h5 class="bold">Starring : Thomas Middleditch, T. J. Miller, Josh Brener, Martin Starr, Kumail Nanjiani & others.</h5>
-
-                        <p style="margin-top: 40px;" align="justify">
-                            In the high-tech gold rush of modern Silicon Valley, the people most qualified to succeed are the least capable of handling success.
-                            A comedy partially inspired by Mike Judge's own experiences as a Silicon Valley engineer in the late 1980s.
-                        </p>
+                        <div class="summary">
+                            <h3 class="info-title">Season One</h3>
+                            <div>
+                                <h5 class="bold">Creators : Mike Judge, John Altschuler, Dave Krinsky</h5>
+                                <h5 class="bold">Producer : Jim Kleverweis</h5>
+                                <h5 class="bold">Starring : Thomas Middleditch, T. J. Miller, Josh Brener, Martin Starr, Kumail Nanjiani & others.</h5>
+                                <p class="paragraphs">
+                                    In the high-tech gold rush of modern Silicon Valley, the people most qualified to succeed are the least capable of handling success.
+                                    A comedy partially inspired by Mike Judge's own experiences as a Silicon Valley engineer in the late 1980s.
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <!-- Panel Choice 2-->
                     <div id="episode-list" class="tab-pane fade">
                         <!-- Section summary content -->
-                        <p class="episode-list">
-                            <header>
-                                <h3 class="info-title">Season One</h3>
-                            </header>
-                        <div>
-                            <div><h4>1. Minimum Viable Product</h4></div>
-                            <div><h4>2. The Cap Table</h4></div>
-                            <div><h4>3. Articles of Incorporation</h4></div>
-                            <div><h4>4. Fiduciary Duties</h4></div>
-                            <div><h4>5. Signaling Risk</h4></div>
-                            <div><h4>6. Third Party Insourcing</h4></div>
-                            <div><h4>7. Proof of Concept</h4></div>
-                            <div><h4>8. Optimal Tip-to-Tip Efficiency</h4></div>
+                        <div class="episode-list">
+                            <h3 class="info-title">Season One</h3>
+                            <div>
+                                <div><h4>1. Minimum Viable Product</h4></div>
+                                <div><h4>2. The Cap Table</h4></div>
+                                <div><h4>3. Articles of Incorporation</h4></div>
+                                <div><h4>4. Fiduciary Duties</h4></div>
+                                <div><h4>5. Signaling Risk</h4></div>
+                                <div><h4>6. Third Party Insourcing</h4></div>
+                                <div><h4>7. Proof of Concept</h4></div>
+                                <div><h4>8. Optimal Tip-to-Tip Efficiency</h4></div>
+                            </div>
                         </div>
-                        </p>
                     </div>
-
                     <!-- Panel Choice 3-->
                     <div id="review" class="tab-pane fade">
                         <!-- Section summary content -->
-                        <p class="review">
-                            <header>
-                                <h3 class="info-title">IGN</h3>
-                            </header>
-                        <h5 class="bold">GREAT
-                        The first season of Mike Judge’s HBO comedy Silicon Valley gave us one of the year’s best new show.</h5>
-                        <h6>By Cliff Wheatley | JUNE 06, 2014</h6>
-                        <p style="margin-top: 40px;" align="justify">
-                            After a decent start in its first couple of episodes, Mike Judge’s Silicon Valley quickly gained steam to deliver one of the funniest comedies on TV this season. Following the misadventures of a tech start-up with no definitive direction and a cast of perverse, neurotic, and naïve slackers, Silicon Valley introduced us to a cast of characters that experienced real growth in the span of only eight episodes.
-                            <br>
-                            <br>
-                            Season 1 was bold to introduce as many characters as it did; the cast ballooned quickly and there were a few causalities as a result (the Asian roommate, Big Head), but generally the main characters got the attention they deserved episode-to-episode. However, it’s worth noting that only Richard and Erlich – and to a lesser degree, Jared – really had actual arcs over the course of the season.
-                            <br>
-                            <br>
-                            We got to see Richard grow from a timid and underachieving programmer to CEO, Erlich from annoying, overconfident coattail rider to valued (if still overconfident) promo man, and Jared from invisible perfunctory team member to acknowledged presence within the crew. In retrospect, the journeys of Richard and Erlich work quite well in context of the entire season, but early on it was a little tiresome to see them hit the same incompetent beats.
-                            <br>
-                            <br>
-                            Dinesh and Gilfoyle were less developed, serving mainly to be rivals to each other and offer up a bulk of the gags, but their presence added a load of humor in every episode (Dinesh’s dilemma about sleeping with Gilfoyle’s girlfriend was a particular standout).
-                            <br>
-                            <br>
-                            But when it comes down to it, Silicon Valley is a comedy, and the jokes only got better as episodes wore on. From “mean jerk time” to Erlich’s threatening the neighborhood kids to the prevalent satire of the tech industry, the laughs came often, which ultimately is the most important element. Though it came a little too close to Workaholics early on, Silicon Valley eventually found its voice and delivered character-centric humor that feels unique to the show. Jared’s misadventures with technology is a stellar example of that.
-                            <br>
-                            <br>
-                            There were some uneven points of this first season, though, aside from the abandoned characters; the half-effort to build romantic tension between Richard and Monica is one of them, as is the unfortunate disappearance of the Peter Gregory character. Of course, the latter was unavoidable with the sad passing of actor Christopher Evan Welch; it’s a testament to his strong performance that the exit of the character had such a profound effect on the show’s dynamic. His Burger King monologue remains one of this season’s triumphs. </p>
-                        </p>
+                        <div class="review">
+                            <h3 class="info-title">IGN</h3>
+                            <h5 class="bold">GREAT The first season of Mike Judge’s HBO comedy Silicon Valley gave us one of the year’s best new show.</h5>
+                            <h6>By Cliff Wheatley | JUNE 06, 2014</h6>
+                            <p class="paragraphs">
+                                After a decent start in its first couple of episodes, Mike Judge’s Silicon Valley quickly gained steam to deliver one of the funniest comedies on TV this season.
+                                Following the misadventures of a tech start-up with no definitive direction and a cast of perverse, neurotic, and naïve slackers, Silicon Valley introduced us to a
+                                cast of characters that experienced real growth in the span of only eight episodes.
+                                <br>
+                                <br>
+                                Season 1 was bold to introduce as many characters as it did; the cast ballooned quickly and there were a few causalities as a result (the Asian roommate, Big Head),
+                                but generally the main characters got the attention they deserved episode-to-episode. However, it’s worth noting that only Richard and Erlich – and to a lesser degree,
+                                Jared – really had actual arcs over the course of the season.
+                                <br>
+                                <br>
+                                We got to see Richard grow from a timid and underachieving programmer to CEO, Erlich from annoying, overconfident coattail rider to valued (if still overconfident)
+                                promo man, and Jared from invisible perfunctory team member to acknowledged presence within the crew. In retrospect, the journeys of Richard and Erlich work quite
+                                well in context of the entire season, but early on it was a little tiresome to see them hit the same incompetent beats.
+                                <br>
+                                <br>
+                                Dinesh and Gilfoyle were less developed, serving mainly to be rivals to each other and offer up a bulk of the gags, but their presence added a load of humor in
+                                every episode (Dinesh’s dilemma about sleeping with Gilfoyle’s girlfriend was a particular standout).
+                                <br>
+                                <br>
+                                [...]
+                            </p>
+                        </div>
                     </div>
                 </div>  <!-- End panel-ctnt-->
             </div> <!-- End movie-info-->
