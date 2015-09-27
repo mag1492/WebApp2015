@@ -1,4 +1,3 @@
-
 #trailer-background {
     color: white;
     margin: 0;
@@ -17,7 +16,8 @@
         -webkit-transition: all 200ms;
         transition: all 1000ms;
     }
-    #trailer-background header .movie-ctnt {
+
+    #trailer-background header {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
@@ -29,9 +29,26 @@
         bottom: 10%;
     }
 
+    #info {
+        height: 100%;
+        position: fixed;
+        background-image: url(../Images/logoOpaque.gif);
+        background-position: right 45px bottom 20px;
+        background-repeat: no-repeat;
+        background-size: 300px;
+        -webkit-background-size: 300px;
+    }
+
     .specs {
+        color: black;
         position: absolute;
         bottom: 30%;
+    }
+
+    .specs:hover {
+        -webkit-animation: fadeIn;
+        -webkit-animation-delay: 50ms;
+        background-color:rgba(255, 255, 255, 0.9);
     }
 }
 
@@ -45,11 +62,15 @@
     font-weight: bold;
     letter-spacing: 2px;
 }
+
 .trailer {
     bottom: 10%
 }
 
 .specs {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-weight: bold;
     font-size: medium;
     font-weight: bold;
     position: static;
@@ -104,7 +125,7 @@
 }
 
 .tab-content {
-    background-color: white;
+    background-color: transparent;
 }
 
 .nav-tabs > li > a {

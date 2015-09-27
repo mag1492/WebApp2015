@@ -3,3 +3,11 @@
     background-size: cover;
     -webkit-background-size: cover;
 }
+
+.specs {
+    background-color: transparent;
+    border: 3px transparent;
+    padding: 2px 5px;
+    color: black;
+}
+
