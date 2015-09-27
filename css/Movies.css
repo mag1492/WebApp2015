@@ -11,3 +11,10 @@
     color: black;
 }
 
+@media (min-width: 992px) {
+    .specs:hover {
+        -webkit-animation: fadeIn;
+        -webkit-animation-delay: 50ms;
+        background-color:rgba(255, 255, 255, 0.9);
+    }
+}

@@ -16,8 +16,16 @@
 }
 
 .specs {
-    background-color: rgba(249, 255, 246, 0.22));
+    background-color: rgba(0, 6, 0, 0.9));
     border: 3px transparent;
     padding: 2px 5px;
     color: white;
+}
+
+@media (min-width: 992px) {
+    .specs:hover {
+        -webkit-animation: fadeIn;
+        -webkit-animation-delay: 50ms;
+        background-color: rgba(0, 6, 0, 0.5);
+    }
 }

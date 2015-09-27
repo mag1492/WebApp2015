@@ -36,7 +36,7 @@ $(document).ready(function() {
 });
 
 function redirect(){
-    document.location.href="Index.html";
+    document.location.href="index.html";
 }
 
 function goToRecentlyAdded(){
