@@ -16,6 +16,7 @@
         -webkit-transition: all 200ms;
         transition: all 1000ms;
     }
+
     #trailer-background header {
         position: relative;
         top: 50%;
@@ -26,6 +27,16 @@
     .links {
         position: absolute;
         bottom: 10%;
+    }
+
+    #info {
+        height: 100%;
+        position: fixed;
+        background-image: url(../Images/logoOpaque.gif);
+        background-position: right 45px bottom 20px;
+        background-repeat: no-repeat;
+        background-size: 300px;
+        -webkit-background-size: 300px;
     }
 
     .specs {
@@ -55,7 +66,6 @@
 .trailer {
     bottom: 10%
 }
-
 
 .specs {
     margin-left: 20px;
@@ -115,7 +125,7 @@
 }
 
 .tab-content {
-    background-color: white;
+    background-color: transparent;
 }
 
 .nav-tabs > li > a {
