@@ -1,3 +1,42 @@
+@media (min-width: 992px) {
+    .links {
+        position: absolute;
+        bottom: 10%;
+    }
+    #info {
+        height: 100%;
+        position: fixed;
+        background-image: url(../Images/logoOpaque.gif);
+        background-position: right 45px bottom 20px;
+        background-repeat: no-repeat;
+        background-size: 300px;
+        -webkit-background-size: 300px;
+    }
+    .specs {
+        color: black;
+        position: absolute;
+        bottom: 30%;
+    }
+    .specs:hover {
+        -webkit-animation: fadeIn;
+        -webkit-animation-delay: 50ms;
+        background-color:rgba(255, 255, 255, 0.9);
+    }
+    #trailer-background {
+        height: 100%;
+        position: fixed;
+        overflow: hidden;
+        margin: 0;
+        -webkit-transition: all 200ms;
+        transition: all 1000ms;
+    }
+    #trailer-background header {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 20px 40px;
+    }
+}
 .media-info {
     width: 100%;
     font-family: 'Raleway', sans-serif;
@@ -87,43 +126,4 @@
     border-bottom: solid;
     border-bottom-style: solid;
     border-bottom-color: #E74C3C;
-}
-@media (min-width: 992px) {
-    .links {
-        position: absolute;
-        bottom: 10%;
-    }
-    #info {
-        height: 100%;
-        position: fixed;
-        background-image: url(../Images/logoOpaque.gif);
-        background-position: right 45px bottom 20px;
-        background-repeat: no-repeat;
-        background-size: 300px;
-        -webkit-background-size: 300px;
-    }
-    .specs {
-        color: black;
-        position: absolute;
-        bottom: 30%;
-    }
-    .specs:hover {
-        -webkit-animation: fadeIn;
-        -webkit-animation-delay: 50ms;
-        background-color:rgba(255, 255, 255, 0.9);
-    }
-    #trailer-background {
-        height: 100%;
-        position: fixed;
-        overflow: hidden;
-        margin: 0;
-        -webkit-transition: all 200ms;
-        transition: all 1000ms;
-    }
-    #trailer-background header {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        padding: 20px 40px;
-    }
 }

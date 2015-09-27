@@ -1,3 +1,10 @@
+@media (min-width: 992px) {
+    .specs:hover {
+        -webkit-animation: fadeIn;
+        -webkit-animation-delay: 50ms;
+        background-color: rgba(0, 6, 0, 0.5);
+    }
+}
 .media-theme #trailer-background {
     background: url(../Images/sillicon-valley-dvd.jpg) no-repeat center center;
     background-size: cover;
@@ -17,11 +24,4 @@
     border: 3px transparent;
     padding: 2px 5px;
     color: white;
-}
-@media (min-width: 992px) {
-    .specs:hover {
-        -webkit-animation: fadeIn;
-        -webkit-animation-delay: 50ms;
-        background-color: rgba(0, 6, 0, 0.5);
-    }
 }
