@@ -8,6 +8,6 @@ $(function() {
         el: '.menu',
         render: function () {
             this.$el.html(this.template());
-                }
-            });
-        });
+        }
+    });
+});
