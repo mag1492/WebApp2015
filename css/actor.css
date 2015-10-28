@@ -7,9 +7,6 @@
     color:White;
     margin: 0;
 }
-.actor-info{
-    text-align:Center;
-}
 .media-title {
     color:black;
     letter-spacing: 2px;
@@ -24,7 +21,7 @@
     height: auto;
     max-height:550px;
     margin-top: 5px;
-    margin-botton: 5px;
+    margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
 }
