@@ -2,16 +2,16 @@
  * Created by Gabriel on 2015-10-27.
  */
 $(function() {
-    var randomActor = new Actor({"id" : "129377537"});
-    var movies = new ActorMovies({});
+    var chuckNorris = new Actor({"id" : "129377537"});
+
 
     ActorView = Backbone.View.extend({
-        template : _.template($('#header-template').html()),
-        el: '.header',
-        model : randomActor,
+        template : _.template($('#actor-info-template').html()),
+        el: '.actor-info',
+        model : chuckNorris,
         render: function () {
             var that = this;
-            randomActor.fetch({
+            chuckNorris.fetch({
                 success: function (ret) {
                     that.$el.html(that.template({actor: ret.toJSON()}));
                 }
@@ -19,18 +19,5 @@ $(function() {
         }
     });
 
-    ActorMoviesView = Backbone.View.extend({
-        template : _.template($('#actor-movies-template').html()),
-        el: '.actor-movies',
-        collection : movies,
-        render: function () {
-            alert('here?');
-            var that = this;
-            movies.fetch({
-                success: function (ret) {
-                    that.$el.html(that.template({movies: ret.toJSON()}));
-                }
-            })
-        }
-    });
+
 });

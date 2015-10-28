@@ -24,30 +24,25 @@
     <link rel="stylesheet" href="../owl-carousel/owl.theme.css">
     <script src="../owl-carousel/owl.carousel.js"></script>
     <!--Custom JS-->
-    <script src="../js/actor.js"></script>
     <script src="../js/global.js"></script>
 </head>
 
 <body class="media-theme">
 <div id="main">
 
-    <div class="header"></div>
+    <div class="actor-info"></div>
 
     <div id="trailer" class="col-md-8 col-md-offset-4">
         <header>
             <h3 class="info-title">Movies</h3>
         </header>
-        <div class="row">
-            <div class="span12">
 
-                    <div class="actor-movies"></div>
+        <div class="actor-movies"></div>
 
-            </div>
-        </div>
     </div>
 </div>
 
-<script type="text/template" id="header-template">
+<script type="text/template" id="actor-info-template">
     <div id="trailer-background" class="col-md-4">
         <div class="row">
             <div class="media-title col-md-12 white-text">
@@ -77,6 +72,8 @@
 </script>
 <script src="../js/models/actor.js"></script>
 <script src="../js/views/actorView.js"></script>
+<script src="../js/collection/chuckNorrisMovies.js"></script>
+<script src="../js/views/actorMoviesView.js"></script>
 <script src="../js/router.js"></script>
 <script src="../js/app.js"></script>
 </body>
