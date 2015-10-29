@@ -26,36 +26,10 @@
 
 </head>
 <body class="media-theme">
+<div class="menu"></div>
 <div id="main">
-    <div id="trailer-background" class="col-md-4"  >
-        <div class="row">
-            <div class="media-title col-md-12">
-                <h1>Silicon Valley</h1>
-            </div>
-            <div class="trailer col-md-12 iframe">
-                <div class="trailer-box embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/69V__a49xtw" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="row top-buffer">
-            <div class="specs bottom-buffer white-text">
-                <p>Genre : Comedy |
-                    Date : April 6, 2014 (USA)
-                </p>
-            </div>
-        </div>
-        <div class="row bottom-buffer">
-            <div class="links col-md-12">
-                <p>
-                    <button class="btn-links" >Similar series</button>
-                </p>
-                <div class="btn-itunes">
-                    <a href="https://geo.itunes.apple.com/ca/tv-season/silicon-valley-season-1/id849050573?mt=4" class="itune-button"></a>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <div class="seasonX-info"></div>
     <!--Content Section-->
     <div id="info" class="col-md-8 col-md-offset-4">
         <div id="info-background" class="tab-background">
@@ -138,7 +112,90 @@
     </div>
 </div>
 
+<script type="text/template" id="menu-template">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-main">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand pointer" onclick="homeFromOtherPage()">
+                    <span class="orange-color">u</span>Movie
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="col-sm-3 col-md-3 pull-left">
+                    <form class="navbar-form" role="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">WatchLists</a></li>
+                    <li><a href="#">user1234</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-cog"></span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</script>
+
+<script type="text/template" id="season-info-template">
+    <div id="trailer-background" class="col-md-4"  >
+        <div class="row">
+            <div class="media-title col-md-12">
+                <h1><%= season[0].collectionName %></h1>
+            </div>
+            <div class="trailer col-md-12 iframe">
+                <div class="trailer-box embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/69V__a49xtw" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row top-buffer">
+            <div class="specs bottom-buffer white-text">
+                <p>Genre : <%= season[0].primaryGenreName %> |
+                    Date : <%= season[0].releaseDate %>
+                </p>
+            </div>
+        </div>
+        <div class="row bottom-buffer">
+            <div class="links col-md-12">
+                <p>
+                    <button class="btn-links" >Similar series</button>
+                </p>
+                <div class="btn-itunes">
+                    <a href="<% season[0].artistViewUrl %>" class="itune-button"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
 
 <!-- Put scripts for templating MVC here -->
+<script src="../js/models/episode.js"></script>
+<script src="../js/models/tvshow.js"></script>
+<script src="../js/models/season.js"></script>
+<script src="../js/views/menuView.js"></script>
+<script src="../js/views/tvshowView.js"></script>
+<script src="../js/router/TVRouter.js"></script>
+<script src="../js/tvApp.js"></script>
 </body>
 </html>

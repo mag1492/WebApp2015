@@ -2,17 +2,19 @@ var app = app || {};
 
 $(function(){
 
-    var RouterTvShows = Backbone.Router.extend({
+    var TVRouter = Backbone.Router.extend({
        routes: {
-           "": "home"
+           "": "homeTVShow"
        },
 
-       home: function(){
-        console.log("this is home");
+        homeTVShow: function(){
+            console.log("this is home TV");
+            app.menuView.render();
+            app.tvShowView.render();
        }
 
     });
 
-
-
-})
+    app.tvRouter = new TVRouter();
+    Backbone.history.start();
+});

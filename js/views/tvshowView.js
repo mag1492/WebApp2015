@@ -2,22 +2,21 @@ var app = app || {};
 
 $(function(){
 
-    var TasksListView = Backbone.View.extend({
+    var SiliconS01 = new app.Season({"id" : "279175900"});
 
-        el: ".notesApp",
+    var TVShowsView = Backbone.View.extend({
+        template : _.template($('#season-info-template').html()),
+        el: ".seasonX-info",
+        model : SiliconS01,
 
         render: function(){
             var that = this;
-            app.tasks.fetch({
-                success: function(tasks){
-                    var template = _.template($('#note-list-template').html(), {tasks: tasks.models});
-                    that.$el.html(template);
+            SiliconS01.fetch({
+                success: function(response){
+                     that.$el.html(that.template({season: response.toJSON()}));
                 }
             });
         }
-
     });
-
-    app.tasksListView = new TasksListView({collection: app.tasks});
-
+    app.tvShowView = new TVShowsView();
 });
