@@ -6,7 +6,7 @@
     }
 }
 .media-theme #trailer-background {
-    background: url(../Images/sillicon-valley-dvd.jpg) no-repeat center center;
+    background: url(../images/sillicon-valley-dvd.jpg) no-repeat center center;
     background-size: cover;
     -webkit-background-size: cover;
 }

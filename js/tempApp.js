@@ -7,7 +7,7 @@ $(function() {
     var actorMovie = new ActorMoviesView();
 
     router = new Router();
-    router.on('route:home', function() {
+    router.on('route:homeFromOtherPage', function() {
         actor.render();
         actorMovie.render();
     });

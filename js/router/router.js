@@ -4,7 +4,7 @@
 $(function(){
     Router = Backbone.Router.extend({
         routes:{
-            '' : 'home'
+            '' : 'homeFromOtherPage'
         }
     });
 });
