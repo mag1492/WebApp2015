@@ -1,14 +1,11 @@
 .media-theme #trailer-background {
-    background: url(../Images/chuck-norris.jpg) no-repeat center center;
+    background: url(../images/chuck-norris.jpg) no-repeat center center;
     background-size: cover;
     -webkit-background-size: cover;
 }
 #trailer-background {
     color:White;
     margin: 0;
-}
-.actor-info{
-    text-align:Center;
 }
 .media-title {
     color:black;
@@ -24,7 +21,7 @@
     height: auto;
     max-height:550px;
     margin-top: 5px;
-    margin-botton: 5px;
+    margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
 }

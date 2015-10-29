@@ -6,7 +6,7 @@
     }
 }
 .media-theme #trailer-background {
-    background: url(../Images/Inception-bgd.jpg) no-repeat center center;
+    background: url(../images/Inception-bgd.jpg) no-repeat center center;
     background-size: cover;
     -webkit-background-size: cover;
 }
