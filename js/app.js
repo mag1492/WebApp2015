@@ -6,7 +6,7 @@ $(function() {
     var menuView = new MenuView();
 
     router = new Router();
-    router.on('route:home', function() {
+    router.on('route:homeFromOtherPage', function() {
         menuView.render();
     });
 

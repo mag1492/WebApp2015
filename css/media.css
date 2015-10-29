@@ -6,7 +6,7 @@
     #info {
         height: 100%;
         position: fixed;
-        background-image: url(../Images/logoOpaque.gif);
+        background-image: url(../images/logoOpaque.gif);
         background-position: right 45px bottom 20px;
         background-repeat: no-repeat;
         background-size: 300px;
@@ -97,7 +97,7 @@
     transition: all 0.25s ease 0s;
     background-color: white;
     border-color: inherit;
-    background: url(../Images/moreMedias.png) no-repeat center center;
+    background: url(../images/moreMedias.png) no-repeat center center;
     background-color: white;
     -webkit-text-fill-color: transparent;
 }

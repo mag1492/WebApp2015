@@ -1,5 +1,5 @@
 .media-theme #trailer-background {
-    background: url(../Images/chuck-norris.jpg) no-repeat center center;
+    background: url(../images/chuck-norris.jpg) no-repeat center center;
     background-size: cover;
     -webkit-background-size: cover;
 }
