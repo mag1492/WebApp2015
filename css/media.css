@@ -3,6 +3,11 @@
         position: absolute;
         bottom: 10%;
     }
+
+    .media-tab-padding {
+        padding-top: 52px;
+    }
+
     #info {
         height: 100%;
         position: fixed;
@@ -45,6 +50,13 @@
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
+
+.media-title-template {
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding-top: 40px;
+}
+
 .info-title {
     font-size: 32px;
     font-weight: bold;

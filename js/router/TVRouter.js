@@ -10,8 +10,10 @@ $(function(){
         homeTVShow: function(){
             console.log("this is home TV");
             app.menuView.render();
+            app.trailerEpisodeView.render();
             app.tvShowView.render();
             app.episodesView.render();
+
        }
 
     });
