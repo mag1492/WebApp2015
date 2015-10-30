@@ -1,10 +1,19 @@
-/**
- * Created by Gabriel on 2015-10-14.
- */
+var app = app || {};
+
 $(function(){
-    Router = Backbone.Router.extend({
-        routes:{
-            '' : 'homeFromOtherPage'
+
+    var Router = Backbone.Router.extend({
+        routes: {
+            "": "home"
+        },
+
+        home: function(){
+            app.menuView.render();
         }
+
     });
-});
+
+    app.router = new Router();
+    Backbone.history.start();
+
+})
