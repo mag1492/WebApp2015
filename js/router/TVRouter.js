@@ -11,6 +11,7 @@ $(function(){
             console.log("this is home TV");
             app.menuView.render();
             app.tvShowView.render();
+            app.episodesView.render();
        }
 
     });
