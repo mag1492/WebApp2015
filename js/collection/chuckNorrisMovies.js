@@ -2,8 +2,6 @@ var app = app || {};
 
 $(function() {
     app.ChuckNorrisMovies = Backbone.Collection.extend({
-        url : 'https://umovie.herokuapp.com/unsecure/actors/129377537/movies',
-
         initialize: function(options){
             options || (options= {});
             if(options.actorId){

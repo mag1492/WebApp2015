@@ -2,7 +2,6 @@ var app = app || {};
 
 $(function(){
 
-    var menuView = new MenuView({el:'.menu'});
     var Router = Backbone.Router.extend({
         routes: {
             '': 'home',
@@ -21,7 +20,6 @@ $(function(){
 
         homeTVShow: function(){
             this.setup();
-            console.log("this is home TV");
             app.trailerEpisodeView.render();
             app.tvShowView.render();
             app.episodesView.render();
@@ -32,9 +30,7 @@ $(function(){
             this.setup();
             app.actorMainView.render();
         }
-
         });
     app.router = new Router();
     Backbone.history.start();
-
 });
