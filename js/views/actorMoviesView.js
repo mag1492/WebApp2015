@@ -1,19 +1,22 @@
-/**
- * Created by Gabriel on 2015-10-27.
- */
+var app = app || {};
+
 $(function() {
-    var movies = new ChuckNorrisMovies({});
+
     ActorMoviesView = Backbone.View.extend({
         template : _.template($('#actor-movies-template').html()),
         el: '.actor-movies',
-        collection : movies,
+        initialize: function(id){
+            this.movies = new app.ChuckNorrisMovies({"actorId" : id});
+        },
+
         render: function () {
             var that = this;
-            movies.fetch({
+            this.movies.fetch({
                 success: function (ret) {
                     that.$el.html(that.template({movies: ret.toJSON()}));
                 }
-            })
+            });
         }
     });
+    app.actorMoviesView = new ActorMoviesView();
 });

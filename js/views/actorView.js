@@ -1,9 +1,7 @@
-/**
- * Created by Gabriel on 2015-10-27.
- */
-$(function() {
-    var chuckNorris = new Actor({"id" : "129377537"});
+var app = app || {};
 
+$(function() {
+    var chuckNorris = new app.Actor({"id" : "129377537"});
 
     ActorView = Backbone.View.extend({
         template : _.template($('#actor-info-template').html()),
@@ -19,5 +17,5 @@ $(function() {
         }
     });
 
-
+    app.actorView = new ActorView();
 });
