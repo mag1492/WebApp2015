@@ -6,7 +6,7 @@ $(function(){
         routes: {
             '': 'home',
             'tvshow': 'homeTVShow',
-            'actor': 'homeActor'
+            'actor/:id': 'homeActor'
         },
 
         setup: function () {
@@ -26,9 +26,9 @@ $(function(){
 
         },
 
-        homeActor: function() {
+        homeActor: function(id) {
             this.setup();
-            app.actorMainView.render();
+            app.actorMainView.render(id);
         }
         });
     app.router = new Router();
