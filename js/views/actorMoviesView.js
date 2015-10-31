@@ -5,7 +5,7 @@ $(function() {
     var movies = new ChuckNorrisMovies({});
     ActorMoviesView = Backbone.View.extend({
         template : _.template($('#actor-movies-template').html()),
-        el: '.actor-movies',
+        el: '.content',
         collection : movies,
         render: function () {
             var that = this;

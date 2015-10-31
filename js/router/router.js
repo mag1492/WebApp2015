@@ -2,18 +2,42 @@ var app = app || {};
 
 $(function(){
 
+    var menuView = new MenuView({el:'.menu'});
     var Router = Backbone.Router.extend({
         routes: {
-            "": "home"
+            '': 'home',
+            '/tvshow': 'homeTVShow',
+            '/actor': 'homeActor'
+        },
+
+        setup: function () {
+            app.menuView.render();
         },
 
         home: function(){
-            app.menuView.render();
+            this.setup();
+            app.homeView.render();
+        },
+
+        homeTVShow: function(){
+            this.setup();
+            console.log("this is home TV");
+            app.trailerEpisodeView.render();
+            app.tvShowView.render();
+            app.episodesView.render();
+
+        },
+
+        homeActor: function() {
+            this.setup();
+            var actor = new ActorView();
+            var actorMovie = new ActorMoviesView();
+            actor.render();
+            actorMovie.render();
         }
 
-    });
-
+        });
     app.router = new Router();
     Backbone.history.start();
 
-})
+});
