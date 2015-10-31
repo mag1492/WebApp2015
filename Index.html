@@ -19,6 +19,10 @@
     <!-- Custom CSS -->
     <link href="css/global.css" rel="stylesheet">
     <link href="css/index.css" rel="stylesheet">
+    <link href="css/Animation.css" rel="stylesheet">
+    <link href="css/actor.css" rel="stylesheet">
+    <link href="css/media.css" rel="stylesheet">
+    <link href="css/tvshow.css" rel="stylesheet">
     <!--Custom font-->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <!--Custom javascript-->
@@ -35,6 +39,7 @@
 
 <body>
 <div class="content"></div>
+</body>
 <footer class="footer">
     <div class="footer"></div>
 </footer>
@@ -97,11 +102,11 @@
                         <div class="item"><a href="#/tvshow"><img src="Images/sillicon-valley-dvd.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/Inception-bgd.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/inception2.jpg"></a></div>
-                        <div class="item"><a href="html/tvshow.html"><img src="Images/silicon2.jpg"></a></div>
+                        <div class="item"><a href="#/tvshow"><img src="Images/silicon2.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/inception3.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/inception4.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/Inception-bgd.jpg"></a></div>
-                        <div class="item"><a href="html/tvshow.html"><img src="Images/sillicon-valley-dvd.jpg"></a></div>
+                        <div class="item"><a href="#/tvshow"><img src="Images/sillicon-valley-dvd.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/inception3.jpg"></a></div>
                     </div>
                 </div>
@@ -115,20 +120,33 @@
             <div class="row">
                 <div class="span12">
                     <div id="actors-carousel" class="owl-carousel owl-theme">
-                        <div class="item"><a href="html/actor.html"><img src="Images/chuck-norris.jpg"></a></div>
-                        <div class="item"><a href="html/actor.html"><img src="Images/chuck-norris-cowboy.jpg"></a></div>
-                        <div class="item"><a href="html/actor.html"><img src="Images/chuck2.jpg"></a></div>
-                        <div class="item"><a href="html/actor.html"><img src="Images/chuck-norris.jpg"></a></div>
-                        <div class="item"><a href="html/actor.html"><img src="Images/chuck-norris-cowboy.jpg"></a></div>
-                        <div class="item"><a href="html/actor.html"><img src="Images/chuck2.jpg"></a></div>
-                        <div class="item"><a href="html/actor.html"><img src="Images/chuck-norris.jpg"></a></div>
-                        <div class="item"><a href="html/actor.html"><img src="Images/chuck-norris-cowboy.jpg"></a></div>
-                        <div class="item"><a href="html/actor.html"><img src="Images/chuck2.jpg"></a></div>
+                        <div class="item"><a href="#/actor"><img src="Images/chuck-norris.jpg"></a></div>
+                        <div class="item"><a href="#/actor"><img src="Images/chuck-norris-cowboy.jpg"></a></div>
+                        <div class="item"><a href="#/actor"><img src="Images/chuck2.jpg"></a></div>
+                        <div class="item"><a href="#/actor"><img src="Images/chuck-norris.jpg"></a></div>
+                        <div class="item"><a href="#/actor"><img src="Images/chuck-norris-cowboy.jpg"></a></div>
+                        <div class="item"><a href="#/actor"><img src="Images/chuck2.jpg"></a></div>
+                        <div class="item"><a href="#/actor"><img src="Images/chuck-norris.jpg"></a></div>
+                        <div class="item"><a href="#/actor"><img src="Images/chuck-norris-cowboy.jpg"></a></div>
+                        <div class="item"><a href="#/actor"><img src="Images/chuck2.jpg"></a></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+</script>
+
+<script type="text/template" id="actor-main-template">
+    <body class="media-theme">
+    <div id="main">
+        <div class="actor-info"></div>
+        <div id="trailer" class="col-md-8 col-md-offset-4">
+            <header>
+                <h3 class="info-title">Movies</h3>
+            </header>
+            <div class="actor-movies"></div>
+        </div>
+    </div>
 </script>
 
 <script type="text/template" id="actor-info-template">
@@ -258,7 +276,9 @@
 <script src="js/views/episodesView.js"></script>
 <script src="js/views/trailerEpisodeView.js"></script>
 <script src="js/views/tvshowView.js"></script>
+<script src="js/views/actorMainView.js"></script>
 <script src="js/views/actorView.js"></script>
+<script src="js/views/actorMoviesView.js"></script>
 <script src="js/views/homeView.js"></script>
 <script src="js/views/menuView.js"></script>
 <script src="js/router/router.js"></script>
@@ -266,5 +286,4 @@
 
 <script src="js/Index.js"></script>
 <script src="js/global.js"></script>
-</body>
 </html>

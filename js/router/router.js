@@ -6,8 +6,8 @@ $(function(){
     var Router = Backbone.Router.extend({
         routes: {
             '': 'home',
-            '/tvshow': 'homeTVShow',
-            '/actor': 'homeActor'
+            'tvshow': 'homeTVShow',
+            'actor': 'homeActor'
         },
 
         setup: function () {
@@ -30,10 +30,9 @@ $(function(){
 
         homeActor: function() {
             this.setup();
-            var actor = new ActorView();
-            var actorMovie = new ActorMoviesView();
-            actor.render();
-            actorMovie.render();
+            app.actorMainView.render();
+            app.actorMoviesView.render();
+            app.actorView.render();
         }
 
         });

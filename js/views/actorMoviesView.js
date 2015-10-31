@@ -1,11 +1,10 @@
-/**
- * Created by Gabriel on 2015-10-27.
- */
+var app = app || {};
+
 $(function() {
-    var movies = new ChuckNorrisMovies({});
+    var movies = new app.ChuckNorrisMovies({"actorId" : "129377537"});
     ActorMoviesView = Backbone.View.extend({
         template : _.template($('#actor-movies-template').html()),
-        el: '.content',
+        el: '.actor-movies',
         collection : movies,
         render: function () {
             var that = this;
@@ -13,7 +12,8 @@ $(function() {
                 success: function (ret) {
                     that.$el.html(that.template({movies: ret.toJSON()}));
                 }
-            })
+            });
         }
     });
+    app.actorMoviesView = new ActorMoviesView();
 });
