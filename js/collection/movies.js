@@ -1,7 +1,7 @@
 var app = app || {};
 
 $(function() {
-    app.ChuckNorrisMovies = Backbone.Collection.extend({
+    app.actorMovies = Backbone.Collection.extend({
         initialize: function(options){
             options || (options= {});
             if(options.actorId){
