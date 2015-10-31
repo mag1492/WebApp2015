@@ -31,8 +31,6 @@ $(function(){
         homeActor: function() {
             this.setup();
             app.actorMainView.render();
-            app.actorMoviesView.render();
-            app.actorView.render();
         }
 
         });
