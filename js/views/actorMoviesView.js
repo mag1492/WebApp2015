@@ -6,7 +6,7 @@ $(function() {
         template : _.template($('#actor-movies-template').html()),
         el: '.actor-movies',
         initialize: function(id){
-            this.movies = new app.ChuckNorrisMovies({"actorId" : id});
+            this.movies = new app.actorMovies({"actorId" : id});
         },
 
         render: function () {
