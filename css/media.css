@@ -33,7 +33,7 @@
         position: fixed;
         overflow: hidden;
         margin: 0;
-        -webkit-transition: all 200ms;
+        -webkit-transition: all 100ms;
         transition: all 1000ms;
     }
 
