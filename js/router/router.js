@@ -5,7 +5,7 @@ $(function(){
     var Router = Backbone.Router.extend({
         routes: {
             '': 'home',
-            'tvshow': 'homeTVShow',
+            'tvshow/:id': 'homeTVShow',
             'actor/:id': 'homeActor'
         },
 
@@ -18,19 +18,18 @@ $(function(){
             app.homeView.render();
         },
 
-        homeTVShow: function(){
+        homeTVShow: function(id){
             this.setup();
-            app.trailerEpisodeView.render();
-            app.tvShowView.render();
-            app.episodesView.render();
-
+            app.tvShowMainView.render(id);
         },
 
         homeActor: function(id) {
             this.setup();
             app.actorMainView.render(id);
         }
-        });
+
+    });
+
     app.router = new Router();
     Backbone.history.start();
 });
