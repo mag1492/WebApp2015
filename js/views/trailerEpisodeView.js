@@ -1,7 +1,6 @@
 var app = app || {};
 
 $(function(){
-
     app.trailerEpisodeView = Backbone.View.extend({
         template : _.template($('#season-episode-trailer-template').html()),
         el: ".season-info-trailer",
@@ -21,5 +20,4 @@ $(function(){
             });
         }
     });
-
 });
