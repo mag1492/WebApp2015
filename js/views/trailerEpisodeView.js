@@ -15,7 +15,7 @@ $(function(){
             this.episodes.fetch({
                 success: function(response){
                     var episodes = response.toJSON();
-                    $("#trailer-background").css("background", "url("+ episodes[0].artworkUrl100 +") ");
+                    $(".trailer-background").css("background", "url("+ episodes[0].artworkUrl100 +") ");
                     that.$el.html(that.template({episodes: response.toJSON()}));
                 }
             });
