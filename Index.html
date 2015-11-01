@@ -136,6 +136,7 @@
     </footer>
 </script>
 
+<!-------------------------- ACTORS MAIN TEMPLATE ---------------------------------------------------------------------->
 <script type="text/template" id="actor-main-template">
     <div class="media-theme" id="main">
         <div class="actor-info"></div>
@@ -149,7 +150,7 @@
 </script>
 
 <script type="text/template" id="actor-info-template">
-    <div id="trailer-background" class="col-md-4">
+    <div class="col-md-4 trailer-background">
         <div class="row">
             <div class="media-title col-md-12">
                 <h1 class="white-text"><%= actor[0].artistName %></h1>
@@ -177,6 +178,22 @@
     </div>
     <% }); %>
 </script>
+
+
+<!-------------------------- TVSHOW MAIN TEMPLATE ---------------------------------------------------------------------->
+<script type="text/template" id="tvshow-main-template">
+    <div class="media-theme" id="tvshow-main">
+        <div>
+            <div class="col-md-4 trailer-background"  >
+                <div class="season-info-trailer"></div>
+                <div class="seasonX-info"></div>
+            </div>
+            <!--Content Section-->
+            <div class="seasonX-episodes"></div>
+        </div>
+    </div>
+</script>
+
 
 <script type="text/template" id="season-info-template">
     <div class="row top-buffer">

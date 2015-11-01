@@ -1,17 +1,20 @@
-.media-theme #trailer-background {
+.media-theme .trailer-background {
     background: url(../images/chuck-norris.jpg) no-repeat center center;
     background-size: cover;
     -webkit-background-size: cover;
 }
-#trailer-background {
+
+.trailer-background {
     color:White;
     margin: 0;
 }
+
 .media-title {
     color:black;
     letter-spacing: 2px;
     margin-bottom: 16px;
 }
+
 #movies-carousel{
     margin-top: 5px;
 }

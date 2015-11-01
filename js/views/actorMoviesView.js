@@ -12,7 +12,7 @@ $(function() {
         render: function () {
             var that = this;
             this.movies.fetch({
-                success: function (ret) {
+                success: function(ret) {
                     that.$el.html(that.template({movies: ret.toJSON()}));
                 }
             });
