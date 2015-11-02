@@ -6,10 +6,14 @@ $(function() {
     ActorView = Backbone.View.extend({
         template : _.template($('#actor-info-template').html()),
         el: '.actor-info',
-        model : chuckNorris,
+
+        initialize: function(id){
+            this.actor = new app.Actor({"actorId" : id});
+        },
+
         render: function () {
             var that = this;
-            chuckNorris.fetch({
+            this.actor.fetch({
                 success: function (ret) {
                     that.$el.html(that.template({actor: ret.toJSON()}));
                 }
