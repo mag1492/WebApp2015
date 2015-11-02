@@ -5,7 +5,7 @@
     }
 
     .media-tab-padding {
-        padding-top: 52px;
+        padding-top: 0px;
     }
 
     #info {
@@ -27,15 +27,17 @@
         -webkit-animation-delay: 50ms;
         background-color:rgba(255, 255, 255, 0.9);
     }
-    #trailer-background {
+
+    .trailer-background {
         height: 100%;
         position: fixed;
         overflow: hidden;
         margin: 0;
-        -webkit-transition: all 200ms;
+        -webkit-transition: all 100ms;
         transition: all 1000ms;
     }
-    #trailer-background header {
+
+    .trailer-background header {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
@@ -80,20 +82,25 @@
     visibility: visible;
     animation: fadeIn;
 }
-#trailer-background {
+
+.trailer-background {
     color: white;
     margin: 0;
 }
-#trailer-background header {
+
+.trailer-background header {
     height: 100%;
 }
+
 .trailer {
     bottom: 10%
 }
+
 .links {
     color: white;
     position: static;
 }
+
 .btn-links{
     background-color: transparent;
     border-color: white;
@@ -104,6 +111,7 @@
     font-weight: bold;
     font-size: 12px;
 }
+
 .btn-links:hover {
     -webkit-transition: all 0.25s ease 0s;
     transition: all 0.25s ease 0s;
@@ -113,24 +121,30 @@
     background-color: white;
     -webkit-text-fill-color: transparent;
 }
+
 .btn-itunes {
     position:static;
 }
+
 .nav-tabs {
     background-color: white;
     border-color: transparent;
 }
+
 .tab-content {
     background-color: transparent;
 }
+
 .nav-tabs > li > a {
     background-color: #E74C3C;
     color: black;
     font-weight: bold;
 }
+
 .nav-tabs > li > a:hover {
     background-color: #EA8074;
 }
+
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus{

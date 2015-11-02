@@ -5,14 +5,16 @@
         background-color: rgba(0, 6, 0, 0.5);
     }
 }
-.media-theme #trailer-background {
+.media-theme .trailer-background {
     background-size: cover;
     -webkit-background-size: cover;
 }
-#trailer-background {
+
+.trailer-background {
     color:White;
     margin: 0;
 }
+
 .media-title {
     color:black;
     letter-spacing: 2px;

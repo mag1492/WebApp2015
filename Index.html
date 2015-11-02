@@ -96,14 +96,14 @@
             <div class="row">
                 <div class="span12">
                     <div id="recently-added-carousel" class="owl-carousel owl-theme">
-                        <div class="item"><a href="#/tvshow"><img src="Images/sillicon-valley-dvd.jpg"></a></div>
+                        <div class="item"><a href="#/tvshow/849050573"><img src="Images/sillicon-valley-dvd.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/Inception-bgd.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/inception2.jpg"></a></div>
-                        <div class="item"><a href="#/tvshow"><img src="Images/silicon2.jpg"></a></div>
+                        <div class="item"><a href="#/tvshow/998746676"><img src="Images/silicon2.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/inception3.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/inception4.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/Inception-bgd.jpg"></a></div>
-                        <div class="item"><a href="#/tvshow"><img src="Images/sillicon-valley-dvd.jpg"></a></div>
+                        <div class="item"><a href="#/tvshow/570755482"><img src="Images/sillicon-valley-dvd.jpg"></a></div>
                         <div class="item"><a href="html/movie.html"><img src="Images/inception3.jpg"></a></div>
                     </div>
                 </div>
@@ -136,6 +136,7 @@
     </footer>
 </script>
 
+<!-------------------------- ACTORS MAIN TEMPLATE ---------------------------------------------------------------------->
 <script type="text/template" id="actor-main-template">
     <div class="media-theme" id="main">
         <div class="actor-info"></div>
@@ -149,7 +150,7 @@
 </script>
 
 <script type="text/template" id="actor-info-template">
-    <div id="trailer-background" class="col-md-4">
+    <div class="col-md-4 trailer-background">
         <div class="row">
             <div class="media-title col-md-12">
                 <h1 class="white-text"><%= actor[0].artistName %></h1>
@@ -178,6 +179,22 @@
     <% }); %>
 </script>
 
+
+<!-------------------------- TVSHOW MAIN TEMPLATE ---------------------------------------------------------------------->
+<script type="text/template" id="tvshow-main-template">
+    <div class="media-theme" id="tvshow-main">
+        <div>
+            <div class="col-md-4 trailer-background"  >
+                <div class="season-info-trailer"></div>
+                <div class="seasonX-info"></div>
+            </div>
+            <!--Content Section-->
+            <div class="seasonX-episodes"></div>
+        </div>
+    </div>
+</script>
+
+
 <script type="text/template" id="season-info-template">
     <div class="row top-buffer">
         <div class="specs bottom-buffer white-text">
@@ -192,7 +209,7 @@
                 <button class="btn-links" >Similar series</button>
             </p>
             <div class="btn-itunes">
-                <a href="<%= season[0].artistViewUrl %>" class="itune-button"></a>
+                <a href="<%= season[0].collectionViewUrl %>" class="itune-button"></a>
             </div>
         </div>
     </div>
@@ -272,12 +289,13 @@
 <script src="js/models/episode.js"></script>
 <script src="js/models/season.js"></script>
 <script src="js/models/tvshow.js"></script>
-<script src="js/views/episodesView.js"></script>
-<script src="js/views/trailerEpisodeView.js"></script>
-<script src="js/views/tvshowView.js"></script>
 <script src="js/views/actorMainView.js"></script>
 <script src="js/views/actorView.js"></script>
 <script src="js/views/actorMoviesView.js"></script>
+<script src="js/views/episodesView.js"></script>
+<script src="js/views/trailerEpisodeView.js"></script>
+<script src="js/views/tvshowView.js"></script>
+<script src="js/views/tvshowMainView.js"></script>
 <script src="js/views/homeView.js"></script>
 <script src="js/views/menuView.js"></script>
 <script src="js/router/router.js"></script>
