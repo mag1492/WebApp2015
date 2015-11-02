@@ -1,9 +1,8 @@
 .media-theme .trailer-background {
-    background: url(../images/logoOpaque.gif) no-repeat center center;
+    background: url(../Images/logoOpaque.gif) no-repeat center center;
     background-size: cover;
     -webkit-background-size: cover;
 }
-
 .trailer-background {
     color:White;
     margin: 0;
