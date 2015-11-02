@@ -1,8 +1,6 @@
 var app = app || {};
 
 $(function() {
-    var chuckNorris = new app.Actor({"id" : "129377537"});
-
     ActorView = Backbone.View.extend({
         template : _.template($('#actor-info-template').html()),
         el: '.actor-info',
