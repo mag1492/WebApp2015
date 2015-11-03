@@ -94,14 +94,14 @@
                 <div class="span12">
                     <div id="recently-added-carousel" class="owl-carousel owl-theme">
                         <div class="item"><a href="#/tvshow/849050573"><img src="Images/sillicon-valley-dvd.jpg"></a></div>
-                        <div class="item"><a href="html/movie.html"><img src="Images/Inception-bgd.jpg"></a></div>
-                        <div class="item"><a href="html/movie.html"><img src="Images/inception2.jpg"></a></div>
+                        <div class="item"><a href="#/movie/400763833"><img src="Images/Inception-bgd.jpg"></a></div>
+                        <div class="item"><a href="#/movie/400763833"><img src="Images/inception2.jpg"></a></div>
                         <div class="item"><a href="#/tvshow/998746676"><img src="Images/silicon2.jpg"></a></div>
-                        <div class="item"><a href="html/movie.html"><img src="Images/inception3.jpg"></a></div>
-                        <div class="item"><a href="html/movie.html"><img src="Images/inception4.jpg"></a></div>
-                        <div class="item"><a href="html/movie.html"><img src="Images/Inception-bgd.jpg"></a></div>
+                        <div class="item"><a href="#/movie/400763833"><img src="Images/inception3.jpg"></a></div>
+                        <div class="item"><a href="#/movie/400763833"><img src="Images/inception4.jpg"></a></div>
+                        <div class="item"><a href="#/movie/400763833"><img src="Images/Inception-bgd.jpg"></a></div>
                         <div class="item"><a href="#/tvshow/570755482"><img src="Images/sillicon-valley-dvd.jpg"></a></div>
-                        <div class="item"><a href="html/movie.html"><img src="Images/inception3.jpg"></a></div>
+                        <div class="item"><a href="#/movie/400763833"><img src="Images/inception3.jpg"></a></div>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,113 @@
     </footer>
 </script>
 
-<!-------------------------- ACTORS MAIN TEMPLATE ---------------------------------------------------------------------->
+<!-------------------------- MOVIE MAIN TEMPLATE ---------------------------------------------------------------------->
+<script type="text/template" id="movie-main-template">
+    <div id="main" class ="media-theme">
+        <div>
+            <div class="col-md-4 trailer-background" >
+                <div class="movie-info-trailer"></div>
+                <div class="movie-info"></div>
+            </div>
+            <!--Content Section-->
+            <div class="movie-supplementary-info"></div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="movie-info-template">
+    <div class="row top-buffer">
+        <div class="specs movie bottom-buffer">
+            <p>Genre :  <%= movie[0].primaryGenreName %>  |
+                Length : x min |
+                Date : <%= movie[0].C %> |
+                Rated : <%= movie[0].contentAdvisoryRating %>  |
+                Rating (IMDb)x/10 |
+            </p>
+        </div>
+    </div>
+    <div class="row bottom-buffer">
+        <div class="links col-md-12">
+            <p>
+                <button class="btn-links" >Similar movies</button>
+            </p>
+            <div class="btn-itunes">
+                <a href="<%= movie[0].trackViewUrl %>" class="itune-button"></a>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="movie-trailer-template">
+    <div class="row">
+        <div class="media-title-template col-md-12">
+            <h1 class="white-text"><%= movie[0].trackName %>, (<%= movie[0].releaseDate %>)</h1>
+        </div>
+        <div class="trailer col-md-12 iframe">
+            <div class="trailer-box embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="<%= movie[0].previewUrl %>" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="movie-supplementary-info-template">
+    <div id="info" class="col-md-8 col-md-offset-4">
+        <div id="info-background" class="tab-background">
+            <div id="movie-info">
+                <!-- Navigation -->
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
+                    <li><a data-toggle="tab" href="#plot">Plot Summary</a></li>
+                    <li><a data-toggle="tab" href="#review">Review</a></li>
+                </ul>
+                <!-- Panel Choices -->
+                <div class="tab-content">
+                    <!-- Panel Choice 1 -->
+                    <div id="summary" class="tab-pane fade in active">
+                        <!-- Section summary content -->
+                        <div class="summary">
+                            <h3 class="info-title"><%= movie[0].trackName%></h3>
+                            <div>
+                                <h5 class="bold">Director: <%= movie[0].artistName%></h5>
+                                <h5 class="bold">Writer: <%= movie[0].artistName%></h5>
+                                <h5 class="bold">Starring: PLACEHOLDER PEOPLE </h5>
+                                <p class="paragraphs">
+                                    SUMMARY IS NOT GIVEN BY THE ACTUAL API.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Panel Choice 2-->
+                    <div id="plot" class="tab-pane fade">
+                        <!-- Section summary content -->
+                        <div class="plot">
+                            <h3 class="info-title">Spoiler Alert !</h3>
+                            <div>
+                                <h5 class="bold">This plot summary could contain spoilers. Readers beware.</h5>
+                                <p class="paragraphs"><%=movie[0].longDescription%></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Panel Choice 2-->
+                    <div id="review" class="tab-pane fade">
+                        <!-- Section summary content -->
+                        <div class="review">
+                            <h3 class="info-title">REVIEWER</h3>
+                            <h5 class="bold">GREAT TITLE</h5>
+                            <h6>By PLACEHOLDER WRITER | PLACEHOLDER DATE</h6>
+                            <p class="paragraphs">
+                                THE REVIEW IS NOT GIVEN BY THE ACTUAL API.
+                            </p>
+                        </div>
+                    </div>
+                </div>  <!-- End panel-ctnt-->
+            </div> <!-- End movie-info-->
+        </div>
+    </div>
+</script>
+
+<!-------------------------- ACTORS MAIN TEMPLATE --------------------------------------------------------------------->
 <script type="text/template" id="actor-main-template">
     <div class="media-theme" id="main">
         <div class="actor-info"></div>
@@ -152,6 +258,9 @@
             <div class="media-title col-md-12">
                 <h1 class="black-text"><%= actor[0].artistName %></h1>
                 <p class="span black-text">Genre : <%= actor[0].primaryGenreName %></p>
+                <!-- <p>
+                    <button class="btn-links" >Similar series</button>
+                </p> -->
                 <div class="btn-itunes">
                     <a href="<%= actor[0].artistLinkUrl %>" class="itune-button"></a>
                 </div>
@@ -176,7 +285,6 @@
     <% }); %>
 </script>
 
-
 <!-------------------------- TVSHOW MAIN TEMPLATE ---------------------------------------------------------------------->
 <script type="text/template" id="tvshow-main-template">
     <div class="media-theme" id="tvshow-main">
@@ -191,10 +299,9 @@
     </div>
 </script>
 
-
 <script type="text/template" id="season-info-template">
     <div class="row top-buffer">
-        <div class="specs bottom-buffer white-text">
+        <div class="specs bottom-buffer">
             <p>Genre : <%= season[0].primaryGenreName %> |
                 Date : <%= season[0].releaseDate %>
             </p>
@@ -202,9 +309,9 @@
     </div>
     <div class="row bottom-buffer">
         <div class="links col-md-12">
-            <p>
+            <!-- <p>
                 <button class="btn-links" >Similar series</button>
-            </p>
+            </p> -->
             <div class="btn-itunes">
                 <a href="<%= season[0].collectionViewUrl %>" class="itune-button"></a>
             </div>
@@ -215,7 +322,7 @@
 <script type="text/template" id="season-episode-trailer-template">
     <div class="row">
         <div class="media-title-template col-md-12">
-            <h1 class="white-text"><%= episodes[0].artistName %></h1>
+            <h1 class=""><%= episodes[0].artistName %></h1>
         </div>
         <div class="trailer col-md-12">
             <div class="trailer-box embed-responsive embed-responsive-16by9">
@@ -233,7 +340,7 @@
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
                     <li><a data-toggle="tab" href="#episode-list">Episode List</a></li>
-                    <li><a data-toggle="tab" href="#review">Review</a></li>
+                    <!--<li><a data-toggle="tab" href="#review">Review</a></li>-->
                 </ul>
                 <!-- Panel Choices -->
                 <div class="tab-content">
@@ -242,11 +349,9 @@
                         <!-- Section summary content -->
                         <div class="summary">
                             <h3 class="info-title"><%= episodes[0].collectionName%></h3>
-                            <div>
-                                <h5 class="bold">Creators : Mike Judge, John Altschuler, Dave Krinsky</h5>
-                                <h5 class="bold">Producer : Jim Kleverweis</h5>
-                                <h5 class="bold">Starring : Thomas Middleditch, T. J. Miller, Josh Brener, Martin Starr, Kumail Nanjiani & others.</h5>
-                                <p class="paragraphs"><%=episodes[0].longDescription%></p>
+                            <div class="row">
+                                <p class="paragraphs col-md-10 col-sm-10 col-xs-8"><%=episodes[0].longDescription%></p>
+                                <div id="cover" class="col-md-2 col-sm-2 col-xs-3" ></div>
                             </div>
                         </div>
                     </div>
@@ -263,9 +368,9 @@
                         </div>
                     </div>
                     <!-- Panel Choice 3-->
-                    <div id="review" class="tab-pane fade">
+                    <!--<div id="review" class="tab-pane fade">
                         <!-- Section summary content -->
-                        <div class="review">
+                        <!--<div class="review">
                             <h3 class="info-title">Whodunnit</h3>
                             <h5 class="bold">GREAT TITLE.</h5>
                             <h6>By Somebody</h6>
@@ -273,7 +378,7 @@
 
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>  <!-- End panel-ctnt-->
             </div> <!-- End movie-info-->
         </div>
@@ -286,6 +391,7 @@
 <script src="js/models/episode.js"></script>
 <script src="js/models/season.js"></script>
 <script src="js/models/tvshow.js"></script>
+<script src="js/models/movie.js"></script>
 <script src="js/views/actorMainView.js"></script>
 <script src="js/views/actorView.js"></script>
 <script src="js/views/actorMoviesView.js"></script>
@@ -295,6 +401,11 @@
 <script src="js/views/tvshowMainView.js"></script>
 <script src="js/views/homeView.js"></script>
 <script src="js/views/menuView.js"></script>
+<script src ="js/views/movieMainView.js"></script>
+<script src ="js/views/movieView.js"></script>
+<script src ="js/views/movieTrailerView.js"></script>
+<script src ="js/views/movieSupplementaryInfosView.js"></script>
 <script src="js/router/router.js"></script>
 <script src="js/app.js"></script>
+
 </html>

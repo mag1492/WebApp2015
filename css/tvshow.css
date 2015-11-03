@@ -1,17 +1,10 @@
-@media (min-width: 992px) {
-    .specs:hover {
-        -webkit-animation: fadeIn;
-        -webkit-animation-delay: 50ms;
-        background-color: rgba(0, 6, 0, 0.5);
-    }
-}
+
 .media-theme .trailer-background {
     background-size: cover;
     -webkit-background-size: cover;
 }
 
 .trailer-background {
-    color:White;
     margin: 0;
 }
 
@@ -21,8 +14,11 @@
     margin-bottom: 16px;
 }
 .specs {
-    background-color: rgba(0, 6, 0, 0.9));
     border: 3px transparent;
     padding: 2px 5px;
-    color: white;
+}
+
+#cover{
+    width:100px;
+    height:100px;
 }
