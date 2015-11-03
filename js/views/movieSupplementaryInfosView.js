@@ -3,8 +3,8 @@ var app = app || {};
 $(function(){
 
     app.movieSupplementaryInfosView = Backbone.View.extend({
-        template : _.template($('#movie-supplementaryInfo-template').html()),
-        el: "movie-supplementary-info",
+        template : _.template($('#movie-supplementary-info-template').html()),
+        el: ".movie-supplementary-info",
 
         initialize: function(id){
             this.movie = new app.Movie({"trackId" : id});
