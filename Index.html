@@ -155,6 +155,9 @@
             <div class="media-title col-md-12">
                 <h1 class="black-text"><%= actor[0].artistName %></h1>
                 <p class="span black-text">Genre : <%= actor[0].primaryGenreName %></p>
+                <!-- <p>
+                    <button class="btn-links" >Similar series</button>
+                </p> -->
                 <div class="btn-itunes">
                     <a href="<%= actor[0].artistLinkUrl %>" class="itune-button"></a>
                 </div>
@@ -197,7 +200,7 @@
 
 <script type="text/template" id="season-info-template">
     <div class="row top-buffer">
-        <div class="specs bottom-buffer white-text">
+        <div class="specs bottom-buffer">
             <p>Genre : <%= season[0].primaryGenreName %> |
                 Date : <%= season[0].releaseDate %>
             </p>
@@ -205,9 +208,9 @@
     </div>
     <div class="row bottom-buffer">
         <div class="links col-md-12">
-            <p>
+            <!-- <p>
                 <button class="btn-links" >Similar series</button>
-            </p>
+            </p> -->
             <div class="btn-itunes">
                 <a href="<%= season[0].collectionViewUrl %>" class="itune-button"></a>
             </div>
@@ -218,7 +221,7 @@
 <script type="text/template" id="season-episode-trailer-template">
     <div class="row">
         <div class="media-title-template col-md-12">
-            <h1 class="white-text"><%= episodes[0].artistName %></h1>
+            <h1 class=""><%= episodes[0].artistName %></h1>
         </div>
         <div class="trailer col-md-12">
             <div class="trailer-box embed-responsive embed-responsive-16by9">
@@ -236,7 +239,7 @@
                 <ul class="nav nav-tabs">
                     <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
                     <li><a data-toggle="tab" href="#episode-list">Episode List</a></li>
-                    <li><a data-toggle="tab" href="#review">Review</a></li>
+                    <!--<li><a data-toggle="tab" href="#review">Review</a></li>-->
                 </ul>
                 <!-- Panel Choices -->
                 <div class="tab-content">
@@ -245,11 +248,9 @@
                         <!-- Section summary content -->
                         <div class="summary">
                             <h3 class="info-title"><%= episodes[0].collectionName%></h3>
-                            <div>
-                                <h5 class="bold">Creators : Mike Judge, John Altschuler, Dave Krinsky</h5>
-                                <h5 class="bold">Producer : Jim Kleverweis</h5>
-                                <h5 class="bold">Starring : Thomas Middleditch, T. J. Miller, Josh Brener, Martin Starr, Kumail Nanjiani & others.</h5>
-                                <p class="paragraphs"><%=episodes[0].longDescription%></p>
+                            <div class="row">
+                                <p class="paragraphs col-md-10 col-sm-10 col-xs-10"><%=episodes[0].longDescription%></p>
+                                <div id="cover" class="col-md-2 col-sm-2 col-xs-2" ></div>
                             </div>
                         </div>
                     </div>
@@ -266,9 +267,9 @@
                         </div>
                     </div>
                     <!-- Panel Choice 3-->
-                    <div id="review" class="tab-pane fade">
+                    <!--<div id="review" class="tab-pane fade">
                         <!-- Section summary content -->
-                        <div class="review">
+                        <!--<div class="review">
                             <h3 class="info-title">Whodunnit</h3>
                             <h5 class="bold">GREAT TITLE.</h5>
                             <h6>By Somebody</h6>
@@ -276,7 +277,7 @@
 
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>  <!-- End panel-ctnt-->
             </div> <!-- End movie-info-->
         </div>
