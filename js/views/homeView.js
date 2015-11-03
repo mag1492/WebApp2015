@@ -1,19 +1,21 @@
-var app = app || {};
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'text!templates/homeTemplate.html'
+], function($, _, Backbone, homeTemplate){
 
-$(function() {
+    var HomeView = Backbone.View.extend({
 
-    HomeView = Backbone.View.extend({
-
-        template : _.template($('#home-template').html()),
         el: '.content',
 
         render: function () {
-            this.$el.html(this.template());
+            $(this.el).html(homeTemplate);
             owlCarouselSetup();
         }
     });
 
-    app.homeView = new HomeView();
+    return HomeView;
 });
 
 function owlCarouselSetup() {

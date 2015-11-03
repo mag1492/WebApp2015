@@ -1,12 +1,16 @@
-var app = app || {};
-
-$(function(){
-    app.movieTrailerView = Backbone.View.extend({
-        template : _.template($('#movie-trailer-template').html()),
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'text!templates/movie/movieTrailerTemplate.html',
+    'models/movie'
+], function($, _, Backbone, MovieTrailerTemplate, Movie){
+    var MovieTrailerView = Backbone.View.extend({
+        template : _.template(MovieTrailerTemplate),
         el: ".movie-info-trailer",
 
         initialize: function(id){
-            this.movie = new app.Movie({"trackId" : id});
+            this.movie = new Movie({"trackId" : id});
         },
 
         render: function(){
@@ -20,4 +24,5 @@ $(function(){
             });
         }
     });
+    return MovieTrailerView;
 });

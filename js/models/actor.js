@@ -1,7 +1,8 @@
-var app = app || {};
-
-$(function() {
-    app.Actor = Backbone.Model.extend({
+define([
+    'underscore',
+    'backbone'
+], function(_, Backbone) {
+    var Actor = Backbone.Model.extend({
         initialize: function(options){
             options || (options= {});
             if(options.actorId){
@@ -14,4 +15,5 @@ $(function() {
             return response.results;
         }
     });
+    return Actor;
 });

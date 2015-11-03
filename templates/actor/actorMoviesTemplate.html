@@ -1,0 +1,13 @@
+<% _.each(movies, function(movie) {%>
+<div style="text-align:center;height:300px;" class="col-sm-3">
+    <div class=""><img src="<%= movie.artworkUrl100 %>">
+        <div class="">
+            <p><%= movie.trackName %><br>Release Date: <%= movie.releaseDate %><br></p>
+            <button type="button" class="btn btn-primary btn-outline btn-lg" onclick="document.location.href='<%= movie.previewUrl %>'">Preview</button>
+            <div class="btn-itunes">
+                <a href="<%= movie.trackViewUrl %>" class="itune-button"></a>
+            </div>
+        </div>
+    </div>
+</div>
+<% }); %>

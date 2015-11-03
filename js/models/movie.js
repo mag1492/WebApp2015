@@ -1,7 +1,8 @@
-var app = app || {};
-
-$(function () {
-    app.Movie = Backbone.Model.extend({
+define([
+    'underscore',
+    'backbone'
+], function(_, Backbone) {
+    var Movie = Backbone.Model.extend({
         initialize: function (options) {
             options || (options = {});
             if (options.trackId) {
@@ -14,4 +15,5 @@ $(function () {
             return response.results;
         }
     });
+    return Movie;
 });

@@ -1,8 +1,9 @@
-var app = app || {};
-
-$(function(){
-
-    app.Episodes = Backbone.Collection.extend({
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+], function($, _, Backbone){
+    var Episodes = Backbone.Collection.extend({
 
         initialize: function(options){
             options || (options= {});
@@ -16,4 +17,5 @@ $(function(){
             return response.results;
         }
     });
+    return Episodes;
 });

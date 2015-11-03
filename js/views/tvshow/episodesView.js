@@ -1,13 +1,16 @@
-var app = app || {};
-
-$(function(){
-
-    app.episodesView = Backbone.View.extend({
-        template : _.template($('#season-episodes-template').html()),
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+    'text!templates/tvshow/SeasonEpisodeTemplate.html',
+    'collections/episodes'
+], function($, _, Backbone, SeasonEpisodeTemplate, Episodes){
+    var EpisodesView = Backbone.View.extend({
+        template : _.template(SeasonEpisodeTemplate),
         el: ".seasonX-episodes",
 
         initialize: function(id){
-          this.episodes = new app.Episodes({"seasonId" : id});
+          this.episodes = new Episodes({"seasonId" : id});
         },
 
         render: function(){
@@ -20,4 +23,5 @@ $(function(){
             });
         }
     });
+    return EpisodesView;
 });
