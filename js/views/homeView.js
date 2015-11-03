@@ -24,7 +24,8 @@ function owlCarouselSetup() {
         itemsDesktopSmall: [979, 3],
         autoHeight: false,
         autoPlay: 2000,
-        stopOnHover: true
+        stopOnHover: true,
+        rewindNav : true
     });
 
 
@@ -34,16 +35,9 @@ function owlCarouselSetup() {
         itemsDesktopSmall: [979, 3],
         autoHeight: false,
         autoPlay: 2000,
-        stopOnHover: true
+        stopOnHover: true,
+        rewindNav : true
     });
-
-    var owl = $("#header-carousel");
-
-    owl.owlCarousel({
-        navigation: true,
-        singleItem: true,
-        transitionStyle: "fade"
-    })
 }
 
 function goToRecentlyAdded(){
