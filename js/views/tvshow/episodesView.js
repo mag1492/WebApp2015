@@ -18,7 +18,8 @@ define([
             this.episodes.fetch({
                 success: function(response){
                     that.$el.html(that.template({episodes: response.toJSON()}));
-                    $("#cover").css("background", "url("+ response.toJSON()[0].artworkUrl100 +") ");
+                    var url = response.toJSON()[0].artworkUrl100.replace("100x100", "200x200");
+                    $("#cover").css("background", "url("+ url +") no-repeat");
                 }
             });
         }
