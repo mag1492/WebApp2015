@@ -55,7 +55,7 @@
 
 /* mouse grab icon */
 .grabbing { 
-    cursor:url(../../../Downloads/owl.carousel/owl-carousel/grabbing.png) 8 8, move;
+    cursor:url(https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/grabbing.png) 8 8, move;
 }
 
 /* fix */
