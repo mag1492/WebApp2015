@@ -9,7 +9,9 @@ define([
             '': 'home',
             'tvshow/:id': 'homeTVShow',
             'actor/:id': 'homeActor',
-            'movie/:id': 'homeMovie'
+            'movie/:id': 'homeMovie',
+            'watchlist': 'homeWatchlists',
+            'watchlist/:id': 'homeOneWatchlist'
         }
     });
 
@@ -38,6 +40,18 @@ define([
             require(['views/movie/movieMainView'], function (MovieMainView) {
                 var movieView = Vm.create(appView, 'MovieView', MovieMainView);
                 movieView.render(id);
+            });
+        });
+        router.on('route:homeWatchlists', function () {
+            require(['views/watchlist/watchlistMainView'], function (WatchlistsMainView) {
+                var watchlistsView = Vm.create(appView, 'WatchlistView', WatchlistsMainView);
+                watchlistsView.render();
+            });
+        });
+        router.on('route:homeOneWatchlist', function (id) {
+            require(['views/watchlist/watchlistMovieView'], function (WatchlistMovieView) {
+               var watchlistMovieView = Vm.create(appView, 'WatchlistMovieView', WatchlistMovieView, {id: id});
+                watchlistMovieView.render();
             });
         });
         Backbone.history.start();
