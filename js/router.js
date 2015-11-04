@@ -51,7 +51,6 @@ define([
         router.on('route:homeOneWatchlist', function (id) {
             require(['views/watchlist/watchlistMovieView'], function (WatchlistMovieView) {
                var watchlistMovieView = Vm.create(appView, 'WatchlistMovieView', WatchlistMovieView, {id: id});
-               console.log("id on router is : " + id);
                 watchlistMovieView.render();
             });
         });
