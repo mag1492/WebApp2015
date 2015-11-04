@@ -48,9 +48,11 @@ define([
                 watchlistsView.render();
             });
         });
-        router.on('route:homeOneWatchlist', function () {
-            require(['views/watchlist/watchlistMainView'], function (WatchlistMainView) {
-                console.log("this is a watchlist");
+        router.on('route:homeOneWatchlist', function (id) {
+            require(['views/watchlist/watchlistMovieView'], function (WatchlistMovieView) {
+               var watchlistMovieView = Vm.create(appView, 'WatchlistMovieView', WatchlistMovieView, {id: id});
+               console.log("id on router is : " + id);
+                watchlistMovieView.render();
             });
         });
         Backbone.history.start();
