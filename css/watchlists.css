@@ -34,3 +34,26 @@
     margin: 0 auto;
     width: 85%;
 }
+#movieBox img {
+    float:left;
+}
+
+#movieBox {
+    width: 80px;
+    height: 80px;
+    display : inline-block;
+    margin:15px;
+    padding: 10px;
+    float:left;
+}
+
+#side-preview img {
+    float:left;
+    margin-right: -15px;
+    height: 400px;
+    wide:200px;
+}
+
+#side-preview {
+
+}
