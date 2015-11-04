@@ -1,0 +1,50 @@
+<div id="info" class="col-md-8 col-md-offset-4">
+    <div id="info-background" class="tab-background media-tab-padding">
+        <div id="media-info">
+            <!-- Navigation -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
+                <li><a data-toggle="tab" href="#episode-list">Episode List</a></li>
+                <!--<li><a data-toggle="tab" href="#review">Review</a></li>-->
+            </ul>
+            <!-- Panel Choices -->
+            <div class="tab-content">
+                <!-- Panel Choice 1 -->
+                <div id="summary" class="tab-pane fade in active">
+                    <!-- Section summary content -->
+                    <div class="summary">
+                        <h3 class="info-title"><%= episodes[0].collectionName%></h3>
+                        <div class="row">
+                            <p class="paragraphs col-md-10 col-sm-10 col-xs-8"><%=episodes[0].longDescription%></p>
+                            <div id="cover" class="col-md-2 col-sm-2 col-xs-3" ></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Panel Choice 2-->
+                <div id="episode-list" class="tab-pane fade">
+                    <!-- Section summary content -->
+                    <div class="episode-list">
+                        <h3 class="info-title">Episodes</h3>
+                        <% _.each(episodes, function(episode) { %>
+                        <div>
+                            <div id="<%= episode.trackNumber%>"><h4><%= episode.trackNumber %>. <%=episode.trackName %></h4></div>
+                        </div>
+                        <% }); %>
+                    </div>
+                </div>
+                <!-- Panel Choice 3-->
+                <!--<div id="review" class="tab-pane fade">
+                    <!-- Section summary content -->
+                <!--<div class="review">
+                    <h3 class="info-title">Whodunnit</h3>
+                    <h5 class="bold">GREAT TITLE.</h5>
+                    <h6>By Somebody</h6>
+                    <p class="paragraphs">
+
+                    </p>
+                </div>
+            </div> -->
+            </div>  <!-- End panel-ctnt-->
+        </div> <!-- End movie-info-->
+    </div>
+</div>

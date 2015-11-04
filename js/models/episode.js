@@ -1,8 +1,8 @@
-var app = app || {};
-
-$(function(){
-
-    app.Episode = Backbone.Model.extend({
+define([
+    'underscore',
+    'backbone'
+], function(_, Backbone) {
+    var Episode = Backbone.Model.extend({
 
         urlRoot: 'https://umovie.herokuapp.com/unsecure/tvshows/season/id/episodes',
 
@@ -11,4 +11,5 @@ $(function(){
         }
 
     });
+    return Episode;
 });

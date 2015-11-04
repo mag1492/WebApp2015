@@ -1,7 +1,9 @@
-var app = app || {};
-
-$(function() {
-    app.actorMovies = Backbone.Collection.extend({
+define([
+    'jquery',
+    'underscore',
+    'backbone',
+], function($, _, Backbone){
+    var Movies = Backbone.Collection.extend({
         initialize: function(options){
             options || (options= {});
             if(options.actorId){
@@ -18,4 +20,5 @@ $(function() {
             return response.results;
         }
     });
+    return Movies;
 });
