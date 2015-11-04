@@ -4,18 +4,18 @@
 
 <% _.each(watchlistMovie.movies, function(movie) { %>
 
-    <div id="side-preview">
-        <% if(!_.isNull(movie.trackId)) { %>
-            <% if(movie === watchlistMovie.movies[0]) { %> <img src="<%=movie.artworkUrl100 %>" >
-            <%} else if(movie === watchlistMovie.movies[1]) {%> <img src="<%=movie.artworkUrl100 %>" > <% } %>
-        <%}%>
-    </div>
+    <% if(!_.isNull(movie.trackId)) { %>
+        <div id="side-preview">
+                <% if(movie === watchlistMovie.movies[0]) { %> <img src="<%=movie.artworkUrl100 %>" >
+                <%} else if(movie === watchlistMovie.movies[1]) {%> <img src="<%=movie.artworkUrl100 %>" > <% } %>
+        </div>
+    <%}%>
 
     <% if(!_.isNull(movie.trackId)) { %>
         <div id="movieBox">
 
-            <img src="<%=movie.artworkUrl100 %>" >
-            <div>
+            <a href="#/movie/<%=movie.trackId%>"><img src="<%=movie.artworkUrl100 %>" > </a>
+            <div id="movieTitle">
                 <a href="#/movie/<%=movie.trackId%>" class="watchlist-link">
                     <%= movie.trackName %>
                 </a>

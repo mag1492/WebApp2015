@@ -36,10 +36,11 @@
 }
 #movieBox img {
     float:left;
+    height:80px;
 }
 
 #movieBox {
-    width: 80px;
+    width: 20%;
     height: 80px;
     display : inline-block;
     margin:15px;
@@ -47,13 +48,18 @@
     float:left;
 }
 
+#movieTitle {
+    float:left;
+}
+
 #side-preview img {
     float:left;
     margin-right: -15px;
     height: 400px;
-    wide:200px;
+
 }
 
 #side-preview {
 
 }
+
