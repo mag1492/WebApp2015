@@ -1,20 +1,20 @@
 <div class="row">
-        <% _.each(watchlistMovie.movies, function(movie) { %>
+    <% _.each(watchlistMovie.movies, function(movie) { %>
 
-            <% if(!_.isNull(movie.trackId)) { %>
+        <% if(!_.isNull(movie.trackId)) { %>
 
-                <% if(movie === watchlistMovie.movies[0]) { %>
-                    <div class="col-md-12" style='background-image: url(<%= movie.artworkUrl100 %>);width:100%;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
-                <% } %>
+            <% if(movie === watchlistMovie.movies[0]) { %>
+                <div class="col-md-12" style='background-image: url(<%= movie.artworkUrl100 %>);width:100%;height:auto;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
+            <% } %>
 
-            <% }%>
+        <% }%>
 
-        <% }); %>
+    <% }); %>
 
         <div class="row">
-            <div class="col-md-12 movies-list">
+            <div class="col-md-12 movies-list inside inside-full-height" >
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-xs-4">
                         <% _.each(watchlistMovie.movies, function(movie) { %>
 
                             <% if(!_.isNull(movie.trackId)) { %>
@@ -27,7 +27,7 @@
 
                         <% }); %>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-8 col-xs-4 ">
                         <h1><%=watchlistMovie.name%></h1>
                         <h1><%=_.size(watchlistMovie.movies)%> Movies</h1>
                         <ol >
@@ -38,6 +38,7 @@
                                         <a href="#/movie/<%=movie.trackId%>" class="watchlist-link">
                                             <%= movie.trackName %>
                                         </a>
+                                        <a><span class="remove-icon glyphicon glyphicon-remove"></span></a>
                                     </li>
                                 <% }%>
                             <% }); %>
