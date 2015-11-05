@@ -35,11 +35,10 @@ define([
             var movie = new Movie({trackId : movieId});
             movie.fetch({
                 success:function(response){
-                    var watchlist = new WatchlistAddMovie({watchlistId:watchlistId, movies:[response.toJSON()[0]]});
-                    console.log(watchlist);
-                    watchlist.save({
+                    var watchlist = new WatchlistAddMovie({trackId:movieId, watchlistId:watchlistId});
+                    watchlist.save(movie, {
                         success:function(ret){
-                            console.log("save");
+                            console.log(watchlist);
                         }
                     })
                 }
