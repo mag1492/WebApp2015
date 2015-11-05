@@ -33,12 +33,18 @@ define([
         },
         addMovie: function(watchlistId, movieId){
             var movie = new Movie({trackId : movieId});
+            console.log("avant fetch");
+            console.log(movie);
             movie.fetch({
                 success:function(response){
-                    var watchlist = new WatchlistAddMovie({trackId:movieId, watchlistId:watchlistId});
-                    watchlist.save(movie, {
+                    console.log("pendant fetch");
+                    console.log(movie);
+                    var watchlist = new WatchlistAddMovie({watchlistId:watchlistId});
+                    watchlist.save(movie.attributes[0], {
                         success:function(ret){
-                            console.log(watchlist);
+
+                            console.log("apres fetch : ");
+                            console.log(movie);
                         }
                     })
                 }
