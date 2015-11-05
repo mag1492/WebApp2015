@@ -4,7 +4,7 @@
         <% if(!_.isNull(movie.trackId)) { %>
 
             <% if(movie === watchlistMovie.movies[0]) { %>
-                <div class="col-md-12" style='background-image: url(<%= movie.artworkUrl100 %>);width:100%;height:auto;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
+    <div class="col-md-12" style='background-image: url(<%= movie.artworkUrl100 %>);width:100%;height:auto;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
             <% } %>
 
         <% }%>
@@ -38,7 +38,7 @@
                                         <a href="#/movie/<%=movie.trackId%>" class="watchlist-link">
                                             <%= movie.trackName %>
                                         </a>
-                                        <a><span class="remove-icon glyphicon glyphicon-remove"></span></a>
+                                        <a href="#"><span class="remove-icon glyphicon glyphicon-remove"></span></a>
                                     </li>
                                 <% }%>
                             <% }); %>
