@@ -2,12 +2,12 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/watchlist/createNewWatchlistTemplate.html',
+    'text!templates/watchlist/createOrEditTemplate.html',
     'models/watchlist'
-], function($, _, Backbone, CreateNewWatchlistViewTemplate, Watchlist){
+], function($, _, Backbone, CreateOrEditViewTemplate, Watchlist){
     var CreateNewWatchlistView = Backbone.View.extend({
 
-        template : _.template(CreateNewWatchlistViewTemplate),
+        template : _.template(CreateOrEditViewTemplate),
         el: '.content',
 
         events:{
@@ -75,9 +75,23 @@ define([
             }
         },
 
-
         deleteWatchlist: function(){
             console.log("should delete");
+            this.confirmDelete();
+
+        },
+
+        confirmDelete: function(){
+            if (confirm("Do you really want to destroy ?") == true) {
+                this.watchlist.destroy({
+                    success: function(){
+                        Backbone.history.navigate('watchlist', true);
+                    },
+                    error: function(){
+
+                    }
+                })
+            }
         },
 
         watchlistNameisValid: function(){
@@ -97,7 +111,6 @@ define([
 
             return true;
         }
-
     });
 
     return CreateNewWatchlistView;

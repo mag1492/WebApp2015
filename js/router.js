@@ -57,7 +57,7 @@ define([
             });
         });
         router.on('route:createNewWatchlist', function (id) {
-            require(['views/watchlist/createNewWatchlistView'], function (CreateWatchlistView) {
+            require(['views/watchlist/createOrEditWatchlistView'], function (CreateWatchlistView) {
                 var createWatchlistView = Vm.create(appView, 'CreateWatchlistView', CreateWatchlistView, {id: id});
                 createWatchlistView.render();
             });

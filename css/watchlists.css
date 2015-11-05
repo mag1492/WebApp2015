@@ -30,6 +30,37 @@
     background-color: #fff;
 }
 
+.watchlist-name-input{
+    height: 50px;
+    width: 100%;
+}
+
+.new-edit-title{
+    border: solid;
+    background-color: #EA8074;
+    color: #EA8074;
+}
+
+.input-name-container{
+    padding-top: 10px;
+}
+
+.watchlist-info-container{
+   padding: 10%;
+}
+
+.button-choice{
+    padding-top: 15px;
+}
+
+.new-edit-page{
+   height: 100%;
+}
+
+.createOrUpdate:hover .delete:hover{
+    color: black;
+}
+
 .content-center{
     margin: 0 auto;
     width: 85%;
