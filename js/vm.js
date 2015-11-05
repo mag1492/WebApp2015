@@ -25,7 +25,6 @@ define([
         return view;
     };
 
-
     return {
         create: create
     };
