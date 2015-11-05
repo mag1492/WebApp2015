@@ -2,7 +2,6 @@
     .watchlist-name-input{
         max-width:  50%;
     }
-
 }
 
 .watchlist-title{
@@ -10,8 +9,6 @@
 }
 
 .watchlist-item{
-    border: solid;
-    color: #2B2B2B;
     height: 200px;
     max-width: 90%;
     max-height: 200px;
@@ -32,6 +29,7 @@
 }
 
 .watchlist-name-container{
+    border-radius: 10px;
     margin: 0 auto;
     padding: 1px;
     width: 100%;
