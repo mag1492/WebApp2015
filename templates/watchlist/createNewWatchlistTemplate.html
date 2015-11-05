@@ -1,7 +1,7 @@
 <div>
     <h1><%= watchlist ? 'Edit' : 'New' %> Watchlist</h1>
     <textarea id="watchlistName" class="text-content">
-        <%= watchlist ? watchlist.name : 'Enter the name of the new watchlist' %>
+        <%= watchlist ? watchlist.name : 'New watchlist name.' %>
     </textarea>
     <% if(watchlist) { %>
     <input type="hidden" id="id" value="<%= watchlist.id %>" />

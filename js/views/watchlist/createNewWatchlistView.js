@@ -49,26 +49,47 @@ define([
         createOrUpdateWatchlist: function(){
             var watchlistID = $("#id").val();
 
-            if(typeof watchlistID != 'undefined'){
-                var watchlist = {
-                    name: $("#watchlistName").val(),
-                    id: watchlistID
-                };
+            if(this.watchlistNameisValid()){
+                if (typeof watchlistID != 'undefined') {
+                    var watchlist = {
+                        name: $("#watchlistName").val().trim(),
+                        id: watchlistID
+                    };
+                }
+                else {
+                    var watchlist = {
+                        name: $("#watchlistName").val().trim()
+                    };
+                }
+
+                var aWatchlist = new Watchlist();
+                aWatchlist.save(watchlist, {
+                    success: function () {
+                        console.log("Adding was a success!");
+                        Backbone.history.navigate('watchlist', true);
+                    }
+                });
             }
-            else{
-                var watchlist = {
-                    name: $("#watchlistName").val()
-                };
+        },
+
+        watchlistNameisValid: function(){
+
+            if($("#watchlistName").val().length > 100){
+                alert("The watchlist's name is too long. ("+ $("#watchlistName").val().length +")\n" +
+                    " Please enter a name with less than 100 characters." );
+
+                return false;
+            }
+            else if($("#watchlistName").val().trim().length <= 0 ){
+                alert("The watchlist's name is empty ! \n"
+                    + "Please write something great.");
+
+                return false;
             }
 
-            var  aWatchlist = new Watchlist();
-            aWatchlist.save(watchlist, {
-                success: function(){
-                    console.log("Adding was a success!");
-                    Backbone.history.navigate('watchlist', true);
-                }
-            });
+            return true;
         }
+
     });
 
     return CreateNewWatchlistView;
