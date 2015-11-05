@@ -82,7 +82,7 @@ define([
         },
 
         confirmDelete: function(){
-            if (confirm("Do you really want to destroy ?") == true) {
+            if (confirm("Are you sure you want to delete this watchlist ?") == true) {
                 this.watchlist.destroy({
                     success: function(){
                         Backbone.history.navigate('watchlist', true);

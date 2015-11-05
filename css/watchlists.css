@@ -1,3 +1,10 @@
+@media (min-width: 992px) {
+    .watchlist-name-input{
+        max-width:  50%;
+    }
+
+}
+
 .watchlist-title{
     color: black;
 }
@@ -30,12 +37,18 @@
     background-color: #fff;
 }
 
+.watchlists-title{
+    border:solid;
+    background-color: #EA8074;
+    color: #EA8074;
+}
 .watchlist-name-input{
     height: 50px;
-    width: 100%;
+    width:100%;
+    max-width: 496px;
 }
 
-.new-edit-title{
+.new-edit-title {
     border: solid;
     background-color: #EA8074;
     color: #EA8074;
@@ -46,11 +59,17 @@
 }
 
 .watchlist-info-container{
-   padding: 10%;
+    padding: 5%;
+    padding-top:50px;
 }
 
 .button-choice{
     padding-top: 15px;
+}
+
+.btn-line{
+    width: 100%;
+    border-radius: 0%;
 }
 
 .new-edit-page{
