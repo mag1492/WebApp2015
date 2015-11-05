@@ -27,24 +27,22 @@ define([
                     var retour = {"movieId" : that.movieId, "response" : response.toJSON()};
                     console.log(retour);
                     that.$el.html(that.template({watchlists: retour}));
+                    $('#myModal').appendTo("body");
                 }
             });
 
         },
         addMovie: function(watchlistId, movieId){
             var movie = new Movie({trackId : movieId});
-            console.log("avant fetch");
-            console.log(movie);
+
             movie.fetch({
                 success:function(response){
-                    console.log("pendant fetch");
-                    console.log(movie);
+
                     var watchlist = new WatchlistAddMovie({watchlistId:watchlistId});
                     watchlist.save(movie.attributes[0], {
                         success:function(ret){
-
-                            console.log("apres fetch : ");
-                            console.log(movie);
+                            $('#myModal').modal('toggle');
+                            Backbone.history.navigate('/watchlist/'+watchlistId,true);
                         }
                     })
                 }
