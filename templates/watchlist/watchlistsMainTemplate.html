@@ -1,21 +1,37 @@
- <div class="row">
-        <div class="col-md-12 text-center">
-            <h2 class="watchlist-title">Watchlist</h2>
-            <h4> these are your watchlist</h4>
-        </div>
+ <div class="col-md-12">
+    <div class="row text-center watchlists-title">
+        <h2 class="watchlist-title">Watchlists</h2>
+        <h4>Those are your watchlist</h4>
     </div>
+     <div class="row  text-center">
+         <a href="#/watchlistNew">
+             <button type="button" class="btn btn-default btn-line">
+                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                 New Watchlist
+             </button>
+         </a>
+     </div>
+ </div>
     <!-- Watchlist lists -->
-    <div class="container">
-        <div class="row content-center">
-            <% _.each(watchlists, function(watchlist) { %>
-            <div class="col-xs-6 col-sm-3 col-lg-2 watchlist-item">
-                <a href="#/watchlist/<%=watchlist.id%>" class="watchlist-link" data-toggle="modal">
+ <div class="container">
+    <div class="row content-center">
+        <% if(_.isEmpty(watchlists)) { %>
+           <div>
+               <h4>You should create a new Watchlist !</h4>
+           </div>
+        <% }; %>
+
+        <% _.each(watchlists, function(watchlist) { %>
+        <div class="col-xs-6 col-sm-3 col-lg-2 watchlist-item">
+            <div class=" watchlist-thumbnail">
+                <a href="#/watchlist/<%=watchlist.id%>">
                     <img class="img-responsive image-center" src="images/logoOpaque150.gif" class="watchlist-cover">
                 </a>
-                <div class="watchlist-name">
-                    <h4><%= watchlist.name %></h4>
-                </div>
             </div>
-            <% }); %>
+            <div class="watchlist-name-container">
+                <h4 class="watchlist-name"><%= watchlist.name %></h4>
+            </div>
         </div>
+        <% }); %>
     </div>
+ </div>
