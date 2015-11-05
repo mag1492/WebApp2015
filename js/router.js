@@ -11,7 +11,8 @@ define([
             'actor/:id': 'homeActor',
             'movie/:id': 'homeMovie',
             'watchlist': 'homeWatchlists',
-            'watchlist/:id': 'homeOneWatchlist'
+            'watchlist/:id': 'homeOneWatchlist',
+            'watchlist/:watchlistId/addMovie/:movieId' : 'addMovieToWatchlist'
         }
     });
 
@@ -50,8 +51,14 @@ define([
         });
         router.on('route:homeOneWatchlist', function (id) {
             require(['views/watchlist/watchlistMovieView'], function (WatchlistMovieView) {
-               var watchlistMovieView = Vm.create(appView, 'WatchlistMovieView', WatchlistMovieView, {id: id});
+                var watchlistMovieView = Vm.create(appView, 'WatchlistMovieView', WatchlistMovieView, {id: id});
                 watchlistMovieView.render();
+            });
+        });
+        router.on('route:addMovieToWatchlist', function (watchlistId, movieId) {
+            require(['views/movie/movieWatchListButtonView'], function (MovieWatchlistButtonView) {
+                var movieWatchlistButtonView = Vm.create(appView, 'MovieWatchlistButtonBiew', MovieWatchlistButtonView, {id: movieId});
+                movieWatchlistButtonView.addMovie(watchlistId, movieId);
             });
         });
         Backbone.history.start();
