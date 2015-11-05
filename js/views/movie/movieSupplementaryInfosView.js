@@ -18,6 +18,9 @@ define([
             this.movie.fetch({
                 success: function(response){
                     that.$el.html(that.template({movie: response.toJSON()}));
+                    var url = response.toJSON()[0].artworkUrl100.replace("100x100", "200x300");
+                    $("#cover").css("background", "url("+ url +") no-repeat");
+
                 }
             });
         }
