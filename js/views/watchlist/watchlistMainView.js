@@ -21,7 +21,7 @@ define([
                     that.$el.html(that.template({watchlists: response.toJSON()}));
                 }
             });
-        }
+        },
     });
 
    return WatchlistMainView;
