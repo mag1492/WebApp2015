@@ -1,32 +1,50 @@
 <div class="row">
-    <div class="col-md-4 side-box">
         <% _.each(watchlistMovie.movies, function(movie) { %>
 
             <% if(!_.isNull(movie.trackId)) { %>
 
                 <% if(movie === watchlistMovie.movies[0]) { %>
-    <div class="col-md-12" style='background-image: url(<%= movie.artworkUrl100 %>);width:100%; height:1000px; background-size: cover; background-repeat: no-repeat; background-position: center;'></div>
+                    <div class="col-md-12" style='background-image: url(<%= movie.artworkUrl100 %>);width:100%;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
                 <% } %>
 
             <% }%>
 
         <% }); %>
-    </div>
 
-    <div class="col-md-8 movies-list">
-        <h1><%=watchlistMovie.name%></h1>
-        <h1><%=_.size(watchlistMovie.movies)%> Movies</h1>
-        <ol >
-            <% _.each(watchlistMovie.movies, function(movie) { %>
-                <% if(!_.isNull(movie.trackId)) { %>
-                    <li class="movie">
-                        <a href="#/movie/<%=movie.trackId%>"><img src="<%=movie.artworkUrl100 %>" > </a>
-                        <a href="#/movie/<%=movie.trackId%>" class="watchlist-link">
-                            <%= movie.trackName %>
-                        </a>
-                    </li>
-                <% }%>
-            <% }); %>
-        </ol>
+        <div class="row">
+            <div class="col-md-12 movies-list">
+                <div class="row">
+                    <div class="col-md-4">
+                        <% _.each(watchlistMovie.movies, function(movie) { %>
+
+                            <% if(!_.isNull(movie.trackId)) { %>
+
+                                <% if(movie === watchlistMovie.movies[0]) { %>
+                                    <img class="side-movie-diplay" src="<%= movie.artworkUrl100 %>">
+                                <% } %>
+
+                            <% }%>
+
+                        <% }); %>
+                    </div>
+                    <div class="col-md-8">
+                        <h1><%=watchlistMovie.name%></h1>
+                        <h1><%=_.size(watchlistMovie.movies)%> Movies</h1>
+                        <ol >
+                            <% _.each(watchlistMovie.movies, function(movie) { %>
+                                <% if(!_.isNull(movie.trackId)) { %>
+                                    <li class="movie">
+                                        <a href="#/movie/<%=movie.trackId%>"><img src="<%=movie.artworkUrl100 %>" > </a>
+                                        <a href="#/movie/<%=movie.trackId%>" class="watchlist-link">
+                                            <%= movie.trackName %>
+                                        </a>
+                                    </li>
+                                <% }%>
+                            <% }); %>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

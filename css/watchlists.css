@@ -40,9 +40,7 @@
     -webkit-background-size: cover;
     width: 100%;
 }
-.movies-list h1{
-    color:black;
-}
+
 
 .movie {
     background-color: black;
@@ -55,9 +53,25 @@
 }
 
 .movies-list {
-    background-image: url("http://img.buzzarena.com/2015/04/Chat-1.jpg");
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    background-position: center;
-    background-size: cover;
+    background-color:black;
+    opacity: 0.7;
+    height:900px;
+}
+.movies-list h1{
+    color:white;
+}
+
+.movies-list ol{
+    color:white;
+}
+
+.movies-list ol a{
+    color:white;
+}
+.movies-list li{
+    padding:2px;
+}
+
+.side-movie-diplay {
+    height:900px;
 }
