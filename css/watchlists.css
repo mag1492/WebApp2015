@@ -93,7 +93,7 @@
    height: 100%;
 }
 
-.createOrUpdate:hover .delete:hover{
+.create-update-btn:hover{
     color: black;
 }
 
