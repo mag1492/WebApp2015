@@ -73,5 +73,8 @@
 }
 
 .side-movie-diplay {
-    height:900px;
+    height:800px;
+    float:right;
+    padding-top:10%;
+    padding-bottom: 10%;
 }
