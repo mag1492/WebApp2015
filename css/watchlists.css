@@ -36,13 +36,28 @@
 }
 
 
-.side-preview img {
-    float:left;
-    margin-right: -15px;
-    height: 600px;
-
+.side-box img {
+    -webkit-background-size: cover;
+    width: 100%;
 }
-.side-preview {
-    height: 100%;
+.movies-list h1{
+    color:black;
 }
 
+.movie {
+    background-color: black;
+    opacity: 0.8;
+}
+
+.movie img {
+    height:80px;
+    -webkit-background-size: cover;
+}
+
+.movies-list {
+    background-image: url("http://img.buzzarena.com/2015/04/Chat-1.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    background-position: center;
+    background-size: cover;
+}
