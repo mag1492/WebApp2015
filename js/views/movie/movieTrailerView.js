@@ -18,10 +18,10 @@ define([
             this.movie.fetch({
                 success: function(response){
                     var movie = response.toJSON();
-                    //$(".trailer-background").css("background", "url("+ movie[0].artworkUrl100 +") ");
                     that.$el.html(that.template({movie: response.toJSON()}));
                 }
             });
+
         }
     });
     return MovieTrailerView;
