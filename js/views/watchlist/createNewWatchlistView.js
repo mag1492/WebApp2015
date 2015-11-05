@@ -4,11 +4,15 @@ define([
     'backbone',
     'text!templates/watchlist/createNewWatchlistTemplate.html',
     'models/watchlist'
-], function($, _, Backbone, CreateNewWatchlistView, Watchlist){
+], function($, _, Backbone, CreateNewWatchlistViewTemplate, Watchlist){
     var CreateNewWatchlistView = Backbone.View.extend({
 
-        template : _.template(CreateNewWatchlistView),
+        template : _.template(CreateNewWatchlistViewTemplate),
         el: '.content',
+
+        events:{
+            "click .createOrUpdate": "createOrUpdateWatchlist"
+        },
 
         initialize:function(options){
             this.idIsUndefined = 'false';
@@ -40,6 +44,30 @@ define([
             else{
                 this.$el.html(this.template({watchlist: null}));
             }
+        },
+
+        createOrUpdateWatchlist: function(){
+            var watchlistID = $("#id").val();
+
+            if(typeof watchlistID != 'undefined'){
+                var watchlist = {
+                    name: $("#watchlistName").val(),
+                    id: watchlistID
+                };
+            }
+            else{
+                var watchlist = {
+                    name: $("#watchlistName").val()
+                };
+            }
+
+            var  aWatchlist = new Watchlist();
+            aWatchlist.save(watchlist, {
+                success: function(){
+                    console.log("Adding was a success!");
+                    Backbone.history.navigate('watchlist', true);
+                }
+            });
         }
     });
 
