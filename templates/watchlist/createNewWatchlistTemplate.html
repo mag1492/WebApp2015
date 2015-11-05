@@ -1,0 +1,11 @@
+<div>
+    <h1><%= watchlist ? 'Edit' : 'New' %> Watchlist</h1>
+    <textarea id="watchlistName" class="text-content">
+        <%= watchlist ? watchlist.name : 'Enter the name of the new watchlist' %>
+    </textarea>
+    <% if(watchlist) { %>
+    <input type="hidden" id="id" value="<%= watchlist.id %>" />
+    <button class="btn btn-danger delete">Delete</button>
+    <% }; %>
+    <button class="btn create"><%= watchlist ? 'Update' : 'Create' %></button>
+</div>

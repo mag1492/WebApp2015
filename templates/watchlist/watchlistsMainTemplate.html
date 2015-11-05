@@ -2,9 +2,11 @@
     <div class="col-md-12 text-center">
         <h2 class="watchlist-title">Watchlist</h2>
         <h4> these are your watchlist</h4>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#createWatchlist">
-            New Watchlist
-        </button>
+        <a href="#/watchlistNew">
+            <button class="btn btn-primary">
+                New Watchlist
+            </button>
+        </a>
     </div>
  </div>
     <!-- Watchlist lists -->
@@ -22,71 +24,3 @@
         <% }); %>
     </div>
  </div>
-
- <!-- Modal -->
- <div class="modal fade" id="createWatchlist" tabindex="-1" role="dialog"
-      aria-labelledby="myModalLabel" aria-hidden="true">
-     <div class="modal-dialog">
-         <div class="modal-content">
-             <!-- Modal Header -->
-             <div class="modal-header">
-                 <button type="button" class="close"
-                         data-dismiss="modal">
-                     <span aria-hidden="true">&times;</span>
-                     <span class="sr-only">Close</span>
-                 </button>
-                 <h4 class="modal-title" id="myModalLabel">
-                     Create a Watchlist
-                 </h4>
-             </div>
-
-             <!-- Modal Body -->
-             <div class="modal-body">
-                 <form class="form-horizontal" role="form">
-                     <div class="form-group">
-                         <label  class="col-sm-2 control-label"
-                                 for="inputEmail3">Title</label>
-                         <div class="col-sm-10">
-                             <input type="email" class="form-control"
-                                    id="inputEmail3" placeholder="Email"/>
-                         </div>
-                     </div>
-                     <div class="form-group">
-                         <label class="col-sm-2 control-label"
-                                for="inputPassword3" >Password</label>
-                         <div class="col-sm-10">
-                             <input type="password" class="form-control"
-                                    id="inputPassword3" placeholder="Password"/>
-                         </div>
-                     </div>
-                     <div class="form-group">
-                         <div class="col-sm-offset-2 col-sm-10">
-                             <div class="checkbox">
-                                 <label>
-                                     <input type="checkbox"/> Remember me
-                                 </label>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="form-group">
-                         <div class="col-sm-offset-2 col-sm-10">
-                             <button type="submit" class="btn btn-default">Sign in</button>
-                         </div>
-                     </div>
-                 </form>
-             </div>
-             <!-- Modal Footer -->
-             <div class="modal-footer">
-                 <button type="button" class="btn btn-default"
-                         data-dismiss="modal">
-                     Close
-                 </button>
-                 <button type="button" class="btn btn-primary">
-                     Save changes
-                 </button>
-             </div>
-         </div>
-     </div>
- </div>
-
-
