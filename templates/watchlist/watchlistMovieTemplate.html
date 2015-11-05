@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row page-height">
     <% _.each(watchlistMovie.movies, function(movie) { %>
 
         <% if(!_.isNull(movie.trackId)) { %>
@@ -11,8 +11,8 @@
 
     <% }); %>
 
-        <div class="row">
-            <div class="col-md-12 movies-list inside inside-full-height" >
+        <div class="row" >
+            <div class="col-md-12 movies-list min-height-row">
                 <div class="row">
                     <div class="col-md-4 col-xs-6">
                         <% _.each(watchlistMovie.movies, function(movie) { %>
@@ -34,8 +34,8 @@
                             <% _.each(watchlistMovie.movies, function(movie) { %>
                                 <% if(!_.isNull(movie.trackId)) { %>
                                     <li class="movie">
-                                        <a href="#/movie/<%=movie.trackId%>"><img src="<%=movie.artworkUrl100 %>" > </a>
-                                        <a href="#/movie/<%=movie.trackId%>" class="watchlist-link">
+                                        <a class="movie-icon" href="#/movie/<%=movie.trackId%>"><img src="<%=movie.artworkUrl100 %>" > </a>
+                                        <a  href="#/movie/<%=movie.trackId%>" class="watchlist-link">
                                             <%= movie.trackName %>
                                         </a>
                                         <a href="#"><span class="remove-icon glyphicon glyphicon-remove"></span></a>
@@ -49,3 +49,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(window).on("resize", _.debounce(function() {
+        $('.min-height-row').css('min-height', window.innerHeight);
+    }, 1));
+</script>
