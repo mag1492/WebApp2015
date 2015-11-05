@@ -15,13 +15,21 @@
     <!-- Watchlist lists -->
  <div class="container">
     <div class="row content-center">
+        <% if(_.isEmpty(watchlists)) { %>
+           <div>
+               <h4>You should create a new Watchlist !</h4>
+           </div>
+        <% }; %>
+
         <% _.each(watchlists, function(watchlist) { %>
         <div class="col-xs-6 col-sm-3 col-lg-2 watchlist-item">
-            <a href="#/watchlist/<%=watchlist.id%>" class="watchlist-link" data-toggle="modal">
-                <img class="img-responsive image-center" src="images/logoOpaque150.gif" class="watchlist-cover">
-            </a>
-            <div class="watchlist-name">
-                <h4><%= watchlist.name %></h4>
+            <div class=" watchlist-thumbnail">
+                <a href="#/watchlist/<%=watchlist.id%>">
+                    <img class="img-responsive image-center" src="images/logoOpaque150.gif" class="watchlist-cover">
+                </a>
+            </div>
+            <div class="watchlist-name-container">
+                <h4 class="watchlist-name"><%= watchlist.name %></h4>
             </div>
         </div>
         <% }); %>
