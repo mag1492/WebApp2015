@@ -11,7 +11,8 @@ define([
         el: '.content',
 
         events:{
-            "click .createOrUpdate": "createOrUpdateWatchlist"
+            "click .createOrUpdate": "createOrUpdateWatchlist",
+            "click .delete" : "deleteWatchlist"
         },
 
         initialize:function(options){
@@ -37,7 +38,9 @@ define([
                         that.$el.html(that.template({watchlist: response.toJSON()}));
                     },
                     error: function(){
-                        alert("Error Not Found.\n The watchlist's id:" + that.watchlistOption + " was not found.");
+                        alert("Error Not Found.\n The watchlist's id:" + that.watchlistOption + " was not found. \n"+
+                        "We will bring you back to the other side.");
+                        Backbone.history.navigate('watchlist', true);
                     }
                 });
             }
@@ -70,6 +73,11 @@ define([
                     }
                 });
             }
+        },
+
+
+        deleteWatchlist: function(){
+            console.log("should delete");
         },
 
         watchlistNameisValid: function(){
