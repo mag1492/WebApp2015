@@ -19,7 +19,6 @@
                         <% _.each(watchlistMovie.movies, function(movie) { %>
 
                             <% if(!_.isNull(movie.trackId)) { %>
-
                                 <% if(movie === watchlistMovie.movies[0]) { %>
                                     <img class="side-movie-display" src='<%= (movie.artworkUrl100).replace("100x100", "600x600") %>'>
                                 <% } %>
@@ -39,7 +38,7 @@
                                         <a class="name-length" href="#/movie/<%=movie.trackId%>" >
                                             <%= movie.trackName %>
                                         </a>
-                                        <a href="#"><span class="remove-icon glyphicon glyphicon-remove"></span></a>
+                                        <a href="#/watchlist/<%= watchlistMovie.watchlistId %>/deleteMovie/<%= movie.trackId %>"><span class="remove-icon glyphicon glyphicon-remove"></span></a>
                                     </li>
                                 <% }%>
                             <% }); %>
