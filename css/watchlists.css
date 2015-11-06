@@ -55,7 +55,7 @@
 
 .movies-list {
     background-color:black;
-    opacity: 0.75;
+    opacity: 0.8;
     height:auto;
 }
 .movies-list h1,.movies-list ol{
@@ -85,7 +85,7 @@
     color:  #E74C3C;
 }
 
-.side-movie-diplay {
+.side-movie-display {
     height:800px;
     float:right;
     padding-top:10%;
@@ -100,7 +100,7 @@
 }
 
 .min-height-row{
-    min-height: 1200px;
+    min-height: 1000px;
 }
 
 

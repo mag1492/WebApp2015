@@ -4,7 +4,7 @@
         <% if(!_.isNull(movie.trackId)) { %>
 
             <% if(movie === watchlistMovie.movies[0]) { %>
-    <div class="col-md-12" style='background-image: url(<%= movie.artworkUrl100 %>);width:100%;height:auto;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
+    <div class="col-md-12" style='background-image: url(<%= (movie.artworkUrl100).replace("100x100", "600x600") %>);width:100%;height:auto;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
             <% } %>
 
         <% }%>
@@ -21,7 +21,7 @@
                             <% if(!_.isNull(movie.trackId)) { %>
 
                                 <% if(movie === watchlistMovie.movies[0]) { %>
-                                    <img class="side-movie-diplay" src="<%= movie.artworkUrl100 %>">
+                                    <img class="side-movie-display" src='<%= (movie.artworkUrl100).replace("100x100", "600x600") %>'>
                                 <% } %>
 
                             <% }%>
@@ -56,4 +56,5 @@
     $(window).on("resize", _.debounce(function() {
         $('.min-height-row').css('min-height', window.innerHeight);
     }, 1));
+
 </script>
