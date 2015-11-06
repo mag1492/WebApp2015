@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-2">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Add to watchlist</button>
+
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Your watchlists</h4>
+                    </div>
+                    <div class="modal-body">
+                        <% _.each(watchlists.response, function(watchlist) { %>
+                        <div><a href="#watchlist/<%= watchlist.id %>/addMovie/<%= watchlists.movieId %>"><%= watchlist.name %></a></div>
+                        <% }); %>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+</script>

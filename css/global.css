@@ -33,11 +33,25 @@
     width:110px;
     height:40px;
 }
+
+@media (max-width: 992px) {
+    .watchlist-button{
+
+        padding-bottom:20px;
+    }
+}
+
 .btn-outline {
     background: none;
     color: inherit;
     transition: all .5s;
 }
+
+.modal .modal-body {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
 .btn-primary.btn-outline {
     color: #E74C3C;
     border-color: #E74C3C;

@@ -11,7 +11,7 @@ define([
         el: '.content',
 
         events:{
-            "click .createOrUpdate": "createOrUpdateWatchlist",
+            "click .create-update-btn": "createOrUpdateWatchlist",
             "click .delete" : "deleteWatchlist"
         },
 
