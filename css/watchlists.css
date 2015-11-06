@@ -31,7 +31,7 @@
 .watchlist-name-container{
     border-radius: 10px;
     margin: 0 auto;
-    padding: 1px;
+    padding: 0px;
     width: 100%;
     height: 45%;
     background-color: #EA8074;
@@ -41,7 +41,7 @@
 }
 
 .watchlist-name{
-    padding: 1px;
+    padding: 2px;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 90%;
@@ -150,6 +150,26 @@
 
 .movie-watchlist:hover .remove-icon {
     display:block;
+}
+
+
+.watchlist-item .movie-icon:hover {
+    text-decoration: none;
+}
+
+.watchlist-btn{
+    overflow: hidden;
+    display: table-cell;
+}
+
+.edit-icon{
+    display:block;
+    bottom: 0;
+    right:0;
+}
+
+.edit-icon:hover {
+    color:  #869791;
 }
 
 .remove-icon {
