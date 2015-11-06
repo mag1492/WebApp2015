@@ -1,3 +1,9 @@
+@media (min-width: 992px) {
+    .watchlist-name-input{
+        max-width:  50%;
+    }
+}
+
 .watchlist-title{
     color: black;
 }
@@ -22,12 +28,73 @@
     max-width: 400px;
 }
 
-.watchlist-name{
+.watchlist-name-container{
+    border-radius: 10px;
     margin: 0 auto;
-    padding: 2px;
-    max-width: 400px;
+    padding: 1px;
+    width: 100%;
+    height: 45%;
+    background-color: #EA8074;
+    vertical-align: middle;
     text-align: center;
-    background-color: #fff;
+    line-height: 118px;
+}
+
+.watchlist-name{
+    padding: 1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%;
+    max-height: 80%;
+    display: inline-block;
+}
+
+.watchlists-title{
+    border:solid;
+    background-color: #EA8074;
+    color: #EA8074;
+}
+.watchlist-name-input{
+    height: 50px;
+    width:100%;
+    max-width: 496px;
+}
+
+.new-edit-title {
+    border: solid;
+    background-color: #EA8074;
+    color: #EA8074;
+}
+
+.input-name-container{
+    padding-top: 10px;
+}
+
+.watchlist-info-container{
+    padding: 5%;
+    padding-top:50px;
+}
+
+.button-choice{
+    padding-top: 15px;
+}
+
+.watchlist-thumbnail{
+    width: 100%;
+    height: 50%;
+}
+
+.btn-line{
+    width: 100%;
+    border-radius: 0%;
+}
+
+.new-edit-page{
+   height: 100%;
+}
+
+.create-update-btn:hover{
+    color: black;
 }
 
 .content-center{

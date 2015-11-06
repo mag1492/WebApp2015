@@ -11,7 +11,10 @@ define([
             'actor/:id': 'homeActor',
             'movie/:id': 'homeMovie',
             'watchlist': 'homeWatchlists',
-            'watchlist/:id': 'homeOneWatchlist'
+            'watchlist/:id': 'homeOneWatchlist',
+            'watchlist/:watchlistId/addMovie/:movieId' : 'addMovieToWatchlist',
+            'watchlistNew': 'createNewWatchlist',
+            'watchlistNew/:id': 'createNewWatchlist'
         }
     });
 
@@ -50,10 +53,23 @@ define([
         });
         router.on('route:homeOneWatchlist', function (id) {
             require(['views/watchlist/watchlistMovieView'], function (WatchlistMovieView) {
-               var watchlistMovieView = Vm.create(appView, 'WatchlistMovieView', WatchlistMovieView, {id: id});
+                var watchlistMovieView = Vm.create(appView, 'WatchlistMovieView', WatchlistMovieView, {id: id});
                 watchlistMovieView.render();
             });
         });
+        router.on('route:addMovieToWatchlist', function (watchlistId, movieId) {
+            require(['views/movie/movieWatchListButtonView'], function (MovieWatchlistButtonView) {
+                var movieWatchlistButtonView = Vm.create(appView, 'MovieWatchlistButtonBiew', MovieWatchlistButtonView, {id: movieId});
+                movieWatchlistButtonView.addMovie(watchlistId, movieId);
+            });
+        });
+        router.on('route:createNewWatchlist', function (id) {
+            require(['views/watchlist/createOrEditWatchlistView'], function (CreateWatchlistView) {
+                var createWatchlistView = Vm.create(appView, 'CreateWatchlistView', CreateWatchlistView, {id: id});
+                createWatchlistView.render();
+            });
+        });
+
         Backbone.history.start();
     };
     return {

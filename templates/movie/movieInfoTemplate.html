@@ -1,18 +1,18 @@
 <div class="row top-buffer">
-    <div class="specs movie bottom-buffer">
-        <p>Genre :  <%= movie[0].primaryGenreName %>  |
+    <div class="specs movie">
+        <p>Genre :  <%= movie[0].primaryGenreName %> |
             Length : x min |
-            Date : <%= movie[0].C %> |
-            Rated : <%= movie[0].contentAdvisoryRating %>  |
-            Rating (IMDb)x/10 |
+            Date :  <%= movie[0].releaseDate %> |
+            Rated : <%= movie[0].contentAdvisoryRating %> |
+            Rating (IMDb) x/10 |
         </p>
     </div>
 </div>
-<div class="row bottom-buffer">
+<div class="row">
     <div class="links col-md-12">
-        <p>
+        <!--<p>
             <button class="btn-links" >Similar movies</button>
-        </p>
+        </p>-->
         <div class="btn-itunes">
             <a href="<%= movie[0].trackViewUrl %>" class="itune-button"></a>
         </div>

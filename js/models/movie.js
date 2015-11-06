@@ -11,7 +11,12 @@ define([
             }
         },
 
-        parse: function (response) {
+        parse: function(response) {
+            response.results.forEach(function (movie){
+                var date = new Date(Date.parse(movie.releaseDate));
+                movie.releaseDate = date.toLocaleDateString();
+                movie.year = date.getFullYear();
+            });
             return response.results;
         }
     });
