@@ -27,7 +27,7 @@ define([
             var movie = new WatchlistDeleteMovie({movieId : movieId, watchlistId:watchlistId});
             movie.destroy({
                 success:function(ret){
-                    Backbone.history.navigate('/watchlist/'+watchlistId,true);
+                    window.location.replace('#/watchlist');
                 }
             })
 

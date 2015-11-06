@@ -60,7 +60,7 @@ define([
         });
         router.on('route:addMovieToWatchlist', function (watchlistId, movieId) {
             require(['views/movie/movieWatchListButtonView'], function (MovieWatchlistButtonView) {
-                var movieWatchlistButtonView = Vm.create(appView, 'MovieWatchlistButtonBiew', MovieWatchlistButtonView, {id: movieId});
+                var movieWatchlistButtonView = Vm.create(appView, 'MovieWatchlistButtonView', MovieWatchlistButtonView, {id: movieId});
                 movieWatchlistButtonView.addMovie(watchlistId, movieId);
             });
         });
@@ -72,7 +72,7 @@ define([
         });
         router.on('route:deleteMovieFromWatchlist', function (watchlistId, movieId) {
             require(['views/watchlist/watchlistMovieView'], function (WatchlistMovieView) {
-                var watchlistMovieView = Vm.create(appView, 'MovieWatchlistButtonBiew', WatchlistMovieView, {watchlistId: watchlistId});
+                var watchlistMovieView = Vm.create(appView, 'MovieWatchlistButtonView', WatchlistMovieView, {watchlistId: watchlistId});
                 watchlistMovieView.deleteMovie(watchlistId, movieId);
             });
         });
