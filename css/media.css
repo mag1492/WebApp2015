@@ -1,9 +1,15 @@
+
 @media (min-width: 992px) {
     .links {
         position: absolute;
         bottom: 10%;
     }
-
+    .trailer-box{
+        display:block;
+    }
+    .trailer-button{
+        display:none;
+    }
     .media-tab-padding {
         padding-top: 0px;
     }
@@ -17,6 +23,7 @@
         background-size: 300px;
         -webkit-background-size: 300px;
     }
+
     .specs {
         color: black;
         position: absolute;
@@ -37,6 +44,14 @@
         top: 50%;
         transform: translateY(-50%);
         padding: 20px 40px;
+    }
+}
+@media(max-width:1024px) {
+    .trailer-box {
+        display: none;
+    }
+    .trailer-button{
+        display:block;
     }
 }
 .media-info {
