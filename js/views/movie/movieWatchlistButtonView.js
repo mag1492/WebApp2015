@@ -42,7 +42,7 @@ define([
                     watchlist.save(movie.attributes[0], {
                         success:function(ret){
                             $('#myModal').modal('toggle');
-                            Backbone.history.navigate('/watchlist/'+watchlistId,true);
+                            window.location.replace('#/watchlist/'+watchlistId);
                         }
                     })
                 }
