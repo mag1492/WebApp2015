@@ -41,10 +41,10 @@
 }
 
 .watchlist-name{
-    padding: 2px;
+    padding: 4px;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 90%;
+    max-width: 80%;
     max-height: 80%;
     display: inline-block;
 }
@@ -152,7 +152,6 @@
     display:block;
 }
 
-
 .watchlist-item .movie-icon:hover {
     text-decoration: none;
 }
@@ -160,16 +159,22 @@
 .watchlist-btn{
     overflow: hidden;
     display: table-cell;
+    padding-left: 3px;
+    padding-right:1px;
+}
+
+.watchlist-item:hover .edit-icon{
+    display:block;
 }
 
 .edit-icon{
-    display:block;
+    display:none;
     bottom: 0;
     right:0;
 }
 
 .edit-icon:hover {
-    color:  #869791;
+    color:  #FFFFFF;
 }
 
 .remove-icon {
