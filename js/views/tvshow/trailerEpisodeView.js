@@ -23,7 +23,7 @@ define([
                     this.youtube.fetch({
                         success: function(response){
                             var episode = response.toJSON();
-                            that.$el.html(that.template({youtube: "http://www.youtube.com/v/" + episode.items[0].id.videoId}));
+                            that.$el.html(that.template({youtube: "http://www.youtube.com/watch_popup?v=" + episode.items[0].id.videoId}));
                         }
                     });
                 }
