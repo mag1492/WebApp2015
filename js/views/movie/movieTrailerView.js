@@ -19,14 +19,13 @@ define([
             this.movie.fetch({
                 success: function(response){
                     var movie = response.toJSON();
-                    that.$el.html(that.template({movie: response.toJSON()}));
-                }
-            });
-            this.youtube = new YoutubeMovie({"movieTitle":this.movie.trackName});
-            this.youtube.fetch({
-                success: function(response){
-                    var movie = response.toJSON();
-                    that.$el.html(that.template({youtube: response.toJSON()}));
+                    this.youtube = new YoutubeMovie({"movieTitle": movie[0].trackName});
+                    this.youtube.fetch({
+                        success: function(response){
+                            var movie = response.toJSON();
+                            that.$el.html(that.template({youtube: "http://www.youtube.com/v/" + movie.items[0].id.videoId}));
+                        }
+                    });
                 }
             });
         },
