@@ -8,7 +8,7 @@ define([
             var that = this;
             if (options.movieTitle) {
                 that.movieTitle = options.movieTitle;
-                this.url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='+that.movieTitle+'&key=AIzaSyBTleoO45vwz_sL9Uq8elszsYpailZJZaw';
+                this.url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=trailer'+that.movieTitle+'&key=AIzaSyBTleoO45vwz_sL9Uq8elszsYpailZJZaw';
             }
         }
     });
