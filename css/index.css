@@ -34,8 +34,7 @@
 #actors-carousel .item img{
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 350px;
+    height: 350px;
 }
 #actors-carousel .item:hover {
     border: solid 1px #CCC;
@@ -49,8 +48,7 @@
 #recently-added-carousel .item img{
     display: block;
     width: 100%;
-    height: auto;
-    max-height: 350px;
+    height: 350px;
 }
 #recently-added-carousel .item:hover {
     border: solid 1px #CCC;
