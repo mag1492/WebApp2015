@@ -1,54 +1,21 @@
 <div id="info" class="">
     <div id="info-background" class="tab-background">
         <div id="movie-info">
-            <!-- Navigation -->
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
-                <li><a data-toggle="tab" href="#plot">Plot Summary</a></li>
-                <li><a data-toggle="tab" href="#review">Review</a></li>
-            </ul>
             <!-- Panel Choices -->
             <div class="tab-content">
-                <!-- Panel Choice 1 -->
-                <div id="summary" class="tab-pane fade in active">
-                    <!-- Section summary content -->
-                    <div class="summary">
-                        <h3 class="info-title"><%= movie[0].trackName%></h3>
-                        <div>
-                            <h5 class="bold">Director: <%= movie[0].artistName%></h5>
-                            <h5 class="bold">Writer: <%= movie[0].artistName%></h5>
-                            <h5 class="bold">Starring: PLACEHOLDER PEOPLE </h5>
-                            <div class="row">
-                                <p class="paragraphs col-md-8 col-sm-9 col-xs-12"><%= movie[0].longDescription%></p>
-                                <div id="cover" class="col-md-4 col-sm-3 col-xs-12" ></div>
-                            </div>
+                <div class="summary">
+                    <h3 class="media-title-template info-title">Description</h3>
+                    <div>
+                        <h5 class="bold">Director: <%= movie[0].artistName%></h5>
+                        <div class="row">
+                            <p class="paragraphs col-md-8 col-sm-9 col-xs-12"><%= movie[0].longDescription%></p>
+                            <div id="cover" class="col-md-4 col-sm-3 col-xs-12" ></div>
                         </div>
                     </div>
                 </div>
-                <!-- Panel Choice 2-->
-                <div id="plot" class="tab-pane fade">
-                    <!-- Section summary content -->
-                    <div class="plot">
-                        <h3 class="info-title">Spoiler Alert !</h3>
-                        <div>
-                            <h5 class="bold">This plot summary could contain spoilers. Readers beware.</h5>
-                            <p class="paragraphs"><%=movie[0].longDescription%></p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Panel Choice 2-->
-                <div id="review" class="tab-pane fade">
-                    <!-- Section summary content -->
-                    <div class="review">
-                        <h3 class="info-title">REVIEWER</h3>
-                        <h5 class="bold">GREAT TITLE</h5>
-                        <h6>By PLACEHOLDER WRITER | PLACEHOLDER DATE</h6>
-                        <p class="paragraphs">
-                            THE REVIEW IS NOT GIVEN BY THE ACTUAL API.
-                        </p>
-                    </div>
-                </div>
-            </div>  <!-- End panel-ctnt-->
-        </div> <!-- End movie-info-->
-    </div>
+            </div>
+
+        </div>  <!-- End panel-ctnt-->
+    </div> <!-- End movie-info-->
+</div>
 </div>
