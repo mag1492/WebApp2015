@@ -1,21 +1,10 @@
-@media screen and (min-width:1000px) {
-    .image-button { visibility:visible }
-}
-@media screen and (max-width:999px) {
-    .image-button { visibility:hidden }
-}
 .header-image {
     width: 100%;
     height: 100%;
     padding-bottom: 100px;
     padding-top:38px;
 }
-.image-button{
-    position: absolute;
-    top: 60%;
-    right: 65%;
-    font-family: 'Raleway', sans-serif;
-}
+
 .container{
     padding-top: 50px;
 }
