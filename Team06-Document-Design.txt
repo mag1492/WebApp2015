@@ -1,0 +1,70 @@
+﻿TEAM - 06
+------------------------------------------------------------------------------
+Camille Béland - cabel218 - 111 073 278
+Magalie Caouette - Macao20 - 111 073 281
+Bruno C. Coulombe - brcc0 - 111 046 496
+Gabriel Simard - Gasim53 - 111 068 945
+Antoine Simard - Ansim163 - 111 062 018
+
+------------------------------------------------------------------------------
+
+Document de design. 
+
+On lance l'application en cliquant sur Index.html.
+
+------------------------------------------------------------------------------
+
+
+
+Pour chacune des pages voici comment proceder.
+
+
+
+Page Accueil ----------------------------------------------------------------- 
+
+Index.html, on retrouve les choix de films, de tvshows et d'acteurs. 
+
+
+Page Movie ------------------------------------------------------------------
+
+A partir de la page d'accueil, cliquez sur un des films se retrouvant dans le carrousel. Puisque la recherche
+n'est pas encore implementee, nous avons choisi arbitrairement de mettre le film Inception.
+Dans la page d'un film, il est possible d'ajouter ce film a une de nos watchlists en cliquant sur le bouton "Add to watchlist", ce qui ouvre une fenetre modale permettant de choisir dans laquelle des watchlists le film sera ajoute.
+
+Page TVShow ------------------------------------------------------------------
+
+A partir de la page d'accueil, cliquez sur un des tvshow se retrouvant dans le carrousel. Puisque la recherche
+n'est pas encore implementee, nous avons choisi d'afficher la serie Silicon Valley.
+
+Page Acteur ------------------------------------------------------------------ 
+
+A partir de la page d'accueil, cliquez sur un des acteurs se retrouvant dans le carrousel. Puisque la recherche
+n'est pas encore implementee, nous avons choisi de mettre Chuck Norris.
+
+
+Page Watchlist ---------------------------------------------------------------
+
+A partir de la barre de menu, selectionner watchlists. Dans cette page se retrouve toutes les watchlists
+de l'API car nous n'avons pas encore de concept d'utilisateur authentifie. En cliquant sur une de ces watchlists, il est 
+possible d'acceder aux informations de celle-ci, soit son titre, le nombre de films qu'elle contient et
+l'information sur ces films.
+
+
+Page ajouter watchlist -------------------------------------------------------
+
+A partir de la page principale watchlist (...index.html#/watchlist), cliquez sur "new watchlist" pour 
+ajouter une nouvelle watchlist a la liste de watchlist. 
+
+
+Page edit/delete watchlist ---------------------------------------------------
+
+A partir de la page principale watchlist (...index.html#/watchlist), "hover" sur chacune des watchlists
+presentes afin de pouvoir cliquer sur l'icone edit. Cela permet alors de supprimer cette watchlist ou de 
+tout simplement mettre son nom a jour. 
+
+
+Page movies d'une watchlist ---------------------------------------------------
+
+A partir de la page principale watchlist (...index.html#/watchlist), cliquez sur une des watchlists presentes 
+pour acceder a la liste de ses films. Lorsque la watchlist n'est pas nulle, il suffit de mettre son curseur en
+"hover" sur un film et de selectionner le "x" afin de le supprimer de la liste. 
