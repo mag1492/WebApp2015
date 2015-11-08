@@ -1,31 +1,15 @@
 <div>
-    <% _.each(watchlistMovie.movies, function(movie) { %>
 
-        <% if(!_.isNull(movie.trackId)) { %>
-
-            <% if(movie === watchlistMovie.movies[0]) { %>
-    <div class="col-md-12" style='background-image: url(<%= (movie.artworkUrl100).replace("100x100", "600x600") %>);width:100%;height:auto;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
-            <% } %>
-
-        <% }%>
-
-    <% }); %>
+    <div class="col-md-12" style='background-image: url(<%= (watchlistMovie.movies[0].artworkUrl100).replace("100x100", "600x600") %>);width:100%;height:auto;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
 
         <div class="row" >
             <div class="col-md-12 movies-list min-height-row">
                 <div class="row">
 
                     <div class="col-xs-8 col-sm-2 col-md-4">
-                        <% _.each(watchlistMovie.movies, function(movie) { %>
 
-                            <% if(!_.isNull(movie.trackId)) { %>
-                                <% if(movie === watchlistMovie.movies[0]) { %>
-                                    <img class="side-movie-display" src='<%= (movie.artworkUrl100).replace("100x100", "600x600") %>'>
-                                <% } %>
+                        <img class="side-movie-display" src='<%= (watchlistMovie.movies[0].artworkUrl100).replace("100x100", "600x600") %>'>
 
-                            <% }%>
-
-                        <% }); %>
                     </div>
                     <div class="col-xs-8 col-sm-10 col-md-8">
                         <h1><%=watchlistMovie.name%></h1>

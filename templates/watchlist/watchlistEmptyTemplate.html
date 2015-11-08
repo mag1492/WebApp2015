@@ -1,0 +1,35 @@
+<div class="default-background">
+
+    <div class="col-md-12">
+
+        <div class="row" >
+            <div class="col-md-12 movies-list min-height-row">
+                <div class="row">
+
+                    <div class="col-xs-8 col-sm-2 col-md-4">
+
+                    </div>
+                    <div class="col-xs-8 col-sm-10 col-md-8">
+                        <h1><%=watchlistMovie.name%></h1>
+
+                        <h1>Your watchlist is currently empty.</h1>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.min-height-row').css('min-height',window.innerHeight);
+    $('.default-background').css('min-height',window.innerHeight);
+
+    $(window).on("resize", _.debounce(function() {
+        $('.min-height-row').css('min-height', window.innerHeight);
+        $('.default-background').css('min-height',window.innerHeight);
+
+    }, 1));
+
+</script>
