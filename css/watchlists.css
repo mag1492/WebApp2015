@@ -203,6 +203,10 @@
 .min-height-row{
 }
 
+.default-background{
+    background: url(../Images/logoOpaque.gif) no-repeat center center;
+}
+
 
 @media (max-width: 992px) {
     .side-movie-display {

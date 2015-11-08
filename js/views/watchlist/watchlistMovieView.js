@@ -3,12 +3,14 @@ define([
     'underscore',
     'backbone',
     'text!templates/watchlist/watchlistMovieTemplate.html',
+    'text!templates/watchlist/watchlistEmptyTemplate.html',
     'models/watchlistMovie',
     'models/watchlistDeleteMovie'
-], function($, _, Backbone, WatchlistMovieTemplate, WatchlistMovie, WatchlistDeleteMovie){
+], function($, _, Backbone, WatchlistMovieTemplate, WatchlistEmptyTemplate, WatchlistMovie, WatchlistDeleteMovie){
     var WatchlistMainView = Backbone.View.extend({
 
         template : _.template(WatchlistMovieTemplate),
+        templateEmpty : _.template(WatchlistEmptyTemplate),
         el: '.content',
 
         initialize: function(){
@@ -19,7 +21,11 @@ define([
             var that = this;
             this.watchlistMovie.fetch({
                 success: function(response){
-                    that.$el.html(that.template({watchlistMovie: response.toJSON()}));
+                    if(response.toJSON().movies.length < 1) {
+                        that.$el.html(that.templateEmpty({watchlistMovie: response.toJSON()}));
+                    } else {
+                        that.$el.html(that.template({watchlistMovie: response.toJSON()}));
+                    }
                 }
             })
         },
