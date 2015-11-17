@@ -15,5 +15,5 @@ define([
 });
 
 function goToHome(){
-    document.location.href="../../index.html";
+    document.location.href="./index.html";
 }
