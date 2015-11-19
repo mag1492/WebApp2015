@@ -1,6 +1,3 @@
-/**
- * Created by Gabriel on 11/19/2015.
- */
 define([
     'jquery',
     'underscore',
@@ -19,13 +16,11 @@ define([
 
         render: function(){
             var that = this;
-
             this.tvSeasons.fetch({
                 success: function(response){
                     that.$el.html(that.template({tvSeason: response.toJSON()}));
                 }
             });
-
         }
     });
     return TvSeasonSearchView;

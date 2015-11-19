@@ -1,6 +1,4 @@
-/**
- * Created by Gabriel on 11/19/2015.
- */
+
 define([
     'jquery',
     'underscore',
@@ -23,7 +21,6 @@ define([
                     that.$el.html(that.template({actors: response.toJSON()}));
                 }
             });
-
         }
     });
     return ActorSearchView;

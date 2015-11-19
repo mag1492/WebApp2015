@@ -21,7 +21,6 @@ define([
             this.tvEpisodeSearchView = new TvEpisodeSearchView(searchField);
             this.tvSeasonSearchView = new TvSeasonSearchView(searchField);
 
-
             this.$el.append(this.actorSearchView.render());
             this.$el.append(this.movieSearchView.render());
             this.$el.append(this.tvEpisodeSearchView.render());
