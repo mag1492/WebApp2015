@@ -15,7 +15,6 @@ define([
         el: '.content',
 
         render: function (searchField) {
-            console.log('render main view debut');
             this.$el.html(this.template());
             this.actorSearchView = new ActorSearchView(searchField);
             this.movieSearchView = new MovieSearchView(searchField);
@@ -27,7 +26,6 @@ define([
             this.$el.append(this.movieSearchView.render());
             this.$el.append(this.tvEpisodeSearchView.render());
             this.$el.append(this.tvSeasonSearchView.render());
-            console.log('render main view fin');
 
         }
     });

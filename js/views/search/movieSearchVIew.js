@@ -2,7 +2,7 @@
  * Created by Gabriel on 11/19/2015.
  */
 define([
-    '../../libs/jquery/jquery-min',
+    'jquery',
     'underscore',
     'backbone',
     'text!templates/search/moviesResultTemplate.html',
@@ -19,13 +19,9 @@ define([
 
         render: function(){
             var that = this;
-            console.log('render movie view debut');
-
             this.movies.fetch({
                 success: function(response){
                     that.$el.html(that.template({movies: response.toJSON()}));
-                    console.log('render movie view fin');
-
                 }
             });
         }

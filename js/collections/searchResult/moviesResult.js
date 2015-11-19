@@ -4,12 +4,9 @@ define([
     'backbone',
 ], function($, _, Backbone){
     var MoviesResult = Backbone.Collection.extend({
-        initialize: function(options){
-            options || (options= {});
-            if(options.searchField){
-                this.searchField = options.searchField;
-                this.url = 'https://umovie.herokuapp.com/unsecure/search/movies?q=' + options.searchField.searchField;
-            }
+        initialize: function(searchField){
+                this.searchField = searchField;
+                this.url = 'https://umovie.herokuapp.com/unsecure/search/movies?q=' + searchField.searchField;
         }
     });
     return MoviesResult;

@@ -2,7 +2,7 @@
  * Created by Gabriel on 11/19/2015.
  */
 define([
-    '../../libs/jquery/jquery-min',
+    'jquery',
     'underscore',
     'backbone',
     'text!templates/search/tvSeasonResultTemplate.html',
@@ -19,15 +19,10 @@ define([
 
         render: function(){
             var that = this;
-            console.log('render season view debut');
-
 
             this.tvSeasons.fetch({
                 success: function(response){
                     that.$el.html(that.template({tvSeason: response.toJSON()}));
-                    console.log('render season view fin');
-
-
                 }
             });
 
