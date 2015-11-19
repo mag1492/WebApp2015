@@ -17,3 +17,7 @@ define([
 function goToHome(){
     document.location.href="./index.html";
 }
+
+function menuRedirect(){
+    document.location.href="#/search/" + $("#srch-term").val();
+}
