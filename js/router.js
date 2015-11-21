@@ -15,7 +15,8 @@ define([
             'watchlist/:watchlistId/addMovie/:movieId' : 'addMovieToWatchlist',
             'watchlistNew': 'createNewWatchlist',
             'watchlistNew/:id': 'createNewWatchlist',
-            'watchlist/:watchlistId/deleteMovie/:movieId' : 'deleteMovieFromWatchlist'
+            'watchlist/:watchlistId/deleteMovie/:movieId' : 'deleteMovieFromWatchlist',
+            'search/:searchField' : 'search'
         }
     });
 
@@ -74,6 +75,12 @@ define([
             require(['views/watchlist/watchlistMovieView'], function (WatchlistMovieView) {
                 var watchlistMovieView = Vm.create(appView, 'MovieWatchlistButtonView', WatchlistMovieView, {watchlistId: watchlistId});
                 watchlistMovieView.deleteMovie(watchlistId, movieId);
+            });
+        });
+        router.on('route:search', function (searchField) {
+            require(['views/search/searchMainView'], function (SearchMainView) {
+                var searchMainView = Vm.create(appView, 'SearchMainView', SearchMainView);
+                searchMainView.render(searchField);
             });
         });
         Backbone.history.start();
