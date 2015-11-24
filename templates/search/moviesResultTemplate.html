@@ -1,7 +1,7 @@
 <div class="col-sm-3 col-md-12">
     <% console.log(movies)%>
-    <% _.each(movies[0].results, function(movie) { %>
-    <p><%= movies[0].trackName %></p>
+    <% _.each(movies, function(movie) { %>
+    <p><%= movie.trackName %></p>
    <div class="result-item"><a href="#/movie/<%= movie.trackId %>"><img src="<%= movie.artworkUrl100 %>"></a></div>
     <% }); %>
 </div>
