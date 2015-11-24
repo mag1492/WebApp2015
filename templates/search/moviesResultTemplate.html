@@ -1,5 +1,5 @@
 <div class="col-sm-3 col-md-12">
-    <% _.each(movies.response, function(movie) { %>
+    <% _.each(movies[0].results, function(movie) { %>
     <p>Bonjour.</p>
    <div><a href="#/movie/<%= movie.trackId %>"><img src="<%= movie.artworkUrl100 %>"></a></div>
     <% }); %>
