@@ -21,8 +21,8 @@ define([
                 success: function(response){
                     that.$el.html(that.template({movies: response.toJSON()}));
                     response.toJSON().forEach(function(movie){
-                        var essais = new MovieWatchlistButtonView(movie.trackId);
-                        that.$el.append(essais.render());
+                        var view = new MovieWatchlistButtonView(movie.trackId);
+                        that.$el.append(view.render());
                     });
                 }
             });

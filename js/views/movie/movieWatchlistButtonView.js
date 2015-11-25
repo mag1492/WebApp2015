@@ -16,10 +16,7 @@ define([
         initialize: function(id){
             this.watchlist = new Watchlist({});
             this.movieId = id;
-            console.log("ici?");
-            console.log(id);
             this.$el = $(".watchlist-button" + id);
-            console.log("la?");
         },
 
         render: function(){
