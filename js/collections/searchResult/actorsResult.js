@@ -12,7 +12,5 @@ define([
             return response.results;
         }
     });
-
-
     return ActorsResult;
 });
