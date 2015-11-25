@@ -26,6 +26,7 @@ define([
                     var retour = {"movieId" : that.movieId, "response" : response.toJSON()};
                     that.$el.html(that.template({watchlists: retour}));
                     $('#myModal'+that.movieId).appendTo("body");
+                    $('#buttonModal'+that.movieId).appendTo("body");
                 }
             });
 
