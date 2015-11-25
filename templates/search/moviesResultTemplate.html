@@ -1,7 +1,13 @@
-<div class="col-sm-3 col-md-12">
-    <% console.log(movies)%>
+<div class="col-md-12 col-sm-12 alt-background white-text">
+    <h1 style="color: white">Movies:</h1>
+    <%if (typeof movies === 'undefined' || !movies.length) {%>
+    <h4 style="color: white">No results were found for this section.</h4>
+    <%}%>
     <% _.each(movies, function(movie) { %>
-    <p><%= movie.trackName %></p>
-   <div class="result-item"><a href="#/movie/<%= movie.trackId %>"><img src="<%= movie.artworkUrl100 %>"></a></div>
+    <div class ="col-md-2  result-item">
+        <p><%= movie.trackName %></p>
+        <% var artworkUrl = movie.artworkUrl100.replace("100x100", "150x150"); %>
+        <div><a href="#/movie/<%= movie.trackId %>"><img src="<%= artworkUrl %>"></a></div>
+    </div>
     <% }); %>
 </div>

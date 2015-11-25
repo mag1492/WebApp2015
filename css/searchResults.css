@@ -1,6 +1,8 @@
+.alt-background {
+    background: #E74C3C;
+}
+
 .result-item {
-    display: inline-block;
-    width: 200px;
-    height: 100px;
-    margin: 1em;
+    margin: 5px 0 5px 0;
+    text-align: center;
 }
