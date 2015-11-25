@@ -39,7 +39,7 @@ define([
                     var watchlist = new WatchlistAddMovie({watchlistId:watchlistId});
                     watchlist.save(movie.attributes[0], {
                         success:function(ret){
-                            $('#myModal').modal('toggle');
+                            $('#myModal'+movieId).modal('toggle');
                             //window.location.replace('#/watchlist/'+watchlistId);
                         }
                     })

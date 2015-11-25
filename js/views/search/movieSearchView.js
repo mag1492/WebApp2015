@@ -20,12 +20,9 @@ define([
             this.movies.fetch({
                 success: function(response){
                     that.$el.html(that.template({movies: response.toJSON()}));
-                    that.watchlistButton = [];
-                    var index = 0;
                     response.toJSON().forEach(function(movie){
-                        that.watchlistButton.push(new MovieWatchlistButtonView(movie.trackId));
-                        that.$el.append(that.watchlistButton[index].render());
-                        index++;
+                        var essais = new MovieWatchlistButtonView(movie.trackId);
+                        that.$el.append(essais.render());
                     });
                 }
             });
