@@ -12,11 +12,14 @@ define([
 ], function($, _, Backbone, MovieWatchlistButtonTemplate, Watchlist, WatchlistAddMovie, Movie){
     var MovieWatchlistButtonView = Backbone.View.extend({
         template : _.template(MovieWatchlistButtonTemplate),
-        el: ".watchlist-button",
 
         initialize: function(id){
             this.watchlist = new Watchlist({});
             this.movieId = id;
+            console.log("ici?");
+            console.log(id);
+            this.$el = $(".watchlist-button" + id);
+            console.log("la?");
         },
 
         render: function(){
@@ -26,7 +29,6 @@ define([
                     var retour = {"movieId" : that.movieId, "response" : response.toJSON()};
                     that.$el.html(that.template({watchlists: retour}));
                     $('#myModal'+that.movieId).appendTo("body");
-                    $('#buttonModal'+that.movieId).appendTo("body");
                 }
             });
 
@@ -41,7 +43,7 @@ define([
                     watchlist.save(movie.attributes[0], {
                         success:function(ret){
                             $('#myModal'+movieId).modal('toggle');
-                            //window.location.replace('#/watchlist/'+watchlistId);
+                            window.location.replace('#/watchlist/'+watchlistId);
                         }
                     })
                 }
