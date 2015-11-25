@@ -6,8 +6,8 @@ define([
         initialize: function (options) {
             options || (options = {});
             this.name = options.name;
-            this.password = options.password;
             this.email = options.email;
+            this.password = options.password;
             this.url = 'https://umovie.herokuapp.com/signup';
         },
 

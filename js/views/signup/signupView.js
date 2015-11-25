@@ -18,15 +18,18 @@ define([
             'submit form': 'submit'
         },
 
-        submit: function(form){
-            var user = new User({name : $("#form-username").val(), password : $("#form-password").val(), email : $("#form-email").val()});
+        submit: function(){
+            var user = new User({name : $("#form-username").val(), email : $("#form-email").val(), password : $("#form-password").val()});
             user.save(user.attributes, {
                 type: "POST",
                 contentType: "application/x-www-form-urlencoded",
+                data: $.param(user.attributes).toString(),
                 success: function(ret){
+                    alert(ret.id);
                 }
-            })
+            });
         }
+
     });
     return SignUpView;
 });
