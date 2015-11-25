@@ -1,6 +1,3 @@
-/**
- * Created by Gabriel on 2015-11-05.
- */
 define([
     'jquery',
     'underscore',
