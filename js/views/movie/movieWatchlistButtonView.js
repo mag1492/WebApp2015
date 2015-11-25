@@ -23,9 +23,7 @@ define([
             var that = this;
             this.watchlist.fetch({
                 success: function(response){
-
                     var retour = {"movieId" : that.movieId, "response" : response.toJSON()};
-                    console.log(retour);
                     that.$el.html(that.template({watchlists: retour}));
                     $('#myModal').appendTo("body");
                 }
@@ -42,7 +40,7 @@ define([
                     watchlist.save(movie.attributes[0], {
                         success:function(ret){
                             $('#myModal').modal('toggle');
-                            window.location.replace('#/watchlist/'+watchlistId);
+                            //window.location.replace('#/watchlist/'+watchlistId);
                         }
                     })
                 }

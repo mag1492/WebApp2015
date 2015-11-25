@@ -1,8 +1,8 @@
 <div class="row">
     <div class="col-md-2">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Add to watchlist</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal<%= watchlists.movieId %>">Add to watchlist</button>
 
-        <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal fade" id="myModal<%= watchlists.movieId  %>" role="dialog">
             <div class="modal-dialog">
 
                 <!-- Modal content-->
