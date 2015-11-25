@@ -25,17 +25,16 @@ define([
             this.$el.html(this.successTemplate());
         },
 
-        submit: function(){
+        submit: function(e){
+            e.preventDefault();
+            var that = this;
             var user = new User({name : $("#form-username").val(), email : $("#form-email").val(), password : $("#form-password").val()});
             user.save(user.attributes, {
                 type: "POST",
                 contentType: "application/x-www-form-urlencoded",
                 data: $.param(user.attributes).toString(),
                 success: function(ret){
-                    $('#registration-form').submit(function () {
-                        this.renderSuccess();
-                        return false;
-                    });
+                    that.renderSuccess();
                 }
             });
         }
