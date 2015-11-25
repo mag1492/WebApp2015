@@ -2,28 +2,28 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/signup/signupTemplate.html'
-], function($, _, Backbone, SignUpTemplate){
+    'text!templates/signup/signupTemplate.html',
+    'models/User'
+], function($, _, Backbone, SignUpTemplate, User){
     var SignUpView = Backbone.View.extend({
         template : _.template(SignUpTemplate),
         el: ".content",
-
-        initialize :function(){
-
-        },
 
         render: function(){
             this.$el.html(this.template());
 
         },
-        addMovie: function(watchlistId, movieId){
-            var user = new User({trackId : movieId});
-            user.save(movie.attributes[0], {
+
+        events: {
+            'submit form': 'submit'
+        },
+
+        submit: function(form){
+            var user = new User({name : $("#form-username").val(), password : $("#form-password").val(), email : $("#form-email").val()});
+            user.save(user.attributes, {
                 type: "POST",
                 contentType: "application/x-www-form-urlencoded",
-                success:function(ret){
-                    $('#myModal').modal('toggle');
-                    window.location.replace('#/watchlist/'+watchlistId);
+                success: function(ret){
                 }
             })
         }
