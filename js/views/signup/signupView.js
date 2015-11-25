@@ -21,7 +21,7 @@ define([
             'submit form': 'submit'
         },
 
-        render: function(){
+        renderSuccess: function(){
             this.$el.html(this.successTemplate());
         },
 
@@ -32,7 +32,10 @@ define([
                 contentType: "application/x-www-form-urlencoded",
                 data: $.param(user.attributes).toString(),
                 success: function(ret){
-                    document.getElementById("search-theme-form").action = renderSuccess();
+                    $('#registration-form').submit(function () {
+                        this.renderSuccess();
+                        return false;
+                    });
                 }
             });
         }
