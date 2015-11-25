@@ -15,7 +15,7 @@ define([
         el: '.content',
 
         render: function (id) {
-            this.$el.html(this.template());
+            this.$el.html(this.template({id: id}));
             this.movieView = new MovieView(id);
             this.movieTrailerView = new MovieTrailerView(id);
             this.movieSupplementaryInfosView = new MovieSupplementaryInfosView(id);
