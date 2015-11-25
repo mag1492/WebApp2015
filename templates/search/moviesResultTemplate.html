@@ -4,11 +4,11 @@
     <h4 style="color: white">No results were found for this section.</h4>
     <%}%>
     <% _.each(movies, function(movie) { %>
-    <div class ="col-md-2  result-item">
+    <div class ="col-md-2 col-sm-3 result-item">
         <p><%= movie.trackName %></p>
         <% var artworkUrl = movie.artworkUrl100.replace("100x100", "150x150"); %>
         <div><a href="#/movie/<%= movie.trackId %>"><img src="<%= artworkUrl %>"></a></div>
-        <div class="watchlist-button<%= movie.trackId %>"></div>
+        <div class="watchlist-button<%= movie.trackId %> result-item-fit"></div>
     </div>
     <% }); %>
 </div>
