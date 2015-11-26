@@ -1,0 +1,13 @@
+<div class="col-md-12 col-sm-12 alt-background white-text">
+    <h1 style="color: white">TV Show seasons:</h1>
+    <%if (typeof tvSeasons === 'undefined' || !tvSeasons.length) {%>
+    <h4 style="color: white">No results were found for this section.</h4>
+    <%}%>
+    <% _.each(tvSeasons, function(season) { %>
+    <div class ="col-md-2 col-sm-3 result-item">
+        <p class ="controlled-length"><%= season.artistName %></p>
+        <% var artworkUrl = season.artworkUrl100.replace("100x100", "150x150"); %>
+        <div><a href="#/tvshow/<%= season.collectionId %>"><img src="<%= artworkUrl %>"></a></div>
+    </div>
+    <% }); %>
+</div>

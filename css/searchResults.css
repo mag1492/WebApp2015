@@ -1,0 +1,20 @@
+.alt-background {
+    background: #E74C3C;
+}
+
+.result-item {
+    margin: 5px 0 5px 0;
+    text-align: center;
+}
+
+.result-item-fit {
+    display: table;
+    margin: 2px auto 2px;
+}
+
+.controlled-length {
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+

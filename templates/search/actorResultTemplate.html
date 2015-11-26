@@ -1,0 +1,12 @@
+<div class="col-md-12 col-sm-12">
+    <h1>Actors:</h1>
+    <%if (typeof actors === 'undefined' || !actors.length) {%>
+    <h4>No results were found for this section.</h4>
+    <%}%>
+    <% _.each(actors, function(actor) { %>
+    <div class ="col-md-2 col-sm-3 result-item">
+        <p class ="controlled-length"><%= actor.artistName %></p>
+        <div><a href="#/actor/<%= actor.artistId %>"><img src="Images\logoOpaque150.gif"></a></div>
+    </div>
+    <% }); %>
+</div>

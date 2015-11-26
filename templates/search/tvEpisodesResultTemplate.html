@@ -1,0 +1,13 @@
+<div class="col-md-12 col-sm-12">
+    <h1>TV Show episodes:</h1>
+    <%if (typeof tvEpisodes === 'undefined' || !tvEpisodes.length) {%>
+    <h4>No results were found for this section.</h4>
+    <%}%>
+    <% _.each(tvEpisodes, function(episode) { %>
+    <div class ="col-md-2 col-sm-3 result-item">
+        <p class ="controlled-length"><%= episode.artistName %></p>
+        <% var artworkUrl = episode.artworkUrl100.replace("100x100", "150x150"); %>
+        <div><a href="#/tvshow/<%= episode.collectionId %>"><img src="<%= artworkUrl %>"></a></div>
+    </div>
+    <% }); %>
+</div>

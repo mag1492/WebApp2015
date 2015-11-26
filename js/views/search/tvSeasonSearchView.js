@@ -18,7 +18,7 @@ define([
             var that = this;
             this.tvSeasons.fetch({
                 success: function(response){
-                    that.$el.html(that.template({tvSeason: response.toJSON()}));
+                    that.$el.html(that.template({tvSeasons: response.toJSON()}));
                 }
             });
         }

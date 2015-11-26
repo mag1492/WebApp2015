@@ -3,8 +3,9 @@ define([
     'underscore',
     'backbone',
     'text!templates/search/moviesResultTemplate.html',
-    '../../collections/searchResult/moviesResult'
-], function($, _, Backbone, MoviesResultTemplate, MovieResult){
+    '../../collections/searchResult/moviesResult',
+    'views/movie/movieWatchlistButtonView'
+], function($, _, Backbone, MoviesResultTemplate, MovieResult, MovieWatchlistButtonView){
     var MovieSearchView = Backbone.View.extend({
         template : _.template(MoviesResultTemplate),
         el: ".movie-result",
@@ -19,6 +20,10 @@ define([
             this.movies.fetch({
                 success: function(response){
                     that.$el.html(that.template({movies: response.toJSON()}));
+                    response.toJSON().forEach(function(movie){
+                        var view = new MovieWatchlistButtonView(movie.trackId);
+                        that.$el.append(view.render());
+                    });
                 }
             });
         }

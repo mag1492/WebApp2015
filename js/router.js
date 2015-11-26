@@ -62,7 +62,7 @@ define([
         });
         router.on('route:addMovieToWatchlist', function (watchlistId, movieId) {
             require(['views/movie/movieWatchListButtonView'], function (MovieWatchlistButtonView) {
-                var movieWatchlistButtonView = Vm.create(appView, 'MovieWatchlistButtonView', MovieWatchlistButtonView, {id: movieId});
+                var movieWatchlistButtonView = Vm.create(appView, 'MovieWatchlistButtonView', MovieWatchlistButtonView, movieId);
                 movieWatchlistButtonView.addMovie(watchlistId, movieId);
             });
         });
