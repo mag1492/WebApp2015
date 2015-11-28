@@ -7,15 +7,18 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h2 class="modal-title" id="modalSeasonName"><%= episode.collectionName %></h2>
                 <h4 class="modal-title" id="modalEpisodeName">
-                    <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>  <%= episode.trackName %>
+                   <%= episode.trackName %>
                 </h4>
-                <h5>Duration : ></h5>
+                <h5 class="modal-title">
+                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Duration : <%= episode.trackTimeMillis%>
+                </h5>
                 <br>
                 <button class="btn-links episodePreviewButton" onclick="document.location.href='http://www.google.com'" >Watch Preview</button>
             </div>
             <div class="modal-body">
-                <div class="episodeDescription">
-                    <p class="paragraphs"><%= episode.longDescription %></p>
+                <div class="episodeDescription row">
+                    <p class="paragraphs col-md-8 col-sm-9 col-xs-12"><%= episode.longDescription %></p>
+                    <div id="cover" class="col-md-4 col-sm-3 col-xs-12"></div>
                 </div>
            </div>
             <div class="modal-footer">
