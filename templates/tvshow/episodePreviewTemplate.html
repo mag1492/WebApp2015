@@ -3,22 +3,30 @@
 <div class="modal fade" id="myModal<%= episode.trackNumber %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header col-md-12">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h2 class="modal-title" id="modalSeasonName"><%= episode.collectionName %></h2>
-                <h4 class="modal-title" id="modalEpisodeName">
-                   <%= episode.trackName %>
-                </h4>
-                <h5 class="modal-title">
-                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Duration : <%= episode.trackTimeMillis%>
-                </h5>
-                <br>
-                <button class="btn-links episodePreviewButton" onclick="document.location.href='http://www.google.com'" >Watch Preview</button>
-            </div>
+                <div class="containerHead">
+                    <div class="col-md-8 modalInfoEpisode">
+                        <h2 class="modal-title" id="modalSeasonName"><%= episode.collectionName %></h2>
+                        <h4 class="modal-title" id="modalEpisodeName">
+                            <%= episode.trackName %>
+                        </h4>
+                        <h5 class="modal-title">
+                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Duration : <%= episode.trackTimeMillis%>
+                        </h5>
+                        <br>
+                        <button class="btn-links episodePreviewButton" onclick="document.location.href='http://www.google.com'" >Watch Preview</button>
+                    </div>
+                    <div class="col-md-4 modalPreviewArtwork">
+                        <div id="coverEpisode" class="col-md-12"></div>
+                    </div>
+                </div>
+
+                </div>
             <div class="modal-body">
                 <div class="episodeDescription row">
-                    <p class="paragraphs col-md-8 col-sm-9 col-xs-12"><%= episode.longDescription %></p>
-                    <div id="cover" class="col-md-4 col-sm-3 col-xs-12"></div>
+                    <h2 style="margin-top: 0px"> Summary </h2>
+                    <p class="paragraphs"><%= episode.longDescription %></p>
                 </div>
            </div>
             <div class="modal-footer">

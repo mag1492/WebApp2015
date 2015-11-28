@@ -22,8 +22,8 @@ define([
                     that.$el.html(that.template({episodes: response.toJSON()}));
 
                     this.episodesList.forEach(function(episode){
-                        var url = episode.artworkUrl100.replace("100x100", "200x200");
-                        $("#myModal" + episode.trackNumber).find("#cover").css("background", "url("+ url +") no-repeat");
+                        var url = episode.artworkUrl100.replace("100x100", "120x120");
+                        $("#myModal" + episode.trackNumber).find("#coverEpisode").css("background", "url("+ url +") center center no-repeat");
 
                         var searchSeasonAndEpisodeNumber = "episode " + episode.trackNumber + " " +
                                                            episode.collectionName;
