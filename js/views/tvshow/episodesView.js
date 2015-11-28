@@ -14,7 +14,6 @@ define([
         },
 
         render: function(){
-            console.log("rendering Episodes View");
             var that = this;
             this.episodes.fetch({
                 success: function(response){

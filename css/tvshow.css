@@ -36,3 +36,15 @@
 .modal-title{
     color:white;
 }
+
+.episodePreviewButton{
+    border-color: white;
+}
+
+.episodePreviewButton:hover{
+    border-color: white;
+}
+
+.episodePreviewButton{
+    color: white;
+}
