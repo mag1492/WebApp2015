@@ -41,6 +41,7 @@
 }
 
 .watchlist-name{
+    color: white;
     padding: 4px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -204,7 +205,7 @@
 }
 
 .default-background{
-    background: url(../Images/logoOpaque.gif) no-repeat center center;
+    background: url(../images/logoOpaque.gif) no-repeat center center;
 }
 
 
