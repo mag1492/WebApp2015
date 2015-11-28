@@ -23,3 +23,16 @@
     height:300px;
     text-align:center;
 }
+
+.episodeName:hover{
+    color: #E74C3C;
+    cursor: pointer;
+}
+
+.modal-header{
+    background-color: #E74C3C;
+}
+
+.modal-title{
+    color:white;
+}
