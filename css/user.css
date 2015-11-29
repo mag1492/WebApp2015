@@ -1,0 +1,65 @@
+.avatar-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0px 0px -100px;
+}
+
+.avatar-img-follower{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0px 0px -50px;
+}
+
+.btn-follow{
+    background-color: #E74C3C;
+    color:white;
+}
+
+.btn-follow:hover{
+    background-color: #2B2B2B;
+    color:white;
+    cursor: pointer;
+}
+
+.banner{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #E74C3C;
+    position: relative;
+}
+
+.banner-follower{
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #E74C3C;
+    position: relative;
+}
+
+.wrapper{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.container-follower{
+    max-height: 100%;
+    max-width: 100%;
+}
+
