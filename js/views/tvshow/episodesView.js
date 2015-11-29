@@ -35,7 +35,7 @@ define([
             var episodeResult = [];
             if(searchTerms.trim() != "") {
                 this.episodes.forEach(function (episode) {
-                    if (episode.trackName.toUpperCase().indexOf(searchTerms.toUpperCase()) > -1) {
+                    if (episode.trackName.toUpperCase().trim().indexOf(searchTerms.toUpperCase().trim()) > -1) {
                         episodeResult.push(episode);
                     }
                 });
