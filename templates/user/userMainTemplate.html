@@ -3,11 +3,12 @@
         <div class="col-md-4 trailer-background">
             <div class="row">
                 <div class="media-title col-md-12">
-                    <h1 class="black-text"><%= user.name %></h1>
+                    <h1 class="black-text"><%= user.user.name %></h1>
+
                     <div class="avatar-img">
-                        <img id="avatar" src=".../../images/logoOpaque150.gif" />
+                        <img id="avatar" src='<%= user.avatar%>' />
                     </div>
-                    <div class="span black-text"><%= user.email %></div>
+                    <div class="span black-text"><%= user.user.email %></div>
                     <!-- <p>
                         <button class="btn-links" >Similar series</button>
                     </p> -->

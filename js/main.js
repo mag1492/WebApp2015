@@ -11,6 +11,7 @@ require.config({
         backbone: 'libs/backbone/backbone-min', // https://github.com/amdjs
         bootstrap: 'libs/bootstrap/bootstrap',
         owl: 'libs/owl-carousel/owl.carousel',
+        md5: 'libs/md5/jquery.md5',
 
         // Require.js plugins
         text: 'libs/require/text',
