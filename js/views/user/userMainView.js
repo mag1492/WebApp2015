@@ -16,7 +16,6 @@ define([
 
         getGravatar: function(email) {
             var emailHash = $.md5(email);
-            console.log(emailHash);
             var gravatarUrl = "http://www.gravatar.com/avatar/"+emailHash+"?s=200&d=http%3A%2F%2Fs18.postimg.org%2F5co1s5md5%2Flogo_Opaque.gif"
             return gravatarUrl;
         },
@@ -30,7 +29,7 @@ define([
                     that.$el.html(that.template({user: user}));
 
                     var avatar = that.getGravatar(user.email);
-                    $("#avatar-img").css("background", "url("+ avatar+") no-repeat");
+                    $("#avatar-img").css("background", "url("+ avatar+") center center no-repeat");
 
                     var view = new UserWatchlistView(user.id);
                     that.$el.append(view.render());
