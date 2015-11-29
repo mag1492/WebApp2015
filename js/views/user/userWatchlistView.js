@@ -25,7 +25,8 @@ define([
                         if (allWatchlist.hasOwnProperty(key)) {
                             var owner = allWatchlist[key].owner;
                             if(owner != undefined){
-                                if(owner.if == that.userId){
+                                if(owner.id == that.userId){
+                                    console.log('pushd');
                                     watchlists.push(allWatchlist[key]);
                                 }
                             }
