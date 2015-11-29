@@ -8,7 +8,7 @@ define([
 ], function($, _, Backbone, episodePreviewTemplate, Episodes, YoutubeEpisode){
     var TrailerEpisodeView = Backbone.View.extend({
         template : _.template(episodePreviewTemplate),
-        el : ".modalStuff",
+        el : ".modalEpisode",
 
         initialize: function(id){
             this.episodes = new Episodes({"seasonId" : id});
@@ -23,7 +23,7 @@ define([
 
                     this.episodesList.forEach(function(episode){
                         var url = episode.artworkUrl100.replace("100x100", "120x120");
-                        $("#myModal" + episode.trackNumber).find("#coverEpisode").css("background", "url("+ url +") center center no-repeat");
+                        $("#myModal" + episode.trackNumber).find("#cover-episode").css("background", "url("+ url +") center center no-repeat");
 
                         var searchSeasonAndEpisodeNumber = "episode " + episode.trackNumber + " " +
                                                            episode.collectionName;
@@ -35,7 +35,7 @@ define([
                             success: function(response){
                                 var youtubeLink = response.toJSON();
                                 that.link = "http://www.youtube.com/watch_popup?v=" + youtubeLink.items[0].id.videoId;
-                                $('#myModal'+episode.trackNumber).find(".episodePreviewButton").attr("onclick", "document.location.href='" + that.link + "'");
+                                $('#myModal'+episode.trackNumber).find(".episode-preview-button").attr("onclick", "document.location.href='" + that.link + "'");
                             }
                         });
                     })

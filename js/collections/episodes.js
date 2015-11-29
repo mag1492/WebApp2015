@@ -14,7 +14,6 @@ define([
         },
 
         parse: function(response){
-            console.log("parsing episode");
             response.results.forEach(function (episode){
                 var timeMilli = episode.trackTimeMillis,
                     min = (timeMilli/1000/60) << 0,

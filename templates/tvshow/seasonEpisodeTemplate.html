@@ -28,14 +28,12 @@
                         <% _.each(episodes, function(episode) { %>
                         <div>
                             <div id="<%= episode.trackNumber%>">
-                                <h4  class="episodeName" data-toggle="modal" data-target="#myModal<%= episode.trackNumber %>"><%= episode.trackNumber %>. <%=episode.trackName %></h4>
+                                <h4  class="episode-name" data-toggle="modal" data-target="#myModal<%= episode.trackNumber %>"><%= episode.trackNumber %>. <%=episode.trackName %></h4>
                             </div>
                         </div>
                         <% }); %>
                     </div>
                 </div>
-
-
                 <!-- Panel Choice 3-->
                 <!--<div id="review" class="tab-pane fade">
                     <!-- Section summary content -->
@@ -44,7 +42,6 @@
                     <h5 class="bold">GREAT TITLE.</h5>
                     <h6>By Somebody</h6>
                     <p class="paragraphs">
-
                     </p>
                 </div>
             </div> -->
