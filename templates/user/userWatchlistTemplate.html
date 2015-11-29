@@ -1,5 +1,5 @@
 <header>
-    <h3 class="info-title">Watchlists</h3>
+    <h3 class="info-title"><%= watchlists[0] ? 'Watchlists' : '' %></h3>
 </header>
 <div class="followers">
     <% _.each(watchlists, function(watchlist) { %>

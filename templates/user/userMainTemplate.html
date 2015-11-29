@@ -3,9 +3,9 @@
         <div class="col-md-4 trailer-background">
             <div class="row">
                 <div class="media-title col-md-12">
-                    <div id="wrapper">
+                    <div class="wrapper">
                         <div class="banner" >
-                            <div id="avatar-img"></div>
+                            <div class="avatar-img"></div>
                         </div>
                         <br>
                         <div class="row user-info">
@@ -21,13 +21,20 @@
     <div id="trailer" class="col-md-8 col-md-offset-4">
         <div class="row">
         <header>
-            <h3 class="info-title">Following</h3>
+            <h3 class="info-title"><%= user.following[0] ? 'Following' : '' %></h3>
         </header>
         <div class="followers">
-            <% _.each(user.following, function(followers) { %>
-            <div class ="col-md-2 col-sm-3 result-item">
-                <p class ="controlled-length"><%= followers.name %></p>
-                <div><a href="#/user/<%= followers.id %>"><img src="Images\logoOpaque150.gif"></a></div>
+            <% _.each(user.following, function(follower) { %>
+            <div id="follower<%= follower.id %>"class ="col-md-2 col-sm-3 container-follower">
+                <div class="wrapper">
+                    <a class="banner-follower" href="#/user/<%= follower.id %>" >
+                        <div class="avatar-img-follower"></div>
+                    </a>
+                    <br>
+                    <div class="row follower-info">
+                        <h5 class="black-text"><%= follower.name %></h5>
+                    </div>
+                </div>
             </div>
             <% }); %>
         </div>
