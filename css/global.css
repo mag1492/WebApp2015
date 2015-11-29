@@ -94,3 +94,9 @@ h5{
 h6{
     font-family: 'Raleway', sans-serif;
 }
+
+.controlled-length {
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}

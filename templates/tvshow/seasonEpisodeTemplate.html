@@ -27,7 +27,9 @@
                         <h3 class="info-title">Episodes</h3>
                         <% _.each(episodes, function(episode) { %>
                         <div>
-                            <div id="<%= episode.trackNumber%>"><h4><%= episode.trackNumber %>. <%=episode.trackName %></h4></div>
+                            <div id="<%= episode.trackNumber%>">
+                                <h4  class="episode-name" data-toggle="modal" data-target="#myModal<%= episode.trackNumber %>"><%= episode.trackNumber %>. <%=episode.trackName %></h4>
+                            </div>
                         </div>
                         <% }); %>
                     </div>
@@ -40,7 +42,6 @@
                     <h5 class="bold">GREAT TITLE.</h5>
                     <h6>By Somebody</h6>
                     <p class="paragraphs">
-
                     </p>
                 </div>
             </div> -->

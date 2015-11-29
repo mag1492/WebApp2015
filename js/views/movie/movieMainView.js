@@ -21,7 +21,6 @@ define([
             this.movieSupplementaryInfosView = new MovieSupplementaryInfosView(id);
             this.movieWatchlistButtonView = new MovieWatchlistButtonView(id);
 
-
             this.$el.append(this.movieView.render());
             this.$el.append(this.movieTrailerView.render());
             this.$el.append(this.movieSupplementaryInfosView.render());
