@@ -1,0 +1,9 @@
+.avatar-img{
+    border: solid;
+    border-color: #2B2B2B;
+}
+
+#avatar{
+    display: block;
+    margin: 0 auto;
+}
