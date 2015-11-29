@@ -9,6 +9,11 @@ define([
         render: function () {
             var that = this;
             $(this.el).html(menuTemplate);
+            if($.cookie('token') == undefined){
+                $('#watchlist-link').remove();
+                $('#srch-term').remove();
+                $('.input-group-btn').remove();
+            }
         }
     });
     return AppView;

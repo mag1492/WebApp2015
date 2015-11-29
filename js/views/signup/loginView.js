@@ -28,6 +28,7 @@ define([
                 contentType: "application/x-www-form-urlencoded",
                 data: $.param(user.attributes).toString(),
                 success: function(ret){
+                    goToHome();
                 }
             });
         }
