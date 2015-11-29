@@ -4,14 +4,14 @@
             <div class="row">
                 <div class="media-title col-md-12">
                     <h1 class="black-text"><%= user.name %></h1>
+                    <div>
+                        <img src="/images/logoOpaque150.gif" />
+                    </div>
                     <div class="span black-text"><%= user.email %></div>
                     <!-- <p>
                         <button class="btn-links" >Similar series</button>
                     </p> -->
                         <button type="button" class="btn btn-info">Follow</button>
-
-
-
                 </div>
             </div>
         </div>
@@ -28,7 +28,6 @@
                 <div><a href="#/user/<%= followers.id %>"><img src="Images\logoOpaque150.gif"></a></div>
             </div>
             <% }); %>
-
         </div>
         </div>
         <div class="row">
