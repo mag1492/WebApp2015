@@ -4,12 +4,14 @@ define([
     'backbone',
     'md5',
     'models/user',
+    'models/follow',
     'views/user/userWatchlistView',
     'text!templates/user/userMainTemplate.html',
-], function($, _, Backbone, md5, User, UserWatchlistView, UserMainTemplate){
+], function($, _, Backbone, md5, User, Follow, UserWatchlistView, UserMainTemplate){
     var UserMainView = Backbone.View.extend({
         initialize: function(id){
             this.user = new User(id);
+            this.following = new Follow();
         },
         template : _.template(UserMainTemplate),
         el: '.content',
@@ -41,6 +43,22 @@ define([
 
                     var view = new UserWatchlistView(user.id);
                     that.$el.append(view.render());
+                }
+            });
+        },
+        addFollower: function(){
+            var that = this;
+            console.log(this.following);
+            var follow = {id :this.user.id };
+
+            this.following.save(follow,{
+                type: "POST",
+                contentType: "application/json",
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
+                success: function(response){
+                    document.location.replace("index.html");
                 }
             });
         }
