@@ -23,10 +23,11 @@ define([
                     var url = that.episodes[0].artworkUrl100.replace("100x100", "200x200");
                     $("#cover").css("background", "url("+ url +") no-repeat");
                     that.searchEpisode("");
-                    $('#search-episode').keypress(function() {
-                        var dInput = this.value;
-                        that.searchEpisode(dInput);
-                    });
+                    $('#search-episode').keypress(function(e) {
+                        if(e.which == 13) {
+                            var dInput = this.value;
+                            that.searchEpisode(dInput);
+                        }});
                 }
             });
         },
@@ -35,6 +36,8 @@ define([
             var episodeResult = [];
             if(searchTerms.trim() != "") {
                 this.episodes.forEach(function (episode) {
+                    console.log(episode.trackName.trim().toUpperCase());
+                    console.log(searchTerms.trim().toUpperCase());
                     if (episode.trackName.toUpperCase().trim().indexOf(searchTerms.toUpperCase().trim()) > -1) {
                         episodeResult.push(episode);
                     }
