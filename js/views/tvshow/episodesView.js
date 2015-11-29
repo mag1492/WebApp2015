@@ -33,12 +33,15 @@ define([
         searchEpisode:function(searchTerms){
             var view = new EpisodeListView();
             var episodeResult = [];
-            if(searchTerms.trims != "") {
+            if(searchTerms.trim() != "") {
                 this.episodes.forEach(function (episode) {
                     if (episode.trackName.toUpperCase().indexOf(searchTerms.toUpperCase()) > -1) {
                         episodeResult.push(episode);
                     }
                 });
+            }
+            else{
+                episodeResult = this.episodes;
             }
             this.$el.append(view.render(episodeResult));
 
