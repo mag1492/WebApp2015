@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'text!templates/signup/signupTemplate.html',
-    'models/User',
+    '../../models/userSignup',
     'text!templates/signup/signupSuccessTemplate.html'
 ], function($, _, Backbone, SignUpTemplate, User, SignUpSuccessTemplate){
     var SignUpView = Backbone.View.extend({
