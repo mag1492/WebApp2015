@@ -79,3 +79,14 @@
         display: none;
     }
 }
+.episode-list{
+    height:100%;
+    overflow-y:unset;
+}
+@media (min-width: 992px) {
+    .episode-list{
+        height:400px;
+        overflow-y:scroll;
+    }
+
+}
