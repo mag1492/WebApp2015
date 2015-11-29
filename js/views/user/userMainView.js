@@ -16,7 +16,7 @@ define([
 
         getGravatar: function(email) {
             var emailHash = $.md5(email);
-            var gravatarUrl = "http://www.gravatar.com/avatar/"+emailHash+"?s=200&d=http%3A%2F%2Fs18.postimg.org%2F5co1s5md5%2Flogo_Opaque.gif"
+            var gravatarUrl = "http://www.gravatar.com/avatar/"+emailHash+"?s=200&d=http%3A%2F%2Fs21.postimg.org%2F68t2nogqv%2Flogo_Whitebg.jpg"
             return gravatarUrl;
         },
 
