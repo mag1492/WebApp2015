@@ -1,17 +1,12 @@
 <div id="info" class="col-md-8 col-md-offset-4">
     <div id="info-background" class="tab-background media-tab-padding">
         <div id="media-info">
-            <!-- Navigation -->
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#summary">Summary</a></li>
                 <li><a data-toggle="tab" href="#episode-list">Episode List</a></li>
-                <!--<li><a data-toggle="tab" href="#review">Review</a></li>-->
             </ul>
-            <!-- Panel Choices -->
             <div class="tab-content">
-                <!-- Panel Choice 1 -->
                 <div id="summary" class="tab-pane fade in active">
-                    <!-- Section summary content -->
                     <div class="summary">
                         <h3 class="info-title"><%= episodes[0].collectionName%></h3>
                         <div class="row">
@@ -20,7 +15,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Panel Choice 2-->
                 <div id="episode-list" class="tab-pane fade">
                     <input type="text" class="form-control top-buffer" id="search-episode" placeholder="Search for an episode...">
                     <div id="episode-search-list"></div>
