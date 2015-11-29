@@ -23,3 +23,8 @@
     height:300px;
     text-align:center;
 }
+
+.episode-list{
+    height:400px;
+    overflow-y:scroll;
+}
