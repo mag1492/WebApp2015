@@ -11,7 +11,11 @@
                         <div class="row user-info">
                             <h1 class="black-text"><%= user.name %></h1>
                             <h4 class="black-text"><%= user.email %></h4>
+                            <% if(isFollowing == false){ %>
                             <button type="button" onclick="document.location.href='#/follow/<%= user.id %>';" class="btn btn-follow">Follow</button>
+                            <% }else{ %>
+                            <button type="button" onclick="document.location.href='#/unfollow/<%= user.id %>';" class="btn btn-follow">Unfollow</button>
+                            <% } %>
                         </div>
                     </div>
               </div>
