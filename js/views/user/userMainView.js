@@ -17,9 +17,7 @@ define([
             var that = this;
             this.user.fetch({
                 success: function(response){
-                    console.log();
                     var user = response.toJSON();
-                    user.following.push(user);
                     that.$el.html(that.template({user: user}));
                     var view = new UserWatchlistView(user.id);
                     that.$el.append(view.render());
