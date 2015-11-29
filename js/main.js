@@ -32,5 +32,8 @@ require([
     var appView = Vm.create({}, 'AppView', AppView);
     appView.render();
     Router.initialize({appView: appView});
+    if($.cookie('token') == undefined){
+        document.location.href="#/login";
+    }
 });
 
