@@ -6,7 +6,7 @@ define([
         initialize: function (options) {
             options || (options = {});
 
-                this.url = 'https://umovie.herokuapp.com/unsecure/watchlists/' + options.watchlistId + '/movies/';
+                this.url = 'https://umovie.herokuapp.com/watchlists/' + options.watchlistId + '/movies/';
 
         }
     });

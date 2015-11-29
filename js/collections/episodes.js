@@ -9,7 +9,7 @@ define([
             options || (options= {});
             if(options.seasonId){
                 this.seasonId = options.seasonId;
-                this.url = 'https://umovie.herokuapp.com/unsecure/tvshows/season/'+ options.seasonId +'/episodes';
+                this.url = 'https://umovie.herokuapp.com/tvshows/season/'+ options.seasonId +'/episodes';
             }
         },
 

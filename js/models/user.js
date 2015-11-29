@@ -5,7 +5,7 @@ define([
     var User = Backbone.Model.extend({
         initialize: function(options){
                 this.id = options.id;
-                this.url = 'https://umovie.herokuapp.com/unsecure/users/'+ options.id;
+                this.url = 'https://umovie.herokuapp.com/users/'+ options.id;
 
         }
     });

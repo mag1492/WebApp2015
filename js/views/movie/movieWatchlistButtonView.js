@@ -19,6 +19,9 @@ define([
         render: function(){
             var that = this;
             this.watchlist.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     var retour = {"movieId" : that.movieId, "response" : response.toJSON()};
                     that.$el.html(that.template({watchlists: retour}));
@@ -27,14 +30,20 @@ define([
             });
 
         },
+
         addMovie: function(watchlistId, movieId){
             var movie = new Movie({trackId : movieId});
 
             movie.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success:function(response){
-
                     var watchlist = new WatchlistAddMovie({watchlistId:watchlistId});
                     watchlist.save(movie.attributes[0], {
+                        beforeSend: function(xhr) {
+                            xhr.setRequestHeader('Authorization', $.cookie('token'));
+                        },
                         success:function(ret){
                             $('#myModal'+movieId).modal('toggle');
                             window.location.replace('#/watchlist/'+watchlistId);
@@ -42,9 +51,8 @@ define([
                     })
                 }
             });
-
-
         }
+
     });
     return MovieWatchlistButtonView;
 });

@@ -1,14 +1,14 @@
 define([
     'jquery',
     'underscore',
-    'backbone',
+    'backbone'
 ], function($, _, Backbone){
     var Movies = Backbone.Collection.extend({
         initialize: function(options){
             options || (options= {});
             if(options.actorId){
                 this.actorId = options.actorId;
-                this.url = 'https://umovie.herokuapp.com/unsecure/actors/'+ options.actorId +'/movies';
+                this.url = 'https://umovie.herokuapp.com/actors/'+ options.actorId +'/movies';
             }
         },
 

@@ -17,6 +17,9 @@ define([
         render: function () {
             var that = this;
             this.movies.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(ret) {
                     that.movies = ret.toJSON();
                     var trailers = [];

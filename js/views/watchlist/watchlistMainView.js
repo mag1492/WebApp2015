@@ -17,6 +17,9 @@ define([
         render: function(){
             var that = this;
             this.watchlists.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     that.$el.html(that.template({watchlists: response.toJSON()}));
                 }

@@ -7,7 +7,7 @@ require.config({
     paths: {
         // Major libraries
         jquery: 'libs/jquery/jquery-min',
-        jquerycookie : 'libs/jquery/jquery.cookie',
+        cookie : 'libs/jquery/jquery.cookie',
         underscore: 'libs/underscore/underscore-min', // https://github.com/amdjs
         backbone: 'libs/backbone/backbone-min', // https://github.com/amdjs
         bootstrap: 'libs/bootstrap/bootstrap',
@@ -26,7 +26,8 @@ require([
     'router',
     'vm',
     'bootstrap',
-    'owl'
+    'owl',
+    'cookie'
 ], function(AppView, Router, Vm){
     var appView = Vm.create({}, 'AppView', AppView);
     appView.render();

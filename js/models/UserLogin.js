@@ -1,7 +1,7 @@
 define([
     'underscore',
     'backbone',
-    'jquerycookie'
+    'cookie'
 ], function(_, Backbone) {
     var User = Backbone.Model.extend({
         initialize: function (options) {

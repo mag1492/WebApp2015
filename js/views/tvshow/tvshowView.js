@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'text!templates/tvshow/seasonInfoTemplate.html',
-    'models/season'
+    'models/season',
 ], function($, _, Backbone, SeasonInfoTemplate, Season){
     var TvShowView = Backbone.View.extend({
         template : _.template(SeasonInfoTemplate),
@@ -16,6 +16,9 @@ define([
         render: function(){
             var that = this;
             this.tvshow.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                      that.$el.html(that.template({season: response.toJSON()}));
                 }

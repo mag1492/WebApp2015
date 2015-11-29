@@ -16,6 +16,9 @@ define([
         render: function(){
             var that = this;
             this.movie.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     that.$el.html(that.template({movie: response.toJSON()}));
                     var url = response.toJSON()[0].artworkUrl100.replace("100x100", "200x300");
