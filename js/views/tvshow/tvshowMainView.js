@@ -5,8 +5,9 @@ define([
     'text!templates/tvshow/tvShowMainTemplate.html',
     'views/tvshow/trailerEpisodeView',
     'views/tvshow/tvshowView',
-    'views/tvshow/episodesView'
-], function($, _, Backbone, TvShowMainTemplate, TrailerEpisodeView, TvShowView, EpisodesView){
+    'views/tvshow/episodesView',
+    'views/tvshow/episodesPreviewView'
+], function($, _, Backbone, TvShowMainTemplate, TrailerEpisodeView, TvShowView, EpisodesView, EpisodePreviewView){
     var TvshowMainView = Backbone.View.extend({
 
         template : _.template(TvShowMainTemplate),
@@ -17,10 +18,12 @@ define([
             this.trailerEpisodeView = new TrailerEpisodeView(id);
             this.tvShowView = new TvShowView(id);
             this.episodesView = new EpisodesView(id);
+            this.episodePreviewView = new EpisodePreviewView(id);
 
             this.$el.append(this.trailerEpisodeView.render());
             this.$el.append(this.tvShowView.render());
             this.$el.append(this.episodesView.render());
+            this.$el.append(this.episodePreviewView.render());
         }
     });
 
