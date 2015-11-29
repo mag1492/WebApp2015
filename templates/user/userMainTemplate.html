@@ -1,0 +1,38 @@
+<div class="media-theme" id="main">
+    <div class="user-primary-info">
+        <div class="col-md-4 trailer-background">
+            <div class="row">
+                <div class="media-title col-md-12">
+                    <h1 class="black-text"><%= user.name %></h1>
+                    <div class="span black-text"><%= user.email %></div>
+                    <!-- <p>
+                        <button class="btn-links" >Similar series</button>
+                    </p> -->
+                        <button type="button" class="btn btn-info">Follow</button>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="trailer" class="col-md-8 col-md-offset-4">
+        <div class="row">
+        <header>
+            <h3 class="info-title">Following</h3>
+        </header>
+        <div class="followers">
+            <% _.each(user.following, function(followers) { %>
+            <div class ="col-md-2 col-sm-3 result-item">
+                <p class ="controlled-length"><%= followers.name %></p>
+                <div><a href="#/user/<%= followers.id %>"><img src="Images\logoOpaque150.gif"></a></div>
+            </div>
+            <% }); %>
+
+        </div>
+        </div>
+        <div class="row">
+            <div class="user-watchlist"></div>
+        </div>
+    </div>
+</div>

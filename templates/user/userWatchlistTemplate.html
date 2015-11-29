@@ -1,0 +1,18 @@
+<header>
+    <h3 class="info-title">Watchlists</h3>
+</header>
+<div class="followers">
+    <% _.each(watchlists, function(watchlist) { %>
+    <div class="col-xs-6 col-sm-3 col-lg-2 watchlist-item">
+        <div class=" watchlist-thumbnail" id="watchlist-thumbnail">
+            <a href="#/watchlist/<%=watchlist.id%>">
+                <img class="img-responsive image-center" src="images/logoOpaque150.gif" class="watchlist-cover">
+            </a>
+        </div>
+        <div class="watchlist-name-container">
+            <h4 class="watchlist-name controlled-length"><%= watchlist.name %></h4>
+        </div>
+    </div>
+    <% }); %>
+
+</div>
