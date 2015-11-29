@@ -1,0 +1,12 @@
+<div class="col-md-12 col-sm-12">
+    <h1>User :</h1>
+    <%if (typeof users === 'undefined' || !users.length) {%>
+    <h4>No results were found for this section.</h4>
+    <%}%>
+    <% _.each(users, function(user) { %>
+    <div class ="col-md-2 col-sm-3 result-item">
+        <p class ="controlled-length"><%= user.name %></p>
+        <div><a href=""><img src="Images\logoOpaque150.gif"></a></div>
+    </div>
+    <% }); %>
+</div>
