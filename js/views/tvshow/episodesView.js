@@ -36,8 +36,6 @@ define([
             var episodeResult = [];
             if(searchTerms.trim() != "") {
                 this.episodes.forEach(function (episode) {
-                    console.log(episode.trackName.trim().toUpperCase());
-                    console.log(searchTerms.trim().toUpperCase());
                     if (episode.trackName.toUpperCase().trim().indexOf(searchTerms.toUpperCase().trim()) > -1) {
                         episodeResult.push(episode);
                     }
