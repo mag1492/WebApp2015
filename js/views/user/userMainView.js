@@ -27,10 +27,11 @@ define([
                 success: function(response){
                     var user = response.toJSON();
                     user.following.push(user);
+                    that.$el.html(that.template({user: user}));
 
                     var avatar = that.getGravatar(user.email);
-                    var retour = ({avatar: avatar, user: user})
-                    that.$el.html(that.template({user: retour}));
+                    $("#avatar-img").css("background", "url("+ avatar+") no-repeat");
+
                     var view = new UserWatchlistView(user.id);
                     that.$el.append(view.render());
                 }

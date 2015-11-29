@@ -1,9 +1,13 @@
-.avatar-img{
-    border: solid;
-    border-color: #2B2B2B;
+#avatar-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
-#avatar{
-    display: block;
-    margin: 0 auto;
+.btn-follow{
+    color: #E74C3C;
+    
 }

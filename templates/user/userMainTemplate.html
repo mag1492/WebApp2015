@@ -3,16 +3,10 @@
         <div class="col-md-4 trailer-background">
             <div class="row">
                 <div class="media-title col-md-12">
-                    <h1 class="black-text"><%= user.user.name %></h1>
-
-                    <div class="avatar-img">
-                        <img id="avatar" src='<%= user.avatar%>' />
-                    </div>
-                    <div class="span black-text"><%= user.user.email %></div>
-                    <!-- <p>
-                        <button class="btn-links" >Similar series</button>
-                    </p> -->
-                        <button type="button" class="btn btn-info">Follow</button>
+                    <h1 class="black-text"><%= user.name %></h1>
+                    <div class="span black-text"><%= user.email %></div>
+                    <div id="avatar-img"></div>
+                    <button type="button" class="btn btn-follow">Follow</button>
                 </div>
             </div>
         </div>
