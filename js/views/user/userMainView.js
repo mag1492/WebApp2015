@@ -41,11 +41,13 @@ define([
                         success: function(response){
                             var loggedUser = response.toJSON();
                             var isFollowing = false;
-                            user.following.forEach( function(follower){
-                                if(follower.name == loggedUser.name && follower.email == loggedUser.email){
+
+                            loggedUser.following.forEach(function (follower) {
+                                if (follower.name == user.name && follower.email == user.email) {
                                     isFollowing = true;
                                 }
                             });
+
                             that.$el.html(that.template({user: user, isFollowing : isFollowing}));
 
                             var avatar = that.getGravatar(user.email, 200);
