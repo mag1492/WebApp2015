@@ -19,9 +19,10 @@ define([
             'search/:searchField' : 'search',
             'signup':'signup',
             'user/:id' : 'user',
+            'user/:id/following/:followerId' : 'follower',
             'login' : 'login',
             'follow/:id':'follow',
-            'unfollow/:id':'unfollow'
+            'unfollow/:id/following/:followerId':'unfollow'
         }
     });
 
@@ -112,10 +113,16 @@ define([
                 userMainView.addFollower();
             });
         });
-        router.on('route:unfollow', function (id) {
-            require(['views/user/userMainView'], function (UserMainView) {
-                var userMainView = Vm.create(appView, 'UserMainView', UserMainView,  {id: id});
-                userMainView.deleteFollower();
+        router.on('route:follower', function (id, followerId) {
+            require(['views/user/userFollowerView'], function (UserFollowerView) {
+                var userFollowerView = Vm.create(appView, 'UserFollowerView', UserFollowerView,  {id: id, followerId:followerId});
+                userFollowerView.render();
+            });
+        });
+        router.on('route:unfollow', function (id, followerId) {
+            require(['views/user/userFollowerView'], function (UserFollowerView) {
+                var userFollowerView = Vm.create(appView, 'UserFollowerView', UserFollowerView,  {id: id, followerId:followerId});
+                userFollowerView.deleteFollower();
             });
         });
         Backbone.history.start();

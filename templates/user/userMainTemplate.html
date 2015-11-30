@@ -14,7 +14,7 @@
                             <% if(isFollowing == false){ %>
                             <button type="button" onclick="document.location.href='#/follow/<%= user.id %>';" class="btn btn-follow">Follow</button>
                             <% }else{ %>
-                            <button type="button" onclick="document.location.href='#/unfollow/<%= user.id %>';" class="btn btn-follow">Unfollow</button>
+                            <button type="button" onclick="document.location.href='#/unfollow/<%= user.id %>/following/<%= user.followerId %>';" class="btn btn-follow">Unfollow</button>
                             <% } %>
                         </div>
                     </div>
@@ -29,9 +29,10 @@
         </header>
         <div class="followers">
             <% _.each(user.following, function(follower) { %>
-            <div id="follower<%= follower.id %>"class ="col-md-2 col-sm-3 container-follower">
+            <div id="follower<%= follower._id %>"class ="col-md-2 col-sm-3 container-follower">
                 <div class="wrapper">
-                    <a class="banner-follower" href="#/user/<%= follower.id %>" >
+
+                    <a class="banner-follower" >
                         <div class="avatar-img-follower"></div>
                     </a>
                     <br>

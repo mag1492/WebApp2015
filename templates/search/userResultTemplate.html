@@ -6,7 +6,11 @@
     <% _.each(users, function(user) { %>
     <div class ="col-md-2 col-sm-3 result-item">
         <p class ="controlled-length"><%= user.name %></p>
+        <% if(user.followerId == undefined){ %>
         <div><a href="#/user/<%= user.id %>"><img src="Images\logoOpaque150.gif"></a></div>
+        <% }else{ %>
+        <div><a href="#/user/<%= user.id %>/following/<%= user.followerId %>"><img src="Images\logoOpaque150.gif"></a></div>
+        <% } %>
     </div>
     <% }); %>
 </div>

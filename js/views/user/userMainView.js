@@ -34,35 +34,21 @@ define([
                 },
                 success: function(response){
                     var user = response.toJSON();
-                    that.tokenInfo.fetch({
-                        beforeSend: function(xhr) {
-                            xhr.setRequestHeader('Authorization', $.cookie('token'));
-                        },
-                        success: function(response){
-                            var loggedUser = response.toJSON();
-                            var isFollowing = false;
 
-                            loggedUser.following.forEach(function (follower) {
-                                if (follower.name == user.name && follower.email == user.email) {
-                                    isFollowing = true;
-                                }
-                            });
-
-                            that.$el.html(that.template({user: user, isFollowing : isFollowing}));
+                            that.$el.html(that.template({user: user, isFollowing : false}));
 
                             var avatar = that.getGravatar(user.email, 200);
                             $(".avatar-img").css("background", "url("+ avatar+") center center no-repeat");
 
                             user.following.forEach( function(follower){
                                 var avatarFollower = that.getGravatar(follower.email, 100);
-                                $("#follower"+follower.id).find(".avatar-img-follower").css("background", "url("+ avatarFollower+") no-repeat");
+                                $("#follower"+follower._id).find(".avatar-img-follower").css("background", "url("+ avatarFollower+") no-repeat");
                             });
 
 
                             var view = new UserWatchlistView(user.id);
                             that.$el.append(view.render());
-                        }
-                    });
+
                 }
             });
         },
@@ -73,17 +59,6 @@ define([
             this.following.save(follow,{
                 type: "POST",
                 contentType: "application/json",
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader('Authorization', $.cookie('token'));
-                },
-                success: function(response){
-                    document.location.replace("index.html");
-                }
-            });
-        },
-        deleteFollower: function(){
-
-            this.unfollowing.destroy({
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
