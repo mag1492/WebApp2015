@@ -129,41 +129,6 @@ define([
 
                 }
             });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*            that.tokenInfo.fetch({
-             beforeSend: function (xhr) {
-             xhr.setRequestHeader('Authorization', $.cookie('token'));
-             },
-             success: function (response) {
-             var loggedUser = response.toJSON();
-
-             document.location.replace("#/user/"+loggedUser.id);
-
-             }
-             });
-
-             this.unfollowing.destroy({
-             beforeSend: function(xhr) {
-             xhr.setRequestHeader('Authorization', $.cookie('token'));
-             },
-             success: function(response){
-
-             }
-             });*/
         }
     });
 
