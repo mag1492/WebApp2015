@@ -34,7 +34,6 @@ define([
                 },
                 success: function(response){
                     var user = response.toJSON();
-
                     that.tokenInfo.fetch({
                         beforeSend: function(xhr) {
                             xhr.setRequestHeader('Authorization', $.cookie('token'));
@@ -42,12 +41,11 @@ define([
                         success: function(response){
                             var loggedUser = response.toJSON();
                             var isFollowing = false;
-                            loggedUser.following.forEach( function(follower){
+                            user.following.forEach( function(follower){
                                 if(follower.name == loggedUser.name && follower.email == loggedUser.email){
                                     isFollowing = true;
                                 }
                             });
-                            console.log($.cookie('token'));
                             that.$el.html(that.template({user: user, isFollowing : isFollowing}));
 
                             var avatar = that.getGravatar(user.email, 200);
