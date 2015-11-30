@@ -4,7 +4,7 @@ define([
     'backbone',
     'text!templates/tvshow/episodePreviewTemplate.html',
     'collections/episodes',
-    'models/youtubeEpisode'
+    'models/youtubeEpisode',
 ], function($, _, Backbone, episodePreviewTemplate, Episodes, YoutubeEpisode){
     var TrailerEpisodeView = Backbone.View.extend({
         template : _.template(episodePreviewTemplate),
@@ -17,6 +17,9 @@ define([
         render: function(){
             var that = this;
             this.episodes.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     this.episodesList = response.toJSON();
                     that.$el.html(that.template({episodes: response.toJSON()}));

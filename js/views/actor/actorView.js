@@ -16,6 +16,9 @@ define([
         render: function () {
             var that = this;
             this.actor.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function (ret) {
                     that.$el.html(that.template({actor: ret.toJSON()}));
                 }

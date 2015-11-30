@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'text!templates/user/userWatchlistTemplate.html',
-    'models/watchlist'
+    'models/watchlist',
 ], function($, _, Backbone, UserWatchlistTemplate, Watchlist){
     var WatchlistMainView = Backbone.View.extend({
 
@@ -18,6 +18,9 @@ define([
         render: function(){
             var that = this;
             this.watchlists.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     var watchlists = [];
                     var allWatchlist = response.toJSON();

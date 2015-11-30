@@ -8,7 +8,7 @@ define([
         initialize: function (options) {
             if (options.watchlistId) {
                 this.watchlistId = options.watchlistId;
-                this.url = 'http://umovie.herokuapp.com/unsecure/watchlists/' + options.watchlistId;
+                this.url = 'http://umovie.herokuapp.com/watchlists/' + options.watchlistId;
             }
         }
     });

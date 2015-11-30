@@ -17,6 +17,9 @@ define([
         render: function(){
             var that = this;
             this.movie.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     var movie = response.toJSON();
                     this.youtube = new YoutubeMovie({"movieTitle": movie[0].trackName});

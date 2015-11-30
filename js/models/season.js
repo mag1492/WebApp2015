@@ -4,7 +4,7 @@ define([
 ], function(_, Backbone) {
     var Season = Backbone.Model.extend({
 
-        urlRoot: 'https://umovie.herokuapp.com/unsecure/tvshows/season',
+        urlRoot: 'https://umovie.herokuapp.com/tvshows/season',
 
         parse: function(response){
             response.results.forEach(function (season){

@@ -20,6 +20,9 @@ define([
         render: function(){
             var that = this;
             this.watchlistMovie.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     if(response.toJSON().movies.length < 1) {
                         that.$el.html(that.templateEmpty({watchlistMovie: response.toJSON()}));
@@ -32,17 +35,14 @@ define([
         deleteMovie: function(watchlistId, movieId){
             var movie = new WatchlistDeleteMovie({movieId : movieId, watchlistId:watchlistId});
             movie.destroy({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success:function(ret){
                     window.location.replace('#/watchlist');
                 }
             })
-
-
-
-
         }
-
-
     });
 
     return WatchlistMainView;

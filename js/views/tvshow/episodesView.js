@@ -4,7 +4,7 @@ define([
     'backbone',
     'text!templates/tvshow/SeasonEpisodeTemplate.html',
     'views/tvshow/episodeListView',
-    'collections/episodes'
+    'collections/episodes',
 ], function($, _, Backbone, SeasonEpisodeTemplate, EpisodeListView, Episodes){
     var EpisodesView = Backbone.View.extend({
         template : _.template(SeasonEpisodeTemplate),
@@ -17,6 +17,9 @@ define([
         render: function(){
             var that = this;
             this.season.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     that.episodes = response.toJSON();
                     that.$el.html(that.template({episodes: response.toJSON()}));

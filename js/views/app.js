@@ -9,13 +9,18 @@ define([
         render: function () {
             var that = this;
             $(this.el).html(menuTemplate);
+            if($.cookie('token') == undefined){
+                $('#watchlist-link').remove();
+                $('#search-bar').remove();
+                $('.input-group-btn').remove();
+            }
         }
     });
     return AppView;
 });
 
 function goToHome(){
-    document.location.href="./index.html";
+    document.location.href="index.html";
 }
 
 function menuRedirect(){

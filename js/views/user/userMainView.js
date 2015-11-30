@@ -5,7 +5,7 @@ define([
     'md5',
     'models/user',
     'views/user/userWatchlistView',
-    'text!templates/user/userMainTemplate.html'
+    'text!templates/user/userMainTemplate.html',
 ], function($, _, Backbone, md5, User, UserWatchlistView, UserMainTemplate){
     var UserMainView = Backbone.View.extend({
         initialize: function(id){
@@ -23,6 +23,9 @@ define([
         render: function(){
             var that = this;
             this.user.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     var user = response.toJSON();
                     that.$el.html(that.template({user: user}));
@@ -33,7 +36,7 @@ define([
                     user.following.forEach( function(follower){
                         var avatarFollower = that.getGravatar(follower.email, 100);
                         $("#follower"+follower.id).find(".avatar-img-follower").css("background", "url("+ avatarFollower+") no-repeat");
-                    })
+                    });
 
 
                     var view = new UserWatchlistView(user.id);

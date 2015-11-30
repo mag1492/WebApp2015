@@ -7,7 +7,7 @@ define([
             options || (options = {});
             if (options.trackId) {
                 this.trackId = options.trackId;
-                this.url = 'https://umovie.herokuapp.com/unsecure/movies/' + options.trackId;
+                this.url = 'https://umovie.herokuapp.com/movies/' + options.trackId;
             }
         },
 

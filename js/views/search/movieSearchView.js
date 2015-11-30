@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'text!templates/search/moviesResultTemplate.html',
-    '../../collections/searchResult/moviesResult',
+    'collections/searchResult/moviesResult',
     'views/movie/movieWatchlistButtonView'
 ], function($, _, Backbone, MoviesResultTemplate, MovieResult, MovieWatchlistButtonView){
     var MovieSearchView = Backbone.View.extend({
@@ -18,6 +18,9 @@ define([
         render: function(){
             var that = this;
             this.movies.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
                 success: function(response){
                     that.$el.html(that.template({movies: response.toJSON()}));
                     response.toJSON().forEach(function(movie){

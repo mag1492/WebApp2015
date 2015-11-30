@@ -34,6 +34,9 @@ define([
             var that = this;
             if(this.idIsUndefined === 'false'){
                 that.watchlist.fetch({
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader('Authorization', $.cookie('token'));
+                    },
                     success: function(response){
                         that.$el.html(that.template({watchlist: response.toJSON()}));
                     },
@@ -67,6 +70,9 @@ define([
 
                 var aWatchlist = new Watchlist();
                 aWatchlist.save(watchlist, {
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader('Authorization', $.cookie('token'));
+                    },
                     success: function () {
                         console.log("Adding was a success!");
                         Backbone.history.navigate('watchlist', true);
@@ -84,6 +90,9 @@ define([
         confirmDelete: function(){
             if (confirm("Are you sure you want to delete this watchlist ?") == true) {
                 this.watchlist.destroy({
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader('Authorization', $.cookie('token'));
+                    },
                     success: function(){
                         Backbone.history.navigate('watchlist', true);
                     },
