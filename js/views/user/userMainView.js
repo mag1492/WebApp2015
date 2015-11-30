@@ -6,13 +6,15 @@ define([
     'models/user',
     'models/follow',
     'models/tokenInfo',
+    'models/unfollow',
     'views/user/userWatchlistView',
     'text!templates/user/userMainTemplate.html'
-], function($, _, Backbone, md5, User, Follow,TokenInfo, UserWatchlistView, UserMainTemplate){
+], function($, _, Backbone, md5, User, Follow,TokenInfo,Unfollow, UserWatchlistView, UserMainTemplate){
     var UserMainView = Backbone.View.extend({
         initialize: function(id){
             this.user = new User(id);
             this.following = new Follow();
+            this.unfollowing = new Unfollow(id);
             this.tokenInfo = new TokenInfo();
         },
         template : _.template(UserMainTemplate),
@@ -39,9 +41,8 @@ define([
                         },
                         success: function(response){
                             var loggedUser = response.toJSON();
-
                             var isFollowing = false;
-                            user.following.forEach( function(follower){
+                            loggedUser.following.forEach( function(follower){
                                 if(follower.name == loggedUser.name && follower.email == loggedUser.email){
                                     isFollowing = true;
                                 }
@@ -71,6 +72,17 @@ define([
             this.following.save(follow,{
                 type: "POST",
                 contentType: "application/json",
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
+                success: function(response){
+                    document.location.replace("index.html");
+                }
+            });
+        },
+        deleteFollower: function(){
+
+            this.unfollowing.destroy({
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
