@@ -24,10 +24,8 @@ define([
                 },
                 success: function(response) {
                     var users = response.toJSON();
-
                     that.$el.html(that.template({users: users}));
                 }
-
             });
         }
     });
