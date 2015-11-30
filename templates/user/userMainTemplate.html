@@ -11,7 +11,11 @@
                         <div class="row user-info">
                             <h1 class="black-text"><%= user.name %></h1>
                             <h4 class="black-text"><%= user.email %></h4>
-                            <button type="button" class="btn btn-follow">Follow</button>
+                            <% if(isFollowing == false){ %>
+                            <button type="button" onclick="document.location.href='#/follow/<%= user.id %>';" class="btn btn-follow">Follow</button>
+                            <% }else if(isFollowing == true){ %>
+                            <button type="button" onclick="document.location.href='#/unfollow/<%= user.id %>';" class="btn btn-follow">Unfollow</button>
+                            <% }else{} %>
                         </div>
                     </div>
               </div>
@@ -25,9 +29,9 @@
         </header>
         <div class="followers">
             <% _.each(user.following, function(follower) { %>
-            <div id="follower<%= follower.id %>"class ="col-md-2 col-sm-3 container-follower">
+            <div id="follower<%= follower._id %>"class ="col-md-2 col-sm-3 container-follower">
                 <div class="wrapper">
-                    <a class="banner-follower" href="#/user/<%= follower.id %>" >
+                    <a class="banner-follower" >
                         <div class="avatar-img-follower"></div>
                     </a>
                     <br>

@@ -11,7 +11,6 @@ define([
 
         initialize: function(searchField){
             this.users = new UserResult({"searchField" : searchField});
-
         },
 
         render: function(){
@@ -20,7 +19,7 @@ define([
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
-                success: function(response){
+                success: function(response) {
                     that.$el.html(that.template({users: response.toJSON()}));
                 }
             });

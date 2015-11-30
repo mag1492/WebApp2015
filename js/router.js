@@ -19,7 +19,9 @@ define([
             'search/:searchField' : 'search',
             'signup':'signup',
             'user/:id' : 'user',
-            'login' : 'login'
+            'login' : 'login',
+            'follow/:id':'follow',
+            'unfollow/:id':'unfollow'
         }
     });
 
@@ -102,6 +104,18 @@ define([
             require(['views/signup/loginView'], function (LoginView) {
                 var loginView = Vm.create(appView, 'LoginView', LoginView);
                 loginView.render();
+            });
+        });
+        router.on('route:follow', function (id) {
+            require(['views/user/userMainView'], function (UserMainView) {
+                var userMainView = Vm.create(appView, 'UserMainView', UserMainView,  {id: id});
+                userMainView.addFollower();
+            });
+        });
+        router.on('route:unfollow', function (id) {
+            require(['views/user/userMainView'], function (UserMainView) {
+                var userMainView = Vm.create(appView, 'UserMainView', UserMainView,  {id: id});
+                userMainView.deleteFollower();
             });
         });
         Backbone.history.start();
