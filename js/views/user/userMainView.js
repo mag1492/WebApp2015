@@ -11,10 +11,10 @@ define([
     'text!templates/user/userMainTemplate.html'
 ], function($, _, Backbone, md5, User, Follow,TokenInfo,Unfollow, UserWatchlistView, UserMainTemplate){
     var UserMainView = Backbone.View.extend({
-        initialize: function(id){
-            this.user = new User(id);
+        initialize: function(options){
+            this.user = new User(options);
             this.following = new Follow();
-            this.unfollowing = new Unfollow(id);
+            this.unfollowing = new Unfollow(options);
             this.tokenInfo = new TokenInfo();
         },
         template : _.template(UserMainTemplate),
@@ -34,8 +34,23 @@ define([
                 },
                 success: function(response){
                     var user = response.toJSON();
+                    that.tokenInfo.fetch({
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization', $.cookie('token'));
+                        },
+                        success: function (response) {
+                            var isFollowing = false;
+                            var loggedUser = response.toJSON();
+                            loggedUser.following.forEach(function(follower){
+                                if(user.name == follower.name && user.email == follower.email){
+                                    isFollowing = true;
+                                }
+                            });
+                            if(loggedUser.id == user.id){
+                                isFollowing = null;
+                            }
 
-                            that.$el.html(that.template({user: user, isFollowing : false}));
+                            that.$el.html(that.template({user: user, isFollowing : isFollowing}));
 
                             var avatar = that.getGravatar(user.email, 200);
                             $(".avatar-img").css("background", "url("+ avatar+") center center no-repeat");
@@ -48,6 +63,8 @@ define([
 
                             var view = new UserWatchlistView(user.id);
                             that.$el.append(view.render());
+                        }
+                    });
 
                 }
             });
@@ -59,6 +76,16 @@ define([
             this.following.save(follow,{
                 type: "POST",
                 contentType: "application/json",
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
+                success: function(response){
+                    document.location.replace("index.html");
+                }
+            });
+        },
+        deleteFollower: function(){
+            this.unfollowing.destroy({
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },

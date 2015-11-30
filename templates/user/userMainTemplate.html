@@ -13,9 +13,9 @@
                             <h4 class="black-text"><%= user.email %></h4>
                             <% if(isFollowing == false){ %>
                             <button type="button" onclick="document.location.href='#/follow/<%= user.id %>';" class="btn btn-follow">Follow</button>
-                            <% }else{ %>
+                            <% }else if(isFollowing == true){ %>
                             <button type="button" onclick="document.location.href='#/unfollow/<%= user.id %>/following/<%= user.followerId %>';" class="btn btn-follow">Unfollow</button>
-                            <% } %>
+                            <% }else{} %>
                         </div>
                     </div>
               </div>

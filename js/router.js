@@ -114,15 +114,15 @@ define([
             });
         });
         router.on('route:follower', function (id, followerId) {
-            require(['views/user/userFollowerView'], function (UserFollowerView) {
-                var userFollowerView = Vm.create(appView, 'UserFollowerView', UserFollowerView,  {id: id, followerId:followerId});
-                userFollowerView.render();
+            require(['views/user/userMainView'], function (UserMainView) {
+                var userMainView = Vm.create(appView, 'UserMainView', UserMainView,  {id: id, followerId:followerId});
+                userMainView.render();
             });
         });
         router.on('route:unfollow', function (id, followerId) {
-            require(['views/user/userFollowerView'], function (UserFollowerView) {
-                var userFollowerView = Vm.create(appView, 'UserFollowerView', UserFollowerView,  {id: id, followerId:followerId});
-                userFollowerView.deleteFollower();
+            require(['views/user/userMainView'], function (UserMainView) {
+                var userMainView = Vm.create(appView, 'UserMainView', UserMainView,  {id: id, followerId:followerId});
+                userMainView.deleteFollower();
             });
         });
         Backbone.history.start();
