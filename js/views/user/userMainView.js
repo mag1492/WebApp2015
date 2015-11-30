@@ -88,7 +88,7 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    //document.location.replace("index.html");
+                    document.location.replace("index.html");
                 }
             });
         }
