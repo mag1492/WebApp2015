@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone',
     'text!templates/search/tvSeasonResultTemplate.html',
-    'collections/searchResult/tvshowsSeasonResult',
+    'collections/searchResult/tvshowsSeasonResult'
 ], function($, _, Backbone, TvSeasonResultTemplate, TvshowsSeasonResult){
     var TvSeasonSearchView = Backbone.View.extend({
         template : _.template(TvSeasonResultTemplate),

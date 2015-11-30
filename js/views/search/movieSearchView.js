@@ -4,7 +4,7 @@ define([
     'backbone',
     'text!templates/search/moviesResultTemplate.html',
     'collections/searchResult/moviesResult',
-    'views/movie/movieWatchlistButtonView',
+    'views/movie/movieWatchlistButtonView'
 ], function($, _, Backbone, MoviesResultTemplate, MovieResult, MovieWatchlistButtonView){
     var MovieSearchView = Backbone.View.extend({
         template : _.template(MoviesResultTemplate),

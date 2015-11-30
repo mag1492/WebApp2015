@@ -11,7 +11,7 @@ define([
             $(this.el).html(menuTemplate);
             if($.cookie('token') == undefined){
                 $('#watchlist-link').remove();
-                $('#srch-term').remove();
+                $('#search-bar').remove();
                 $('.input-group-btn').remove();
             }
         }

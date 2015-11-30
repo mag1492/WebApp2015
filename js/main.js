@@ -33,7 +33,7 @@ require([
     appView.render();
     Router.initialize({appView: appView});
     if($.cookie('token') == undefined){
-        document.location.href="#/login";
+        window.location.replace('#/login');
     }
 });
 
