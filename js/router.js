@@ -19,10 +19,9 @@ define([
             'search/:searchField' : 'search',
             'signup':'signup',
             'user/:id' : 'user',
-            'user/:id/following/:followerId' : 'follower',
             'login' : 'login',
             'follow/:id':'follow',
-            'unfollow/:id/following/:followerId':'unfollow'
+            'unfollow/:id':'unfollow'
         }
     });
 
@@ -113,15 +112,9 @@ define([
                 userMainView.addFollower();
             });
         });
-        router.on('route:follower', function (id, followerId) {
+        router.on('route:unfollow', function (id) {
             require(['views/user/userMainView'], function (UserMainView) {
-                var userMainView = Vm.create(appView, 'UserMainView', UserMainView,  {id: id, followerId:followerId});
-                userMainView.render();
-            });
-        });
-        router.on('route:unfollow', function (id, followerId) {
-            require(['views/user/userMainView'], function (UserMainView) {
-                var userMainView = Vm.create(appView, 'UserMainView', UserMainView,  {id: id, followerId:followerId});
+                var userMainView = Vm.create(appView, 'UserMainView', UserMainView,  {id: id});
                 userMainView.deleteFollower();
             });
         });

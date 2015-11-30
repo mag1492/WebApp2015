@@ -14,7 +14,6 @@ define([
         initialize: function(options){
             this.user = new User(options);
             this.following = new Follow();
-            this.unfollowing = new Unfollow(options);
             this.tokenInfo = new TokenInfo();
         },
         template : _.template(UserMainTemplate),
@@ -86,6 +85,7 @@ define([
                         },
                         success: function (response) {
                             var loggedUser = response.toJSON();
+
                             document.location.replace("#/user/"+loggedUser.id);
 
                         }
@@ -95,23 +95,75 @@ define([
         },
         deleteFollower: function(){
             var that = this;
-            this.unfollowing.destroy({
+
+            this.user.fetch({
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
+                    var user = response.toJSON();
                     that.tokenInfo.fetch({
                         beforeSend: function (xhr) {
                             xhr.setRequestHeader('Authorization', $.cookie('token'));
                         },
                         success: function (response) {
                             var loggedUser = response.toJSON();
-                            document.location.replace("#/user/"+loggedUser.id);
-
+                            var id;
+                            loggedUser.following.forEach(function(follower){
+                                if(user.name == follower.name && user.email == follower.email){
+                                    id = follower._id;
+                                }
+                            });
+                            var unfollowing = new Unfollow({"id":user.id, "followerId":id});
+                            console.log(unfollowing);
+                            unfollowing.destroy({
+                                beforeSend: function(xhr) {
+                                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                                },
+                                success: function(response){
+                                    document.location.replace("#/user/"+loggedUser.id);
+                                }
+                            })
                         }
                     });
+
                 }
             });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*            that.tokenInfo.fetch({
+             beforeSend: function (xhr) {
+             xhr.setRequestHeader('Authorization', $.cookie('token'));
+             },
+             success: function (response) {
+             var loggedUser = response.toJSON();
+
+             document.location.replace("#/user/"+loggedUser.id);
+
+             }
+             });
+
+             this.unfollowing.destroy({
+             beforeSend: function(xhr) {
+             xhr.setRequestHeader('Authorization', $.cookie('token'));
+             },
+             success: function(response){
+
+             }
+             });*/
         }
     });
 
