@@ -80,17 +80,36 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    document.location.replace("index.html");
+                    that.tokenInfo.fetch({
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization', $.cookie('token'));
+                        },
+                        success: function (response) {
+                            var loggedUser = response.toJSON();
+                            document.location.replace("#/user/"+loggedUser.id);
+
+                        }
+                    });
                 }
             });
         },
         deleteFollower: function(){
+            var that = this;
             this.unfollowing.destroy({
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    document.location.replace("index.html");
+                    that.tokenInfo.fetch({
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization', $.cookie('token'));
+                        },
+                        success: function (response) {
+                            var loggedUser = response.toJSON();
+                            document.location.replace("#/user/"+loggedUser.id);
+
+                        }
+                    });
                 }
             });
         }
