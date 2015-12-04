@@ -31,6 +31,10 @@ define([
                     goToHome();
                 }
             });
+        },
+
+        isEmailValid: function(email){
+
         }
 
     });
