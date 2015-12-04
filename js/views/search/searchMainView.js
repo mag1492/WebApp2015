@@ -16,10 +16,14 @@ define([
 
         render: function (searchField) {
             this.$el.html(this.template());
-            this.actorSearchView = new ActorSearchView(searchField);
-            this.movieSearchView = new MovieSearchView(searchField);
-            this.userSearchView = new UserSearchView(searchField);
-            this.tvSeasonSearchView = new TvSeasonSearchView(searchField);
+            var optionsActor = {searchField : searchField, isGeneral : true, el : ".actor-result"};
+            var optionsUser = {searchField : searchField, isGeneral : true, el : ".user-result"};
+            var optionsMovies = {searchField : searchField, isGeneral : true, el : ".movie-result"};
+            var optionsTv = {searchField : searchField, isGeneral : true, el : ".tv-season-result"};
+            this.actorSearchView = new ActorSearchView(optionsActor);
+            this.movieSearchView = new MovieSearchView(optionsMovies);
+            this.userSearchView = new UserSearchView(optionsUser);
+            this.tvSeasonSearchView = new TvSeasonSearchView(optionsTv);
 
             this.$el.append(this.actorSearchView.render());
             this.$el.append(this.movieSearchView.render());

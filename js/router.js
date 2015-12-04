@@ -21,7 +21,8 @@ define([
             'user/:id' : 'user',
             'login' : 'login',
             'follow/:id':'follow',
-            'unfollow/:id':'unfollow'
+            'unfollow/:id':'unfollow',
+            'movieSearch/:searchField':'movieSearch'
         }
     });
 
@@ -80,6 +81,12 @@ define([
             require(['views/watchlist/watchlistMovieView'], function (WatchlistMovieView) {
                 var watchlistMovieView = Vm.create(appView, 'MovieWatchlistButtonView', WatchlistMovieView, {watchlistId: watchlistId});
                 watchlistMovieView.deleteMovie(watchlistId, movieId);
+            });
+        });
+        router.on('route:movieSearch', function (searchField) {
+            require(['views/search/movieSearchView'], function (MovieSearchView) {
+                var movieSearchView = Vm.create(appView, 'MovieSearchView', MovieSearchView, {searchField: searchField, isGeneral:false});
+                movieSearchView.render();
             });
         });
         router.on('route:search', function (searchField) {

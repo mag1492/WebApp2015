@@ -8,10 +8,11 @@ define([
 ], function($, _, Backbone, ActorResultTemplate, ActorResult){
     var ActorSearchView = Backbone.View.extend({
         template : _.template(ActorResultTemplate),
-        el: ".actor-result",
 
-        initialize: function(searchField){
-            this.actors = new ActorResult({"searchField" : searchField});
+        initialize: function(options){
+            this.actors = new ActorResult(options);
+            this.setElement(options.el);
+
         },
 
         render: function(){

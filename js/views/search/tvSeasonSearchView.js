@@ -7,10 +7,10 @@ define([
 ], function($, _, Backbone, TvSeasonResultTemplate, TvshowsSeasonResult){
     var TvSeasonSearchView = Backbone.View.extend({
         template : _.template(TvSeasonResultTemplate),
-        el: ".tv-season-result",
 
-        initialize: function(searchField){
-            this.tvSeasons = new TvshowsSeasonResult({"searchField" : searchField});
+        initialize: function(options){
+            this.tvSeasons = new TvshowsSeasonResult( options);
+            this.setElement(options.el);
 
         },
 

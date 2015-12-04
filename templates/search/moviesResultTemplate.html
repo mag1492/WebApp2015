@@ -4,7 +4,13 @@
     <h4 class="white-text">No results were found for this section.</h4>
     <%}else{
     var counter = 0;
-    var maxResult = 6;%>
+
+    var maxResult = 6;
+    console.log(isGeneral);
+    if(isGeneral== false){
+        maxResult = 60;
+    }%>
+
     <% _.each(movies, function(movie) {
     if(counter < maxResult){%>
 
@@ -17,7 +23,8 @@
     <% counter++;
     }});
     if(movies.length > maxResult){%>
-    <button type="button" class="btn btn-default btn-line">More results</button>
+
+    <button type="button" onclick="document.location.href='#/movieSearch/<%= searchField %>';"  class="btn btn-default btn-line">More results</button>
 
     <% }} %>
 

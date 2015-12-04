@@ -8,11 +8,14 @@ define([
 ], function($, _, Backbone, MoviesResultTemplate, MovieResult, MovieWatchlistButtonView){
     var MovieSearchView = Backbone.View.extend({
         template : _.template(MoviesResultTemplate),
-        el: ".movie-result",
 
-        initialize: function(searchField){
-            this.movies = new MovieResult({"searchField" : searchField});
-
+        initialize: function(options){
+            this.movies = new MovieResult(options);
+            if(options.isGeneral == true){
+                this.setElement(options.el);
+            }else{
+                this.setElement(".content");
+            }
         },
 
         render: function(){
@@ -22,7 +25,7 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    that.$el.html(that.template({movies: response.toJSON()}));
+                    that.$el.html(that.template({movies: response.toJSON(), searchField : that.movies.searchField, isGeneral : that.movies.isGeneral}));
                     response.toJSON().forEach(function(movie){
                         var view = new MovieWatchlistButtonView(movie.trackId);
                         that.$el.append(view.render());

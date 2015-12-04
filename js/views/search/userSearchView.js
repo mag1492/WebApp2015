@@ -7,10 +7,11 @@ define([
 ], function($, _, Backbone, UserResultTemplate, UserResult){
     var userSearchView = Backbone.View.extend({
         template : _.template(UserResultTemplate),
-        el: ".user-result",
 
-        initialize: function(searchField){
-            this.users = new UserResult({"searchField" : searchField});
+        initialize: function(options){
+            this.users = new UserResult(options);
+            this.setElement(options.el);
+
         },
 
         render: function(){
