@@ -11,7 +11,11 @@ define([
 
         initialize: function(options){
             this.actors = new ActorResult(options);
-            this.setElement(options.el);
+            if(options.isGeneral == true){
+                this.setElement(options.el);
+            }else{
+                this.setElement(".content");
+            }
 
         },
 
@@ -22,7 +26,8 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    that.$el.html(that.template({actors: response.toJSON()}));
+                    that.$el.html(that.template({actors: response.toJSON(), searchField : that.actors.searchField, isGeneral : that.actors.isGeneral}));
+
                 }
             });
         }

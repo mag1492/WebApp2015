@@ -10,7 +10,11 @@ define([
 
         initialize: function(options){
             this.tvSeasons = new TvshowsSeasonResult( options);
-            this.setElement(options.el);
+            if(options.isGeneral == true){
+                this.setElement(options.el);
+            }else{
+                this.setElement(".content");
+            }
 
         },
 
@@ -21,7 +25,8 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    that.$el.html(that.template({tvSeasons: response.toJSON()}));
+                    that.$el.html(that.template({tvSeasons: response.toJSON(), searchField : that.tvSeasons.searchField, isGeneral : that.tvSeasons.isGeneral}));
+
                 }
             });
         }
