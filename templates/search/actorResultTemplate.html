@@ -2,11 +2,19 @@
     <h1>Actors:</h1>
     <%if (typeof actors === 'undefined' || !actors.length) {%>
     <h4>No results were found for this section.</h4>
-    <%}%>
-    <% _.each(actors, function(actor) { %>
+    <%}else{
+    var counter = 0;
+    var maxResult = 6;%>
+    <% _.each(actors, function(actor) {
+    if(counter < maxResult){%>
     <div class ="col-md-2 col-sm-3 result-item">
         <p class ="controlled-length"><%= actor.artistName %></p>
         <div><a href="#/actor/<%= actor.artistId %>"><img src="Images\logoOpaque150.gif"></a></div>
     </div>
-    <% }); %>
+    <% counter++;
+    }});
+    if(actors.length > maxResult){%>
+    <button type="button" class="btn btn-default btn-line">More results</button>
+
+    <% }} %>
 </div>

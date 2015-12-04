@@ -2,13 +2,24 @@
     <h1 class="white-text">Movies:</h1>
     <%if (typeof movies === 'undefined' || !movies.length) {%>
     <h4 class="white-text">No results were found for this section.</h4>
-    <%}%>
-    <% _.each(movies, function(movie) { %>
+    <%}else{
+    var counter = 0;
+    var maxResult = 6;%>
+    <% _.each(movies, function(movie) {
+    if(counter < maxResult){%>
+
     <div class ="col-md-2 col-sm-3 result-item">
         <p class ="controlled-length"><%= movie.trackName %></p>
         <% var artworkUrl = movie.artworkUrl100.replace("100x100", "150x150"); %>
         <div><a href="#/movie/<%= movie.trackId %>"><img src="<%= artworkUrl %>"></a></div>
         <div class="watchlist-button<%= movie.trackId %> result-item-fit"></div>
     </div>
-    <% }); %>
+    <% counter++;
+    }});
+    if(movies.length > maxResult){%>
+    <button type="button" class="btn btn-default btn-line">More results</button>
+
+    <% }} %>
+
+
 </div>
