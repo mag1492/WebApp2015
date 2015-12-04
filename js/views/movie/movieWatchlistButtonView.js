@@ -26,8 +26,6 @@ define([
                 },
                 success: function(response){
                     var watchlists = response.toJSON();
-
-
                     that.tokenInfo.fetch({
                         beforeSend: function(xhr) {
                             xhr.setRequestHeader('Authorization', $.cookie('token'));

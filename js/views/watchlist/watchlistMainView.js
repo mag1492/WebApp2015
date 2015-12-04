@@ -33,7 +33,6 @@ define([
                             var loggedUserWatchlists = [];
                             for (var prop in watchlists) {
                                 if (watchlists.hasOwnProperty(prop)) {
-                                    console.log(typeof(watchlists[prop].owner) != 'undefined');
                                     if(typeof(watchlists[prop].owner) != 'undefined'){
                                         if(loggedUser.id == watchlists[prop].owner.id){
                                             loggedUserWatchlists.push(watchlists[prop]);
@@ -42,7 +41,6 @@ define([
                                 }
                             }
                             that.$el.html(that.template({watchlists: loggedUserWatchlists}));
-
                         }
                     });
                 }

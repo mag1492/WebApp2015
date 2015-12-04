@@ -36,8 +36,6 @@ define([
                             },
                             success: function(response) {
                                 watchlist.isMine = true;
-                                console.log(watchlist.owner);
-                                console.log(response.toJSON());
                                 if(watchlist.owner.id != response.toJSON().id){
                                     watchlist.isMine = false;
                                 }
