@@ -33,9 +33,9 @@ define([
             var password =  $("#form-password").val();
 
             if(this.isEmpty(username)){
-                swal("Did you forget something?", "Your username is empty. Please enter something great!", "warning");
+                swal("Did you forget something?", "Your username is empty. Please enter something!", "warning");
             }else if(this.isEmpty(password)){
-                swal("Did you forget something?", "Your password is empty. This can't do, please write something crunchy!", "warning");
+                swal("Did you forget something?", "Your password is empty. This can't do, please write something!", "warning");
             }else if(!this.isEmailValid(email)){
                 swal("We're sorry...", "Your email is invalid. Try again.", "warning");
             }else if(this.isEmailValid(email) && !this.isEmpty(password) && !this.isEmpty(username)){
@@ -48,7 +48,7 @@ define([
                         that.renderSuccess();
                     },
                     error: function(){
-                        swal("We're sorry...", "Something went wrong. Try again.", "error");
+                        swal("Error", "We could not sign you up. Please try again.", "error");
                     }
                 });
             }
