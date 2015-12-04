@@ -5,14 +5,16 @@ define([
     'text!templates/movie/movieWatchlistButtonTemplate.html',
     'models/watchlist',
     'models/watchlistAddMovie',
-    'models/movie'
-], function($, _, Backbone, MovieWatchlistButtonTemplate, Watchlist, WatchlistAddMovie, Movie){
+    'models/movie',
+    'models/tokenInfo'
+], function($, _, Backbone, MovieWatchlistButtonTemplate, Watchlist, WatchlistAddMovie, Movie, TokenInfo){
     var MovieWatchlistButtonView = Backbone.View.extend({
         template : _.template(MovieWatchlistButtonTemplate),
 
         initialize: function(id){
             this.watchlist = new Watchlist({});
             this.movieId = id;
+            this.tokenInfo = new TokenInfo();
             this.$el = $(".watchlist-button" + id);
         },
 
@@ -23,9 +25,29 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    var retour = {"movieId" : that.movieId, "response" : response.toJSON()};
-                    that.$el.html(that.template({watchlists: retour}));
-                    $('#myModal'+that.movieId).appendTo("body");
+                    var watchlists = response.toJSON();
+                    that.tokenInfo.fetch({
+                        beforeSend: function(xhr) {
+                            xhr.setRequestHeader('Authorization', $.cookie('token'));
+                        },
+                        success: function(response){
+                            var loggedUser = response.toJSON();
+                            var loggedUserWatchlists = [];
+                            for (var prop in watchlists) {
+                                if (watchlists.hasOwnProperty(prop)) {
+                                    if(typeof(watchlists[prop].owner) != 'undefined'){
+                                        if(loggedUser.id == watchlists[prop].owner.id){
+                                            loggedUserWatchlists.push(watchlists[prop]);
+                                        }
+                                    }
+                                }
+                            }
+                            var retour = {"movieId" : that.movieId, "response" : loggedUserWatchlists};
+                            that.$el.html(that.template({watchlists: retour}));
+                            $('#myModal'+that.movieId).appendTo("body");
+
+                        }
+                    });
                 }
             });
 
