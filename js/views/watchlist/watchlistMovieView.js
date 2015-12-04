@@ -5,8 +5,9 @@ define([
     'text!templates/watchlist/watchlistMovieTemplate.html',
     'text!templates/watchlist/watchlistEmptyTemplate.html',
     'models/watchlistMovie',
+    'models/tokenInfo',
     'models/watchlistDeleteMovie'
-], function($, _, Backbone, WatchlistMovieTemplate, WatchlistEmptyTemplate, WatchlistMovie, WatchlistDeleteMovie){
+], function($, _, Backbone, WatchlistMovieTemplate, WatchlistEmptyTemplate, WatchlistMovie, TokenInfo, WatchlistDeleteMovie){
     var WatchlistMainView = Backbone.View.extend({
 
         template : _.template(WatchlistMovieTemplate),
@@ -15,6 +16,7 @@ define([
 
         initialize: function(){
             this.watchlistMovie = new WatchlistMovie({"watchlistId" : this.options.id});
+            this.tokenInfo = new TokenInfo();
         },
 
         render: function(){
@@ -24,10 +26,25 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    if(response.toJSON().movies.length < 1) {
-                        that.$el.html(that.templateEmpty({watchlistMovie: response.toJSON()}));
+                    var watchlist = response.toJSON();
+                    if(watchlist.movies.length < 1) {
+                        that.$el.html(that.templateEmpty({watchlistMovie: watchlist}));
                     } else {
-                        that.$el.html(that.template({watchlistMovie: response.toJSON()}));
+                        that.tokenInfo.fetch({
+                            beforeSend: function(xhr) {
+                                xhr.setRequestHeader('Authorization', $.cookie('token'));
+                            },
+                            success: function(response) {
+                                watchlist.isMine = true;
+                                console.log(watchlist.owner);
+                                console.log(response.toJSON());
+                                if(watchlist.owner.id != response.toJSON().id){
+                                    watchlist.isMine = false;
+                                }
+
+                                that.$el.html(that.template({watchlistMovie: watchlist}));
+                            }
+                        });
                     }
                 }
             })
