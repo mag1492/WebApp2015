@@ -41,7 +41,6 @@ define([
                                 });
 
                             });
-                            console.log(users);
                             that.$el.html(that.template({users: users}));
 
                         }
