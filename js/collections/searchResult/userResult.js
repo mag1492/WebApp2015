@@ -5,7 +5,7 @@ define([
 ], function($, _, Backbone){
     var userResult = Backbone.Collection.extend({
         initialize: function(options){
-                this.searchField = options.searchField;
+            this.searchField = options.searchField;
             this.isGeneral = options.isGeneral;
             if(options.isGeneral){
                 this.url = 'https://umovie.herokuapp.com/unsecure/search/users?q='+ options.searchField;

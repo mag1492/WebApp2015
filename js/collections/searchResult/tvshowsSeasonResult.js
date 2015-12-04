@@ -5,7 +5,7 @@ define([
 ], function($, _, Backbone){
     var TvShowSeasonResult = Backbone.Collection.extend({
         initialize: function(options){
-                this.searchField = options.searchField;
+            this.searchField = options.searchField;
             this.isGeneral = options.isGeneral;
             if(options.isGeneral){
                 this.url = 'https://umovie.herokuapp.com/unsecure/search/tvshows/seasons?q='+ options.searchField;
