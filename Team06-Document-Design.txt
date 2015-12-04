@@ -14,8 +14,6 @@ On lance l'application en cliquant sur Index.html.
 
 ------------------------------------------------------------------------------
 
-
-
 Pour chacune des pages voici comment proceder.
 
 

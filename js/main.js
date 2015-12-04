@@ -13,6 +13,7 @@ require.config({
         bootstrap: 'libs/bootstrap/bootstrap',
         owl: 'libs/owl-carousel/owl.carousel',
         md5: 'libs/md5/jquery.md5',
+        sweetalarm: 'libs/sweet-alert/sweetalert.min',
 
         // Require.js plugins
         text: 'libs/require/text',
