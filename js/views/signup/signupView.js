@@ -18,7 +18,7 @@ define([
         },
 
         events: {
-            'submit form': 'submit'
+            'click #submit-signup': 'submit'
         },
 
         renderSuccess: function(){

@@ -16,7 +16,7 @@ define([
         },
 
         events: {
-            'submit form': 'submit'
+            'click #submit-login': 'submit'
         },
 
         submit: function(e){
