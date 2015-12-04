@@ -27,9 +27,9 @@ define([
 
             if(!this.isEmailValid(email)){
                 swal("We're sorry...", "Your email is invalid. Try again.", "warning");
-            }else if(this.isPasswordEmpty(password)){
-                swal("We're sorry...", "Your password is empty. Try again.", "warning");
-            }else if(this.isEmailValid(email) && !this.isPasswordEmpty(password)){
+            }else if(this.isEmpty(password)){
+                swal("Did you forget something?", "Your password is empty. This can't do, please write something crunchy!", "warning");
+            }else if(this.isEmailValid(email) && !this.isEmpty(password)){
                 var user = new User({email : email, password : password});
                 user.save(user.attributes, {
                     type: "POST",
@@ -50,10 +50,9 @@ define([
             return regex.test(email);
         },
 
-        isPasswordEmpty: function(password){
+        isEmpty: function(password){
            return password == "" || /^\s+$/.test(password);
         }
-
     });
     return LoginView;
 });
