@@ -22,7 +22,9 @@
                                         <a class="name-length" href="#/movie/<%=movie.trackId%>" >
                                             <%= movie.trackName %>
                                         </a>
+                                        <% if(watchlistMovie.isMine == true){ %>
                                         <a href="#/watchlist/<%= watchlistMovie.watchlistId %>/deleteMovie/<%= movie.trackId %>"><span class="remove-icon glyphicon glyphicon-remove"></span></a>
+                                        <% } %>
                                     </li>
                                 <% }%>
                             <% }); %>
