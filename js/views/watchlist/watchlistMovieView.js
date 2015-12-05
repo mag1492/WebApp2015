@@ -2,12 +2,14 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/watchlist/watchlistMovieTemplate.html',
     'text!templates/watchlist/watchlistEmptyTemplate.html',
     'models/watchlistMovie',
     'models/tokenInfo',
-    'models/watchlistDeleteMovie'
-], function($, _, Backbone, WatchlistMovieTemplate, WatchlistEmptyTemplate, WatchlistMovie, TokenInfo, WatchlistDeleteMovie){
+    'models/watchlistDeleteMovie',
+    '../errorHandler'
+], function($, _, Backbone, swal, WatchlistMovieTemplate, WatchlistEmptyTemplate, WatchlistMovie, TokenInfo, WatchlistDeleteMovie){
     var WatchlistMainView = Backbone.View.extend({
 
         template : _.template(WatchlistMovieTemplate),
@@ -44,6 +46,9 @@ define([
                             }
                         });
                     }
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             })
         },
@@ -55,6 +60,9 @@ define([
                 },
                 success:function(ret){
                     window.location.replace('#/watchlist');
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             })
         }
