@@ -3,7 +3,8 @@ define([
     'underscore',
     'backbone',
     'text!templates/actor/actorInformationTemplate.html',
-    'models/actor'
+    'models/actor',
+    '../errorHandler'
 ], function($, _, Backbone, actorInformationTemplate, Actor){
     var ActorView = Backbone.View.extend({
         template : _.template(actorInformationTemplate),

@@ -1,17 +1,21 @@
+
+
 function showError(errorCode){
+    var error = errorCode.toString();
+
     if(errorCode == "400"){
         showError400();
     }else if(errorCode == "401"){
         showError401();
     }else if(errorCode == "404"){
         showError404();
-    }else if(errorCode.charAt(0) == "4"){
+    }else if(error.substring(0,1) == "4"){
         showError4xx();
     }
 
     if(errorCode == "500"){
         showError500();
-    }else if(errorCode.charAt(0) == "5"){
+    }else if(error.substring(0,1) == "5"){
         showError5xx();
     }
 }
