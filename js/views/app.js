@@ -27,6 +27,7 @@ define([
                     success: function (response) {
                         var loggedUser = response.toJSON();
                         that.$el.html(that.template({loggedUser: loggedUser}));
+                        $('#login-button').remove();
                     }
                 });
             }
