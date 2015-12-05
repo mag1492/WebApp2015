@@ -21,6 +21,9 @@ define([
                 },
                 success: function (ret) {
                     that.$el.html(that.template({actor: ret.toJSON()}));
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             })
         }

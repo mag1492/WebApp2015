@@ -1,13 +1,18 @@
 function showError(errorCode){
-    if(errorCode == "401"){
-        showError401();
-    }else if(errorCode == "400"){
+    if(errorCode == "400"){
         showError400();
-    }else{
-        swal({  title: "Error" + errorCode,
-            text: "Could not retrieve the actor's movies. You will be redirected.",
-            type: "error",
-            timer: 1890});
+    }else if(errorCode == "401"){
+        showError401();
+    }else if(errorCode == "404"){
+        showError404();
+    }else if(errorCode.charAt(0) == "4"){
+        showError4xx();
+    }
+
+    if(errorCode == "500"){
+        showError500();
+    }else if(errorCode.charAt(0) == "5"){
+        showError5xx();
     }
 }
 
@@ -36,17 +41,49 @@ function showError401(){
 }
 
 function showError404(){
+    swal({  title: "Error",
+            text: "Could not retrieve the content. Please try again.",
+            type: "error",
+            timer: 2500},
+        function(){
+            waitAndGoTohome(10);
+        });
 
+    waitAndGoTohome(2800);
 }
 
 function showError4xx(){
+    swal({  title: "Error",
+            text: "Oops, you did something wrong. We'll fix it for you. You will be redirected to the home page.",
+            type: "error",
+            timer: 2500},
+        function(){
+            waitAndGoTohome(10);
+        });
 
+    waitAndGoTohome(2800);
 }
 
 function showError500(){
+    swal({  title: "Error",
+            text: "Unexpected Internal Error. You will be redirected to the home page.",
+            type: "error",
+            timer: 2500},
+        function(){
+            waitAndGoTohome(10);
+        });
 
+    waitAndGoTohome(2800);
 }
 
 function showError5xx(){
+    swal({  title: "Oops...",
+            text: "Sorry, something went awry... You will be redirected to the home page.",
+            type: "error",
+            timer: 2500},
+        function(){
+            waitAndGoTohome(10);
+        });
 
+    waitAndGoTohome(2800);
 }
