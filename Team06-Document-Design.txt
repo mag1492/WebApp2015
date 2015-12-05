@@ -21,7 +21,6 @@ Page Accueil -----------------------------------------------------------------
 
 Index.html, on retrouve les choix de films, de tvshows et d'acteurs. 
 
-
 Page Movie ------------------------------------------------------------------
 
 A partir de la page d'accueil, cliquez sur un des films se retrouvant dans le carrousel. Puisque la recherche
