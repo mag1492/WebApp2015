@@ -48,10 +48,10 @@ function showError400(){
         type: "error",
         timer: 2500},
     function(){
-        waitAndGoTohome(10);
+        waitAndGoToHome(10);
     });
 
-    waitAndGoTohome(2800);
+    waitAndGoToHome(2800);
 }
 
 function showError401(){
@@ -60,7 +60,7 @@ function showError401(){
         type: "error",
         timer: 1890},
     function(){
-        waitAndGoTohome(10);
+        waitAndGoToHome(10);
     });
 
     waitAndGoToLogIn(4000);
@@ -72,10 +72,10 @@ function showError404(){
             type: "error",
             timer: 2500},
         function(){
-            waitAndGoTohome(10);
+            waitAndGoToHome(10);
         });
 
-    waitAndGoTohome(2800);
+    waitAndGoToHome(2800);
 }
 
 function showError4xx(){
@@ -84,10 +84,10 @@ function showError4xx(){
             type: "error",
             timer: 2500},
         function(){
-            waitAndGoTohome(10);
+            waitAndGoToHome(10);
         });
 
-    waitAndGoTohome(2800);
+    waitAndGoToHome(2800);
 }
 
 function showError500(){
@@ -96,10 +96,10 @@ function showError500(){
             type: "error",
             timer: 2500},
         function(){
-            waitAndGoTohome(10);
+            waitAndGoToHome(10);
         });
 
-    waitAndGoTohome(2800);
+    waitAndGoToHome(2800);
 }
 
 function showError5xx(){
@@ -108,8 +108,8 @@ function showError5xx(){
             type: "error",
             timer: 2500},
         function(){
-            waitAndGoTohome(10);
+            waitAndGoToHome(10);
         });
 
-    waitAndGoTohome(2800);
+    waitAndGoToHome(2800);
 }
