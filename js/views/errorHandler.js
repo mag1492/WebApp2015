@@ -1,5 +1,3 @@
-
-
 function showError(errorCode){
     var error = errorCode.toString();
 
@@ -18,6 +16,30 @@ function showError(errorCode){
     }else if(error.substring(0,1) == "5"){
         showError5xx();
     }
+}
+
+function emptyUsername(){
+    swal("Did you forget something?", "Your username is empty. Please enter something!", "warning");
+}
+
+function emptyPassword(){
+    swal("Did you forget something?", "Your password is empty. This can't do, please write something!", "warning");
+}
+
+function invalidEmail(){
+    swal("Oops...", "Your email is invalid. Try again.", "warning");
+}
+
+function emailPasswordInvalid(){
+    swal("Error", "Incorrect username or password. Please try again.", "error");
+}
+
+function logError(){
+    swal("Error", "Incorrect username or password. Please try again.", "error");
+}
+
+function signInError(){
+    swal("Error", "We could not sign you up. Please try again.", "error");
 }
 
 function showError400(){
