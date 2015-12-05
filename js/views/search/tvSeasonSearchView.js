@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/search/tvSeasonResultTemplate.html',
-    'collections/searchResult/tvshowsSeasonResult'
-], function($, _, Backbone, TvSeasonResultTemplate, TvshowsSeasonResult){
+    'collections/searchResult/tvshowsSeasonResult',
+    '../errorHandler'
+], function($, _, Backbone, swal, TvSeasonResultTemplate, TvshowsSeasonResult){
     var TvSeasonSearchView = Backbone.View.extend({
         template : _.template(TvSeasonResultTemplate),
 
@@ -15,7 +17,6 @@ define([
             }else{
                 this.setElement(".content");
             }
-
         },
 
         render: function(){
@@ -26,7 +27,9 @@ define([
                 },
                 success: function(response){
                     that.$el.html(that.template({tvSeasons: response.toJSON(), searchField : that.tvSeasons.searchField, isGeneral : that.tvSeasons.isGeneral}));
-
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }

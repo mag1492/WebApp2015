@@ -2,10 +2,12 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/search/moviesResultTemplate.html',
     'collections/searchResult/moviesResult',
-    'views/movie/movieWatchlistButtonView'
-], function($, _, Backbone, MoviesResultTemplate, MovieResult, MovieWatchlistButtonView){
+    'views/movie/movieWatchlistButtonView',
+    '../errorHandler'
+], function($, _, Backbone, swal, MoviesResultTemplate, MovieResult, MovieWatchlistButtonView){
     var MovieSearchView = Backbone.View.extend({
         template : _.template(MoviesResultTemplate),
 
@@ -30,6 +32,9 @@ define([
                         var view = new MovieWatchlistButtonView(movie.trackId);
                         that.$el.append(view.render());
                     });
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }

@@ -1,11 +1,12 @@
-
 define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/search/actorResultTemplate.html',
-    'collections/searchResult/actorsResult'
-], function($, _, Backbone, ActorResultTemplate, ActorResult){
+    'collections/searchResult/actorsResult',
+    '../errorHandler'
+], function($, _, Backbone, swal, ActorResultTemplate, ActorResult){
     var ActorSearchView = Backbone.View.extend({
         template : _.template(ActorResultTemplate),
 
@@ -16,7 +17,6 @@ define([
             }else{
                 this.setElement(".content");
             }
-
         },
 
         render: function(){
@@ -28,6 +28,9 @@ define([
                 success: function(response){
                     that.$el.html(that.template({actors: response.toJSON(), searchField : that.actors.searchField, isGeneral : that.actors.isGeneral}));
 
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }
