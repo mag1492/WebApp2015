@@ -109,6 +109,9 @@ define([
                                 function () {
                                     Backbone.history.navigate('watchlist', true);
                             });
+                        },
+                        error: function(ret, jqXHR){
+                            showError(jqXHR.status);
                         }
                     });
             });

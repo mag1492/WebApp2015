@@ -7,7 +7,7 @@ define([
     '../../collections/actorMovies',
     'models/youtube',
     '../errorHandler'
-], function($, _, Backbone,swal, actorMoviesTemplate, Movies, Youtube){
+], function($, _, Backbone,Swal, actorMoviesTemplate, Movies, Youtube){
 
     var ActorMoviesView = Backbone.View.extend({
         template : _.template(actorMoviesTemplate),

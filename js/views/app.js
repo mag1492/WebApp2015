@@ -40,7 +40,7 @@ function goToHome(){
     document.location.href="index.html";
 }
 
-function waitAndGoTohome(time){
+function waitAndGoToHome(time){
     setTimeout("document.location.href = 'index.html';",time);
 }
 
