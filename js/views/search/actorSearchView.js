@@ -8,10 +8,15 @@ define([
 ], function($, _, Backbone, ActorResultTemplate, ActorResult){
     var ActorSearchView = Backbone.View.extend({
         template : _.template(ActorResultTemplate),
-        el: ".actor-result",
 
-        initialize: function(searchField){
-            this.actors = new ActorResult({"searchField" : searchField});
+        initialize: function(options){
+            this.actors = new ActorResult(options);
+            if(options.isGeneral == true){
+                this.setElement(options.el);
+            }else{
+                this.setElement(".content");
+            }
+
         },
 
         render: function(){
@@ -21,7 +26,8 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    that.$el.html(that.template({actors: response.toJSON()}));
+                    that.$el.html(that.template({actors: response.toJSON(), searchField : that.actors.searchField, isGeneral : that.actors.isGeneral}));
+
                 }
             });
         }

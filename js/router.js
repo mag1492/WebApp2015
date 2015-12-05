@@ -21,7 +21,11 @@ define([
             'user/:id' : 'user',
             'login' : 'login',
             'follow/:id':'follow',
-            'unfollow/:id':'unfollow'
+            'unfollow/:id':'unfollow',
+            'movieSearch/:searchField':'movieSearch',
+            'actorSearch/:searchField':'actorSearch',
+            'tvSeasonSearch/:searchField':'tvSeasonSearch',
+            'userSearch/:searchField':'userSearch'
         }
     });
 
@@ -80,6 +84,30 @@ define([
             require(['views/watchlist/watchlistMovieView'], function (WatchlistMovieView) {
                 var watchlistMovieView = Vm.create(appView, 'MovieWatchlistButtonView', WatchlistMovieView, {watchlistId: watchlistId});
                 watchlistMovieView.deleteMovie(watchlistId, movieId);
+            });
+        });
+        router.on('route:movieSearch', function (searchField) {
+            require(['views/search/movieSearchView'], function (MovieSearchView) {
+                var movieSearchView = Vm.create(appView, 'MovieSearchView', MovieSearchView, {searchField: searchField, isGeneral:false});
+                movieSearchView.render();
+            });
+        });
+        router.on('route:actorSearch', function (searchField) {
+            require(['views/search/actorSearchView'], function (ActorSearchView) {
+                var actorSearchView = Vm.create(appView, 'ActorSearchView', ActorSearchView, {searchField: searchField, isGeneral:false});
+                actorSearchView.render();
+            });
+        });
+        router.on('route:userSearch', function (searchField) {
+            require(['views/search/userSearchView'], function (UserSearchView) {
+                var userSearchView = Vm.create(appView, 'UserSearchView', UserSearchView, {searchField: searchField, isGeneral:false});
+                userSearchView.render();
+            });
+        });
+        router.on('route:tvSeasonSearch', function (searchField) {
+            require(['views/search/tvSeasonSearchView'], function (TvSeasonSearchView) {
+                var tvSeasonSearchView = Vm.create(appView, 'TvSeasonSearchView', TvSeasonSearchView, {searchField: searchField, isGeneral:false});
+                tvSeasonSearchView.render();
             });
         });
         router.on('route:search', function (searchField) {

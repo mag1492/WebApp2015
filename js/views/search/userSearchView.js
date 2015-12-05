@@ -8,11 +8,16 @@ define([
 ], function($, _, Backbone, UserResultTemplate, TokenInfo, UserResult){
     var userSearchView = Backbone.View.extend({
         template : _.template(UserResultTemplate),
-        el: ".user-result",
 
-        initialize: function(searchField){
-            this.users = new UserResult({"searchField" : searchField});
+        initialize: function(options){
+            this.users = new UserResult(options);
             this.tokenInfo = new TokenInfo();
+
+            if(options.isGeneral == true){
+                this.setElement(options.el);
+            }else{
+                this.setElement(".content");
+            }
         },
 
         render: function(){
@@ -41,7 +46,7 @@ define([
                                 });
 
                             });
-                            that.$el.html(that.template({users: users}));
+                            that.$el.html(that.template({users: users, searchField : that.users.searchField, isGeneral : that.users.isGeneral}));
 
                         }
                     });

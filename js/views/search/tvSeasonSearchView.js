@@ -7,10 +7,14 @@ define([
 ], function($, _, Backbone, TvSeasonResultTemplate, TvshowsSeasonResult){
     var TvSeasonSearchView = Backbone.View.extend({
         template : _.template(TvSeasonResultTemplate),
-        el: ".tv-season-result",
 
-        initialize: function(searchField){
-            this.tvSeasons = new TvshowsSeasonResult({"searchField" : searchField});
+        initialize: function(options){
+            this.tvSeasons = new TvshowsSeasonResult( options);
+            if(options.isGeneral == true){
+                this.setElement(options.el);
+            }else{
+                this.setElement(".content");
+            }
 
         },
 
@@ -21,7 +25,8 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    that.$el.html(that.template({tvSeasons: response.toJSON()}));
+                    that.$el.html(that.template({tvSeasons: response.toJSON(), searchField : that.tvSeasons.searchField, isGeneral : that.tvSeasons.isGeneral}));
+
                 }
             });
         }
