@@ -3,11 +3,11 @@ define([
     'underscore',
     'backbone',
     'sweetalarm',
-    'errorhandler',
     'text!templates/actor/actorMoviesTemplate.html',
     '../../collections/actorMovies',
-    'models/youtube'
-], function($, _, Backbone,swal, errorHdl, actorMoviesTemplate, Movies, Youtube){
+    'models/youtube',
+    '../errorHandler'
+], function($, _, Backbone,swal, actorMoviesTemplate, Movies, Youtube){
 
     var ActorMoviesView = Backbone.View.extend({
         template : _.template(actorMoviesTemplate),
@@ -36,15 +36,7 @@ define([
                     });
                 },
                 error: function(ret, jqXHR){
-
-                    errorHdl.testfunction();
-                    console.log("ze statuts : " + jqXHR.status);
-                    swal({  title: "Error",
-                            text: "Could not retrieve the actor's movies. You will be redirected.",
-                            type: "error",
-                            timer: 1890});
-
-                    waitAndGoTohome(2000);
+                    showError(jqXHR.status);
                 }
             });
         }

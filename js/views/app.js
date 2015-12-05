@@ -44,6 +44,10 @@ function waitAndGoTohome(time){
     setTimeout("document.location.href = 'index.html';",time);
 }
 
+function waitAndGoToLogIn(time){
+    setTimeout("document.location.href = 'index.html#/login';",time);
+}
+
 function menuRedirect(){
     document.location.href="#/search/" + $("#srch-term").val();
 }
