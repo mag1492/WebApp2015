@@ -9,6 +9,7 @@ define([
         },
 
         parse: function(response){
+            console.log(response.results.toJSON());
             return response.results;
         }
 
