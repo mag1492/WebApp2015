@@ -2,7 +2,7 @@ define([
     'underscore',
     'backbone'
 ], function(_, Backbone) {
-    var TvShowsGenres = Backbone.Model.extend({
+    var TvShowsGenres = Backbone.Collection.extend({
 
         urlRoot: 'https://umovie.herokuapp.com/genres/tvshows',
 

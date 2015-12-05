@@ -6,8 +6,9 @@ define([
     'views/search/actorSearchView',
     'views/search/movieSearchView',
     'views/search/userSearchView',
-    'views/search/tvSeasonSearchView'
-], function($, _, Backbone, SearchMainTemplate, ActorSearchView, MovieSearchView, UserSearchView, TvSeasonSearchView){
+    'views/search/tvSeasonSearchView',
+    'views/search/genresFilterView'
+], function($, _, Backbone, SearchMainTemplate, ActorSearchView, MovieSearchView, UserSearchView, TvSeasonSearchView, GenresFilterView){
 
     var SearchMainView = Backbone.View.extend({
 
@@ -24,11 +25,13 @@ define([
             this.movieSearchView = new MovieSearchView(optionsMovies);
             this.userSearchView = new UserSearchView(optionsUser);
             this.tvSeasonSearchView = new TvSeasonSearchView(optionsTv);
+            this.genresFilterView = new GenresFilterView();
 
             this.$el.append(this.actorSearchView.render());
             this.$el.append(this.movieSearchView.render());
             this.$el.append(this.userSearchView.render());
             this.$el.append(this.tvSeasonSearchView.render());
+            this.$el.append(this.genresFilterView.render());
 
         }
     });
