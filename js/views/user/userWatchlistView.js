@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/user/userWatchlistTemplate.html',
     'models/watchlist',
-], function($, _, Backbone, UserWatchlistTemplate, Watchlist){
+    '../errorHandler'
+], function($, _, Backbone,swal, UserWatchlistTemplate, Watchlist){
     var WatchlistMainView = Backbone.View.extend({
 
         template : _.template(UserWatchlistTemplate),
@@ -35,6 +37,9 @@ define([
                         }
                     }
                     that.$el.html(that.template({watchlists: watchlists}));
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }
