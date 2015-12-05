@@ -17,6 +17,7 @@ define([
                 this.$el.html(that.template({loggedUser : undefined}));
                 $('#watchlist-link').remove();
                 $('#search-bar').remove();
+                $('#logout').remove();
                 $('.input-group-btn').remove();
             }else{
                 this.tokenInfo.fetch({
@@ -40,4 +41,9 @@ function goToHome(){
 
 function menuRedirect(){
     document.location.href="#/search/" + $("#srch-term").val();
+}
+
+function logout(){
+    $.removeCookie('token');
+    location.reload();
 }
