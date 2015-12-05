@@ -4,7 +4,9 @@ define([
 ], function(_, Backbone) {
     var TvShowsGenres = Backbone.Collection.extend({
 
-        urlRoot: 'https://umovie.herokuapp.com/genres/tvshows',
+        initialize: function(){
+            this.url = 'https://umovie.herokuapp.com/genres/tvshows';
+        },
 
         parse: function(response){
             return response.results;
