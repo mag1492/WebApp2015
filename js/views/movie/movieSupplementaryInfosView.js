@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/movie/movieSupplementaryInfoTemplate.html',
-    'models/movie'
-], function($, _, Backbone, MovieSupplementaryInfoTemplate, Movie){
+    'models/movie',
+    '../errorHandler'
+], function($, _, Backbone, swal, MovieSupplementaryInfoTemplate, Movie){
     var MovieSupplementaryInfosView = Backbone.View.extend({
         template : _.template(MovieSupplementaryInfoTemplate),
         el: ".movie-supplementary-info",
@@ -24,6 +26,9 @@ define([
                     var url = response.toJSON()[0].artworkUrl100.replace("100x100", "200x300");
                     $("#cover").css("background", "url("+ url +") no-repeat");
 
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }

@@ -19,8 +19,7 @@ Pour chacune des pages voici comment proceder.
 
 Page Accueil ----------------------------------------------------------------- 
 
-Index.html, on retrouve les choix de films, de tvshows et d'acteurs. 
-
+Index.html, on retrouve les choix de films, de tvshows et d'acteurs.
 
 Page Movie ------------------------------------------------------------------
 

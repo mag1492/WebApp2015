@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/movie/movieInfoTemplate.html',
-    'models/movie'
-], function($, _, Backbone, MovieInfoTemplate, Movie){
+    'models/movie',
+    '../errorHandler'
+], function($, _, Backbone, swal, MovieInfoTemplate, Movie){
     var MovieView = Backbone.View.extend({
         template : _.template(MovieInfoTemplate),
         el: '.movie-info',
@@ -21,6 +23,9 @@ define([
                 },
                 success: function (ret) {
                     that.$el.html(that.template({movie: ret.toJSON()}));
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             })
         }

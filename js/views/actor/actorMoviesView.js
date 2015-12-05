@@ -2,10 +2,12 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/actor/actorMoviesTemplate.html',
     '../../collections/actorMovies',
-    'models/youtube'
-], function($, _, Backbone, actorMoviesTemplate, Movies, Youtube){
+    'models/youtube',
+    '../errorHandler'
+], function($, _, Backbone,Swal, actorMoviesTemplate, Movies, Youtube){
 
     var ActorMoviesView = Backbone.View.extend({
         template : _.template(actorMoviesTemplate),
@@ -32,6 +34,9 @@ define([
                             }
                         });
                     });
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }

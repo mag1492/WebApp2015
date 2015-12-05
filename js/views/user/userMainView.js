@@ -3,13 +3,15 @@ define([
     'underscore',
     'backbone',
     'md5',
+    'sweetalarm',
     'models/user',
     'models/follow',
     'models/tokenInfo',
     'models/unfollow',
     'views/user/userWatchlistView',
-    'text!templates/user/userMainTemplate.html'
-], function($, _, Backbone, md5, User, Follow,TokenInfo,Unfollow, UserWatchlistView, UserMainTemplate){
+    'text!templates/user/userMainTemplate.html',
+    '../errorHandler'
+], function($, _, Backbone, md5, swal, User, Follow,TokenInfo,Unfollow, UserWatchlistView, UserMainTemplate){
     var UserMainView = Backbone.View.extend({
         initialize: function(options){
             this.user = new User(options);
@@ -45,6 +47,7 @@ define([
                                     isFollowing = true;
                                 }
                             });
+
                             if(loggedUser.id == user.id){
                                 isFollowing = null;
                             }
@@ -59,12 +62,13 @@ define([
                                 $("#follower"+follower._id).find(".avatar-img-follower").css("background", "url("+ avatarFollower+") no-repeat");
                             });
 
-
                             var view = new UserWatchlistView(user.id);
                             that.$el.append(view.render());
                         }
                     });
-
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         },
@@ -90,6 +94,9 @@ define([
 
                         }
                     });
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         },
@@ -122,11 +129,16 @@ define([
                                 },
                                 success: function(response){
                                     document.location.replace("#/user/"+loggedUser.id);
+                                },
+                                error: function(ret, jqXHR){
+                                    showError(jqXHR.status);
                                 }
                             })
                         }
                     });
-
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }

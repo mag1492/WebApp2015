@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+
     'text!templates/search/userResultTemplate.html',
     'models/tokenInfo',
-    'collections/searchResult/userResult'
+    'collections/searchResult/userResult',
+    '../errorHandler'
 ], function($, _, Backbone, UserResultTemplate, TokenInfo, UserResult){
     var userSearchView = Backbone.View.extend({
         template : _.template(UserResultTemplate),
@@ -50,6 +52,9 @@ define([
 
                         }
                     });
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }

@@ -2,12 +2,13 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/movie/movieWatchlistButtonTemplate.html',
     'models/watchlist',
     'models/watchlistAddMovie',
     'models/movie',
     'models/tokenInfo'
-], function($, _, Backbone, MovieWatchlistButtonTemplate, Watchlist, WatchlistAddMovie, Movie, TokenInfo){
+], function($, _, Backbone, swal, MovieWatchlistButtonTemplate, Watchlist, WatchlistAddMovie, Movie, TokenInfo){
     var MovieWatchlistButtonView = Backbone.View.extend({
         template : _.template(MovieWatchlistButtonTemplate),
 
@@ -45,12 +46,13 @@ define([
                             var retour = {"movieId" : that.movieId, "response" : loggedUserWatchlists};
                             that.$el.html(that.template({watchlists: retour}));
                             $('#myModal'+that.movieId).appendTo("body");
-
                         }
                     });
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
-
         },
 
         addMovie: function(watchlistId, movieId){
@@ -71,10 +73,12 @@ define([
                             window.location.replace('#/watchlist/'+watchlistId);
                         }
                     })
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }
-
     });
     return MovieWatchlistButtonView;
 });

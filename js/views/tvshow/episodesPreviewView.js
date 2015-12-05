@@ -2,10 +2,12 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/tvshow/episodePreviewTemplate.html',
     'collections/episodes',
     'models/youtubeEpisode',
-], function($, _, Backbone, episodePreviewTemplate, Episodes, YoutubeEpisode){
+    '../errorHandler'
+], function($, _, Backbone, swal, episodePreviewTemplate, Episodes, YoutubeEpisode){
     var TrailerEpisodeView = Backbone.View.extend({
         template : _.template(episodePreviewTemplate),
         el : ".modalEpisode",
@@ -42,6 +44,9 @@ define([
                             }
                         });
                     })
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }

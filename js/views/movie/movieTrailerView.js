@@ -2,10 +2,12 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/movie/movieTrailerTemplate.html',
     'models/movie',
-    'models/youtube'
-], function($, _, Backbone, MovieTrailerTemplate, Movie, YoutubeMovie){
+    'models/youtube',
+    '../errorHandler'
+], function($, _, Backbone, swal, MovieTrailerTemplate, Movie, YoutubeMovie){
     var MovieTrailerView = Backbone.View.extend({
         template : _.template(MovieTrailerTemplate),
         el: ".movie-info-trailer",
@@ -29,6 +31,9 @@ define([
                             that.$el.html(that.template({youtube: "http://www.youtube.com/watch_popup?v=" + movie.items[0].id.videoId}));
                         }
                     });
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         },
