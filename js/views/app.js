@@ -40,6 +40,10 @@ function goToHome(){
     document.location.href="index.html";
 }
 
+function waitAndGoTohome(time){
+    setTimeout("document.location.href = 'index.html';",time);
+}
+
 function menuRedirect(){
     document.location.href="#/search/" + $("#srch-term").val();
 }
