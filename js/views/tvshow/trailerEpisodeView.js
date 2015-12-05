@@ -2,10 +2,12 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/tvshow/seasonEpisodeTrailerTemplate.html',
     'collections/episodes',
     'models/youtube',
-], function($, _, Backbone, SeasonEpisodeTrailerTemplate, Episodes, Youtube){
+    '../errorHandler'
+], function($, _, Backbone, swal, SeasonEpisodeTrailerTemplate, Episodes, Youtube){
     var TrailerEpisodeView = Backbone.View.extend({
         template : _.template(SeasonEpisodeTrailerTemplate),
         el: ".season-info-trailer",
@@ -29,6 +31,9 @@ define([
                             that.$el.html(that.template({youtube: "http://www.youtube.com/watch_popup?v=" + episode.items[0].id.videoId}));
                         }
                     });
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }

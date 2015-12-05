@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/tvshow/seasonInfoTemplate.html',
     'models/season',
-], function($, _, Backbone, SeasonInfoTemplate, Season){
+    '../errorHandler'
+], function($, _, Backbone, swal, SeasonInfoTemplate, Season){
     var TvShowView = Backbone.View.extend({
         template : _.template(SeasonInfoTemplate),
         el: ".seasonX-info",
@@ -21,6 +23,9 @@ define([
                 },
                 success: function(response){
                      that.$el.html(that.template({season: response.toJSON()}));
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         }
