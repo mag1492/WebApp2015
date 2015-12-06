@@ -24,7 +24,23 @@ define([
                     that.$el.html(that.template({genres: response.toJSON()}));
                 }
             });
-        }
+        },
+
+        events: {
+            'click #movies-genre-chk': 'filterGenre'
+        },
+
+        filterGenre: function(){
+            console.log("appel");
+        //$('#chk-' + genre.id).onchange = function() {
+        //    if(this.checked){
+        //        console.log('checked');
+        //    } else{
+        //        console.log('unchecked');
+        //    }};
+    }
+
     });
     return GenresFilterView;
+
 });

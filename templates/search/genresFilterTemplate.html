@@ -4,14 +4,8 @@
         <% _.each(genres, function(genre) {%>
         <div class ="col-md-2 col-sm-2">
             <label class="white-text" >
-                <input id="chk-<%= genre.id %>" type="checkbox" autocomplete="off"><%= genre.name %></button>
+                <input id="chk-<%= genre.id %>" class="movies-genre-chk" type="checkbox" autocomplete="off"><%= genre.name %></button>
             </label>
-            <%$('#chk-<%= genre.id %>').onchange = function() {
-            if(this.checked){
-            console.log('checked');
-            } else{
-            console.log('unchecked');
-            }};%>
         </div>
         <% });%>
     </div>
