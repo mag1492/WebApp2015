@@ -87,9 +87,10 @@ define([
             });
         });
         router.on('route:movieSearch', function (searchField) {
-            require(['views/search/movieSearchView'], function (MovieSearchView) {
-                var movieSearchView = Vm.create(appView, 'MovieSearchView', MovieSearchView, {searchField: searchField, isGeneral:false});
-                movieSearchView.render();
+            require(['views/search/moreMovieResultView'], function (MoreMovieResultView) {
+                console.log('ici');
+                var moreMovieResultView = Vm.create(appView, 'MoreMovieResultView', MoreMovieResultView);
+                moreMovieResultView.render(searchField);
             });
         });
         router.on('route:actorSearch', function (searchField) {
