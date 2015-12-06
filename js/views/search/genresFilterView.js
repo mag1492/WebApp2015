@@ -4,14 +4,20 @@ define([
     'underscore',
     'backbone',
     'text!templates/search/genresFilterTemplate.html',
-    'collections/moviesGenres'
-], function($, _, Backbone, GenresFilterTemplate, MoviesGenres){
+    'text!templates/search/moviesResultTemplate.html',
+    'collections/searchResult/moviesResult',
+    'collections/moviesGenres',
+    'views/movie/movieWatchlistButtonView'
+], function($, _, Backbone, GenresFilterTemplate, MovieResultTemplate, MovieResult, MoviesGenres, MovieWatchlistButtonView){
     var GenresFilterView = Backbone.View.extend({
         template : _.template(GenresFilterTemplate),
-        el: ".genres-filter",
 
-        initialize: function(){
+        initialize: function(options){
             this.genres = new MoviesGenres();
+            this.movieResult = new MovieResult(options);
+            this.movieEl = options.el;
+            this.setElement(".genres-filter");
+
         },
 
         render: function(){
@@ -33,11 +39,25 @@ define([
         filterGenre: function(e){
             var id = $(e.currentTarget)[0].id;
             if(e.currentTarget.checked){
-                console.log('checked');
+                this.movieResult.addGenre(id);
             } else{
-                console.log('unchecked');
-            }}
-    //}
+                this.movieResult.removeGenre(id);
+            }
+            console.log(this.movieResult);
+            var that = this;
+            this.movieResult.fetch({
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Authorization', $.cookie('token'));
+                },
+                success: function(response){
+                    $(that.movieEl).html(_.template(MovieResultTemplate)({movies: response.toJSON(), searchField : that.movieResult.searchField, isGeneral : that.movieResult.isGeneral}));
+                    response.toJSON().forEach(function(movie){
+                        var view = new MovieWatchlistButtonView(movie.trackId);
+                        $(that.movieEl).append(view.render());
+                    });
+                }
+            });
+    }
 
     });
     return GenresFilterView;
