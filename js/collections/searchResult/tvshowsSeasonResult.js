@@ -7,6 +7,7 @@ define([
         initialize: function(options){
             this.searchField = options.searchField;
             this.isGeneral = options.isGeneral;
+            this.genres = [];
             if(options.isGeneral){
                 this.url = 'https://umovie.herokuapp.com/unsecure/search/tvshows/seasons?q='+ options.searchField;
             }
@@ -18,11 +19,20 @@ define([
         parse: function(response) {
             return response.results;
         },
-        addGenre: function(genre) {
+        addGenreUrl: function(genre) {
             this.url += '&genre=' + genre;
         },
-        removeGenre: function(genre){
+        removeGenreUrl: function(genre){
             this.url = this.url.replace('&genre=' + genre, "")
+        },
+        addGenre: function(genre) {
+            this.genres.push(genre);
+        },
+        removeGenre: function(genre){
+            var index = this.genres.indexOf(genre);
+            if (index > -1) {
+                this.genres.splice(index, 1);
+            }
         }
     });
     return TvShowSeasonResult;

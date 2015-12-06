@@ -42,16 +42,39 @@ define([
             } else{
                 this.TvshowsSeasonResult.removeGenre(id);
             }
-            console.log(this.TvshowsSeasonResult);
             var that = this;
-            this.TvshowsSeasonResult.fetch({
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader('Authorization', $.cookie('token'));
-                },
-                success: function(response){
-                    $(that.tvshowEl).html(_.template(TvSeasonResultTemplate)({tvSeasons: response.toJSON(), searchField : that.TvshowsSeasonResult.searchField, isGeneral : that.TvshowsSeasonResult.isGeneral}));
+            var seasons = [];
+            if(this.TvshowsSeasonResult.genres.length > 0) {
+                this.TvshowsSeasonResult.genres.forEach(function (genre) {
+                    that.TvshowsSeasonResult.addGenreUrl(genre);
+                    that.TvshowsSeasonResult.fetch({
+                        async: false,
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization', $.cookie('token'));
+                        },
+                        success: function (response) {
+                            seasons.push(response.toJSON());
+                        }
+                    });
+                    that.TvshowsSeasonResult.removeGenreUrl(genre);
+                });
+                var arr = [];
+                for (var k in seasons) {
+                    arr = arr.concat(seasons[k]);
                 }
-            });
+
+                $(that.tvshowEl).html(_.template(TvSeasonResultTemplate)({tvSeasons: arr, searchField : that.TvshowsSeasonResult.searchField, isGeneral : that.TvshowsSeasonResult.isGeneral}));
+
+            }else{
+                that.TvshowsSeasonResult.fetch({
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Authorization', $.cookie('token'));
+                    },
+                    success: function (response) {
+                        $(that.tvshowEl).html(_.template(TvSeasonResultTemplate)({tvSeasons: response.toJSON(), searchField : that.TvshowsSeasonResult.searchField, isGeneral : that.TvshowsSeasonResult.isGeneral}));
+                    }
+                });
+            }
         }
 
     });

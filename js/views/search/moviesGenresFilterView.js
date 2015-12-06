@@ -13,8 +13,8 @@ define([
 
         initialize: function(options){
             this.genres = new MoviesGenres();
-            this.TvshowsSeasonResult = new MovieResult(options);
-            this.tvshowEl = options.el;
+            this.MovieResult = new MovieResult(options);
+            this.movieEl = options.el;
             this.setElement(".movies-genres-filter");
 
         },
@@ -38,24 +38,51 @@ define([
         filterGenre: function(e){
             var id = $(e.currentTarget)[0].id;
             if(e.currentTarget.checked){
-                this.TvshowsSeasonResult.addGenre(id);
+                this.MovieResult.addGenre(id);
             } else{
-                this.TvshowsSeasonResult.removeGenre(id);
+                this.MovieResult.removeGenre(id);
             }
-            console.log(this.TvshowsSeasonResult);
             var that = this;
-            this.TvshowsSeasonResult.fetch({
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader('Authorization', $.cookie('token'));
-                },
-                success: function(response){
-                    $(that.tvshowEl).html(_.template(MovieResultTemplate)({movies: response.toJSON(), searchField : that.TvshowsSeasonResult.searchField, isGeneral : that.TvshowsSeasonResult.isGeneral}));
-                    response.toJSON().forEach(function(movie){
-                        var view = new MovieWatchlistButtonView(movie.trackId);
-                        $(that.tvshowEl).append(view.render());
+            var movies = [];
+            if(this.MovieResult.genres.length > 0) {
+                this.MovieResult.genres.forEach(function (genre) {
+                    that.MovieResult.addGenreUrl(genre);
+                    that.MovieResult.fetch({
+                        async: false,
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization', $.cookie('token'));
+                        },
+                        success: function (response) {
+                            movies.push(response.toJSON());
+                        }
                     });
+                    that.MovieResult.removeGenreUrl(genre);
+                });
+                var arr = [];
+                for (var k in movies) {
+                    arr = arr.concat(movies[k]);
                 }
-            });
+
+                $(that.movieEl).html(_.template(MovieResultTemplate)({movies: arr, searchField : that.MovieResult.searchField, isGeneral : that.MovieResult.isGeneral}));
+                arr.forEach(function(movie){
+                    var view = new MovieWatchlistButtonView(movie.trackId);
+                    $(that.movieEl).append(view.render());
+                });
+            }else{
+                that.MovieResult.fetch({
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Authorization', $.cookie('token'));
+                    },
+                    success: function (response) {
+                        $(that.movieEl).html(_.template(MovieResultTemplate)({movies: response.toJSON(), searchField : that.MovieResult.searchField, isGeneral : that.MovieResult.isGeneral}));
+                         response.toJSON().forEach(function(movie){
+                         var view = new MovieWatchlistButtonView(movie.trackId);
+                         $(that.movieEl).append(view.render());
+                         });
+                    }
+                });
+            }
+
     }
 
     });
