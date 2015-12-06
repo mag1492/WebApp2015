@@ -3,8 +3,9 @@ define([
     'underscore',
     'backbone',
     'models/tokenInfo',
+    'awesomplete',
     'text!templates/menuTemplate.html'
-], function ($, _, Backbone, TokenInfo, menuTemplate) {
+], function ($, _, Backbone, TokenInfo, awesomplete, menuTemplate) {
     var AppView = Backbone.View.extend({
         template : _.template(menuTemplate),
         el: '.menu',

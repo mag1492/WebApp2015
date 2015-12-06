@@ -2,7 +2,8 @@ require.config({
     shim: {
         /* Set bootstrap dependencies (just jQuery) */
         'bootstrap' : ['jquery'],
-        'owl': ['jquery']
+        'owl': ['jquery'],
+        'awesomplete': ['jquery']
     },
     paths: {
         // Major libraries
@@ -14,6 +15,7 @@ require.config({
         owl: 'libs/owl-carousel/owl.carousel',
         md5: 'libs/md5/jquery.md5',
         sweetalarm: 'libs/sweet-alert/sweetalert.min',
+        awesomplete: 'libs/awesomplete/awesomplete.min',
 
         // Require.js plugins
         text: 'libs/require/text',
