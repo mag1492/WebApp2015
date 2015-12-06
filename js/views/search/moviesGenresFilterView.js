@@ -2,12 +2,14 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/search/moviesGenresFilterTemplate.html',
     'text!templates/search/moviesResultTemplate.html',
     'collections/searchResult/moviesResult',
     'collections/moviesGenres',
-    'views/movie/movieWatchlistButtonView'
-], function($, _, Backbone, MoviesGenresFilterTemplate, MovieResultTemplate, MovieResult, MoviesGenres, MovieWatchlistButtonView){
+    'views/movie/movieWatchlistButtonView',
+    '../errorHandler'
+], function($, _, Backbone, Swal, MoviesGenresFilterTemplate, MovieResultTemplate, MovieResult, MoviesGenres, MovieWatchlistButtonView){
     var GenresFilterView = Backbone.View.extend({
         template : _.template(MoviesGenresFilterTemplate),
 
@@ -27,6 +29,9 @@ define([
                 },
                 success: function(response){
                     that.$el.html(that.template({genres: response.toJSON()}));
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         },
@@ -55,6 +60,10 @@ define([
                         success: function (response) {
                             movies.push(response.toJSON());
                         }
+                        ,
+                        error: function(ret, jqXHR){
+                            showError(jqXHR.status);
+                        }
                     });
                     that.MovieResult.removeGenreUrl(genre);
                 });
@@ -79,6 +88,9 @@ define([
                          var view = new MovieWatchlistButtonView(movie.trackId);
                          $(that.movieEl).append(view.render());
                          });
+                    },
+                    error: function(ret, jqXHR){
+                        showError(jqXHR.status);
                     }
                 });
             }

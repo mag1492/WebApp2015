@@ -3,11 +3,13 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/search/tvshowsGenresFilterTemplate.html',
     'text!templates/search/tvSeasonResultTemplate.html',
     'collections/searchResult/tvshowsSeasonResult',
-    'collections/tvshowsGenres'
-], function($, _, Backbone, TvshowsGenresFilterTemplate, TvSeasonResultTemplate, TvshowsSeasonResult, TvshowsGenres){
+    'collections/tvshowsGenres',
+    '../errorHandler'
+], function($, _, Backbone,Swal, TvshowsGenresFilterTemplate, TvSeasonResultTemplate, TvshowsSeasonResult, TvshowsGenres){
     var TvshowsGenresFilterView = Backbone.View.extend({
         template : _.template(TvshowsGenresFilterTemplate),
 
@@ -27,6 +29,9 @@ define([
                 },
                 success: function(response){
                     that.$el.html(that.template({genres: response.toJSON()}));
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         },
@@ -54,6 +59,9 @@ define([
                         },
                         success: function (response) {
                             seasons.push(response.toJSON());
+                        },
+                        error: function(ret, jqXHR){
+                            showError(jqXHR.status);
                         }
                     });
                     that.TvshowsSeasonResult.removeGenreUrl(genre);
@@ -72,6 +80,9 @@ define([
                     },
                     success: function (response) {
                         $(that.tvshowEl).html(_.template(TvSeasonResultTemplate)({tvSeasons: response.toJSON(), searchField : that.TvshowsSeasonResult.searchField, isGeneral : that.TvshowsSeasonResult.isGeneral}));
+                    },
+                    error: function(ret, jqXHR){
+                        showError(jqXHR.status);
                     }
                 });
             }
