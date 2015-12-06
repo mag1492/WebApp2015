@@ -37,6 +37,10 @@ define([
     return AppView;
 });
 
+var input = document.getElementById("srch-term");
+var awesomplete = new Awesomplete(input);
+awesomplete.list = ["Ada", "Java", "JavaScript", "Brainfuck", "LOLCODE", "Node.js", "Ruby on Rails"];
+
 function goToHome(){
     document.location.href="index.html";
 }

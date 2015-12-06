@@ -16,7 +16,7 @@
             <div class="col-sm-3 col-md-3 pull-left" id="search-bar">
                 <div class="navbar-form" role="search">
                     <div class="input-group">
-                        <input type="text" class="form-control awesomplete" placeholder="Search" name="srch-term" id="srch-term" data-list="Ada, Java, JavaScript, Brainfuck, LOLCODE, Node.js, Ruby on Rails"/>
+                        <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term" />
                         <div class="input-group-btn">
                             <button onclick="menuRedirect()" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                         </div>
@@ -44,3 +44,11 @@
         </div>
     </div>
 </nav>
+
+<script>
+
+    var input = document.getElementById("srch-term");
+    var awesomplete = new Awesomplete(input);
+    awesomplete.list = ["Ada", "Java", "JavaScript", "Brainfuck", "LOLCODE", "Node.js", "Ruby on Rails"];
+
+</script>
