@@ -1,8 +1,18 @@
 <div class="col-md-12 col-sm-12" style="background-color: #2B2B2B">
-    <h4>Filter by the genres you prefer:</h4>
-    <% _.each(genres, function(genre) {%>
-    <div class ="col-md-1 col-sm-2">
-        <button type="button" class="btn btn-secondary-outline " data-toggle="button"><% genre.name %></button>
+    <h4 class="white-text">Filter movies by the genres you prefer:</h4>
+    <div class="btn-group">
+        <% _.each(genres, function(genre) {%>
+        <div class ="col-md-2 col-sm-2">
+            <label class="white-text" >
+                <input id="chk-<%= genre.id %>" type="checkbox" autocomplete="off"><%= genre.name %></button>
+            </label>
+            <%$('#chk-<%= genre.id %>').onchange = function() {
+            if(this.checked){
+            console.log('checked');
+            } else{
+            console.log('unchecked');
+            }};%>
+        </div>
+        <% });%>
     </div>
-   <% });%>
 </div>

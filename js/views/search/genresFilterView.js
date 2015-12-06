@@ -21,7 +21,6 @@ define([
                     xhr.setRequestHeader('Authorization', $.cookie('token'));
                 },
                 success: function(response){
-                    console.log(response.toJSON());
                     that.$el.html(that.template({genres: response.toJSON()}));
                 }
             });

@@ -8,10 +8,6 @@ define([
             this.url = 'https://umovie.herokuapp.com/genres/tvshows';
         },
 
-        parse: function(response){
-            return response.results;
-        }
-
     });
     return TvShowsGenres;
 });

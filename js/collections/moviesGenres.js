@@ -6,10 +6,6 @@ define([
 
         initialize: function(){
             this.url = 'https://umovie.herokuapp.com/genres/movies';
-        },
-
-        parse: function(response){
-            return response.results;
         }
 
     });
