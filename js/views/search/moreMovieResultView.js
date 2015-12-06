@@ -4,8 +4,8 @@ define([
     'backbone',
     'text!templates/search/searchMainTemplate.html',
     'views/search/movieSearchView',
-    'views/search/genresFilterView'
-], function($, _, Backbone, SearchMainTemplate, MovieSearchView,GenresFilterView){
+    'views/search/moviesGenresFilterView'
+], function($, _, Backbone, SearchMainTemplate, MovieSearchView,MoviesGenresFilterView){
 
     var SearchMainView = Backbone.View.extend({
 
@@ -15,13 +15,13 @@ define([
         render: function (searchField) {
             this.$el.html(this.template());
             var optionsMovies = {searchField : searchField, isGeneral : false, el : ".movie-result"};
-            var optionsMoviesGenre = {searchField : searchField, isGeneral : false, el : ".movie-result"};
+            var optionsMoviesGenres = {searchField : searchField, isGeneral : false, el : ".movie-result"};
 
             this.movieSearchView = new MovieSearchView(optionsMovies);
-            this.genresFilterView = new GenresFilterView(optionsMoviesGenre);
+            this.moviesGenresFilterView = new MoviesGenresFilterView(optionsMoviesGenres);
 
             this.$el.append(this.movieSearchView.render());
-            this.$el.append(this.genresFilterView.render());
+            this.$el.append(this.moviesGenresFilterView.render());
 
         }
     });

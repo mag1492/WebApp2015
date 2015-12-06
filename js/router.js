@@ -88,7 +88,6 @@ define([
         });
         router.on('route:movieSearch', function (searchField) {
             require(['views/search/moreMovieResultView'], function (MoreMovieResultView) {
-                console.log('ici');
                 var moreMovieResultView = Vm.create(appView, 'MoreMovieResultView', MoreMovieResultView);
                 moreMovieResultView.render(searchField);
             });
