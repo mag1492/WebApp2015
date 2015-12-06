@@ -1,7 +1,7 @@
 define([
     'jquery',
     'underscore',
-    'backbone',
+    'backbone'
 ], function($, _, Backbone){
     var MoviesResult = Backbone.Collection.extend({
         initialize: function(options){

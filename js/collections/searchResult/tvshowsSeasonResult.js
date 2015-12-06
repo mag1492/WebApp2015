@@ -1,7 +1,7 @@
 define([
     'jquery',
     'underscore',
-    'backbone',
+    'backbone'
 ], function($, _, Backbone){
     var TvShowSeasonResult = Backbone.Collection.extend({
         initialize: function(options){
@@ -17,6 +17,12 @@ define([
         },
         parse: function(response) {
             return response.results;
+        },
+        addGenre: function(genre) {
+            this.url += '&genre=' + genre;
+        },
+        removeGenre: function(genre){
+            this.url = this.url.replace('&genre=' + genre, "")
         }
     });
     return TvShowSeasonResult;
