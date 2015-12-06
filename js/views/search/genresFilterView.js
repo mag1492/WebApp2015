@@ -6,8 +6,9 @@ define([
     'text!templates/search/genresFilterTemplate.html',
     'text!templates/search/moviesResultTemplate.html',
     'collections/searchResult/moviesResult',
-    'collections/moviesGenres'
-], function($, _, Backbone, GenresFilterTemplate, MovieResultTemplate, MovieResult, MoviesGenres){
+    'collections/moviesGenres',
+    'views/movie/movieWatchlistButtonView'
+], function($, _, Backbone, GenresFilterTemplate, MovieResultTemplate, MovieResult, MoviesGenres, MovieWatchlistButtonView){
     var GenresFilterView = Backbone.View.extend({
         template : _.template(GenresFilterTemplate),
 
@@ -50,6 +51,10 @@ define([
                 },
                 success: function(response){
                     $(that.movieEl).html(_.template(MovieResultTemplate)({movies: response.toJSON(), searchField : that.movieResult.searchField, isGeneral : that.movieResult.isGeneral}));
+                    response.toJSON().forEach(function(movie){
+                        var view = new MovieWatchlistButtonView(movie.trackId);
+                        $(that.movieEl).append(view.render());
+                    });
                 }
             });
     }
