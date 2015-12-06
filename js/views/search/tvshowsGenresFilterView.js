@@ -8,7 +8,7 @@ define([
     'collections/searchResult/tvshowsSeasonResult',
     'collections/tvshowsGenres'
 ], function($, _, Backbone, TvshowsGenresFilterTemplate, TvSeasonResultTemplate, TvshowsSeasonResult, TvshowsGenres){
-    var GenresFilterView = Backbone.View.extend({
+    var TvshowsGenresFilterView = Backbone.View.extend({
         template : _.template(TvshowsGenresFilterTemplate),
 
         initialize: function(options){
@@ -55,6 +55,6 @@ define([
         }
 
     });
-    return GenresFilterView;
+    return TvshowsGenresFilterView;
 
 });
