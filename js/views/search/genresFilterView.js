@@ -27,18 +27,17 @@ define([
         },
 
         events: {
-            'click #movies-genre-chk': 'filterGenre'
+            'click .movies-genre-chk': 'filterGenre'
         },
 
-        filterGenre: function(){
-            console.log("appel");
-        //$('#chk-' + genre.id).onchange = function() {
-        //    if(this.checked){
-        //        console.log('checked');
-        //    } else{
-        //        console.log('unchecked');
-        //    }};
-    }
+        filterGenre: function(e){
+            var id = $(e.currentTarget)[0].id;
+            if(e.currentTarget.checked){
+                console.log('checked');
+            } else{
+                console.log('unchecked');
+            }}
+    //}
 
     });
     return GenresFilterView;
