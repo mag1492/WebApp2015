@@ -87,9 +87,9 @@ define([
             });
         });
         router.on('route:movieSearch', function (searchField) {
-            require(['views/search/moreMovieResultView'], function (MoreMovieResultView) {
-                var moreMovieResultView = Vm.create(appView, 'MoreMovieResultView', MoreMovieResultView);
-                moreMovieResultView.render(searchField);
+            require(['views/search/moreMoviesResultsView'], function (MoreMoviesResultsView) {
+                var moreMoviesResultsView = Vm.create(appView, 'MoreMoviesResultsView', MoreMoviesResultsView);
+                moreMoviesResultsView.render(searchField);
             });
         });
         router.on('route:actorSearch', function (searchField) {
@@ -105,9 +105,9 @@ define([
             });
         });
         router.on('route:tvSeasonSearch', function (searchField) {
-            require(['views/search/tvSeasonSearchView'], function (TvSeasonSearchView) {
-                var tvSeasonSearchView = Vm.create(appView, 'TvSeasonSearchView', TvSeasonSearchView, {searchField: searchField, isGeneral:false});
-                tvSeasonSearchView.render();
+            require(['views/search/moreTvSeasonsResultsView'], function (MoreTvSeasonsResultView) {
+                var moreTvSeasonsResultsView = Vm.create(appView, 'MoreTvSeasonsResultView', MoreTvSeasonsResultView);
+                moreTvSeasonsResultsView.render(searchField);
             });
         });
         router.on('route:search', function (searchField) {
