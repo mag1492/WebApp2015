@@ -22,23 +22,16 @@ define([
             var optionsUser = {searchField : searchField, isGeneral : true, el : ".user-result"};
             var optionsMovies = {searchField : searchField, isGeneral : true, el : ".movie-result"};
             var optionsTv = {searchField : searchField, isGeneral : true, el : ".tv-season-result"};
-            var optionsMoviesGenres = {searchField : searchField, isGeneral : true, el : ".movie-result"};
-            var optionsTvShowsGenres = {searchField : searchField, isGeneral : true, el : ".tv-season-result"};
 
             this.actorSearchView = new ActorSearchView(optionsActor);
             this.movieSearchView = new MovieSearchView(optionsMovies);
             this.userSearchView = new UserSearchView(optionsUser);
             this.tvSeasonSearchView = new TvSeasonSearchView(optionsTv);
-            this.moviesGenresFilterView = new MoviesGenresFilterView(optionsMoviesGenres);
-            this.tvshowsGenresFilterView = new TvshowsGenresFilterView(optionsTvShowsGenres);
 
             this.$el.append(this.actorSearchView.render());
             this.$el.append(this.movieSearchView.render());
             this.$el.append(this.userSearchView.render());
             this.$el.append(this.tvSeasonSearchView.render());
-            this.$el.append(this.moviesGenresFilterView.render());
-            this.$el.append(this.tvshowsGenresFilterView.render());
-
         }
     });
 
