@@ -17,6 +17,12 @@ define([
         },
         parse: function(response) {
             return response.results;
+        },
+        addGenre: function(genre) {
+            this.url += '&genre=' + genre;
+        },
+        removeGenre: function(genre){
+            this.url = this.url.replace('&genre=' + genre, "")
         }
     });
     return MoviesResult;
