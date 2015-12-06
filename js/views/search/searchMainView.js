@@ -6,10 +6,8 @@ define([
     'views/search/actorSearchView',
     'views/search/movieSearchView',
     'views/search/userSearchView',
-    'views/search/tvSeasonSearchView',
-    'views/search/moviesGenresFilterView',
-    'views/search/tvshowsGenresFilterView'
-], function($, _, Backbone, SearchMainTemplate, ActorSearchView, MovieSearchView, UserSearchView, TvSeasonSearchView, MoviesGenresFilterView, TvshowsGenresFilterView){
+    'views/search/tvSeasonSearchView'
+], function($, _, Backbone, SearchMainTemplate, ActorSearchView, MovieSearchView, UserSearchView, TvSeasonSearchView){
 
     var SearchMainView = Backbone.View.extend({
 
