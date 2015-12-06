@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/watchlist/createOrEditTemplate.html',
-    'models/watchlist'
-], function($, _, Backbone, CreateOrEditViewTemplate, Watchlist){
+    'models/watchlist',
+    '../errorHandler'
+], function($, _, Backbone, swal, CreateOrEditViewTemplate, Watchlist){
     var CreateNewWatchlistView = Backbone.View.extend({
 
         template : _.template(CreateOrEditViewTemplate),
@@ -21,7 +23,6 @@ define([
 
             if(typeof options.id != 'undefined'){
                 this.watchlistOption = options.id.toString();
-                console.log(this.watchlistOption);
                 this.watchlist = new Watchlist({id: options.id});
             }
             else{
@@ -40,10 +41,8 @@ define([
                     success: function(response){
                         that.$el.html(that.template({watchlist: response.toJSON()}));
                     },
-                    error: function(){
-                        alert("Error Not Found.\n The watchlist's id:" + that.watchlistOption + " was not found. \n"+
-                        "We will bring you back to the other side.");
-                        Backbone.history.navigate('watchlist', true);
+                    error: function(ret, jqXHR){
+                        showError(jqXHR.status);
                     }
                 });
             }
@@ -74,47 +73,68 @@ define([
                         xhr.setRequestHeader('Authorization', $.cookie('token'));
                     },
                     success: function () {
-                        console.log("Adding was a success!");
                         Backbone.history.navigate('watchlist', true);
+                    },
+                    error: function(ret, jqXHR){
+                        showError(jqXHR.status);
                     }
                 });
             }
         },
 
         deleteWatchlist: function(){
-            console.log("should delete");
             this.confirmDelete();
-
         },
 
         confirmDelete: function(){
-            if (confirm("Are you sure you want to delete this watchlist ?") == true) {
-                this.watchlist.destroy({
-                    beforeSend: function(xhr) {
-                        xhr.setRequestHeader('Authorization', $.cookie('token'));
-                    },
-                    success: function(){
-                        Backbone.history.navigate('watchlist', true);
-                    },
-                    error: function(){
-
-                    }
-                })
-            }
+            var that = this;
+            swal({   title: "Are you sure you want to delete this watchlist ?",
+                text: "You will not be able to recover this watchlist!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#E74C3C",
+                confirmButtonText: "Yes, delete it!",
+                closeOnConfirm: false },
+                function() {
+                    that.watchlist.destroy({
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader('Authorization', $.cookie('token'));
+                        },
+                        success: function () {
+                            swal({
+                                    title: "Deleted!",
+                                    text: "Your watchlist has been successfully deleted!",
+                                    type: "success"
+                                },
+                                function () {
+                                    Backbone.history.navigate('watchlist', true);
+                            });
+                        },
+                        error: function(ret, jqXHR){
+                            showError(jqXHR.status);
+                        }
+                    });
+            });
         },
 
         watchlistNameisValid: function(){
 
             if($("#watchlistName").val().length > 100){
-                alert("The watchlist's name is too long. ("+ $("#watchlistName").val().length +")\n" +
-                    " Please enter a name with less than 100 characters." );
 
+                swal({   title: "The watchlist's name is too long.(" +  $("#watchlistName").val().length +")" ,
+                    text: " Please enter a name with less than 100 characters." ,
+                    type: "warning",
+                    ButtonColor: "#E74C3C"
+                });
                 return false;
             }
             else if($("#watchlistName").val().trim().length <= 0 ){
-                alert("The watchlist's name is empty ! \n"
-                    + "Please write something great.");
 
+                swal({   title: "The watchlist's name is empty !",
+                    text: "Please enter a name." ,
+                    type: "warning",
+                    ButtonColor: "#E74C3C"
+                });
                 return false;
             }
 

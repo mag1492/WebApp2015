@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/actor/actorInformationTemplate.html',
-    'models/actor'
-], function($, _, Backbone, actorInformationTemplate, Actor){
+    'models/actor',
+    '../errorHandler'
+], function($, _, Backbone, swal, actorInformationTemplate, Actor){
     var ActorView = Backbone.View.extend({
         template : _.template(actorInformationTemplate),
         el: '.actor-info',
@@ -21,6 +23,9 @@ define([
                 },
                 success: function (ret) {
                     that.$el.html(that.template({actor: ret.toJSON()}));
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             })
         }

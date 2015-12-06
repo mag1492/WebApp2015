@@ -4,7 +4,8 @@ define([
     'backbone',
     'sweetalarm',
     'text!templates/login/loginTemplate.html',
-    'models/userLogin'
+    'models/userLogin',
+    '../errorHandler'
 ], function($, _, Backbone, swal, LoginTemplate, User){
     var LoginView = Backbone.View.extend({
         template : _.template(LoginTemplate),
@@ -25,9 +26,8 @@ define([
             var email = $("#form-email").val();
             var password =$("#form-password").val();
 
-
            if(!this.isEmailValid(email) || this.isEmpty(password)){
-               swal("Error", "Incorrect username or password. Please try again.", "error");
+               emailPasswordInvalid();
            }else if(this.isEmailValid(email) && !this.isEmpty(password)){
                 var user = new User({email : email, password : password});
                 user.save(user.attributes, {
@@ -38,7 +38,7 @@ define([
                         goToHome();
                     },
                     error: function(ret){
-                        swal("Error", "Incorrect username or password. Please try again.", "error");
+                        logError();
                     }
                 });
             }

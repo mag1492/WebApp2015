@@ -2,10 +2,12 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'text!templates/tvshow/SeasonEpisodeTemplate.html',
     'views/tvshow/episodeListView',
     'collections/episodes',
-], function($, _, Backbone, SeasonEpisodeTemplate, EpisodeListView, Episodes){
+    '../errorHandler'
+], function($, _, Backbone, swal, SeasonEpisodeTemplate, EpisodeListView, Episodes){
     var EpisodesView = Backbone.View.extend({
         template : _.template(SeasonEpisodeTemplate),
         el: ".seasonX-episodes",
@@ -31,6 +33,9 @@ define([
                             var dInput = this.value;
                             that.searchEpisode(dInput);
                         }});
+                },
+                error: function(ret, jqXHR){
+                    showError(jqXHR.status);
                 }
             });
         },
@@ -48,7 +53,6 @@ define([
                 episodeResult = this.episodes;
             }
             this.$el.append(view.render(episodeResult));
-
         }
     });
     return EpisodesView;
