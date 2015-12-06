@@ -21,7 +21,6 @@ define([
             var optionsUser = {searchField : searchField, isGeneral : true, el : ".user-result"};
             var optionsMovies = {searchField : searchField, isGeneral : true, el : ".movie-result"};
             var optionsTv = {searchField : searchField, isGeneral : true, el : ".tv-season-result"};
-
             var optionsMoviesGenre = {searchField : searchField, isGeneral : true, el : ".movie-result"};
 
             this.actorSearchView = new ActorSearchView(optionsActor);
