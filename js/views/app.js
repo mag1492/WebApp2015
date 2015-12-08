@@ -14,7 +14,7 @@ define([
             this.tokenInfo = new TokenInfo();
         },
         events:{
-            "input #srch-term" : "autocomplete"
+            "keydown #srch-term" : "autocomplete"
         },
         render: function () {
             var that = this;
@@ -37,11 +37,11 @@ define([
                 });
             }
         },
-        autocomplete : function () {
+        autocomplete : function (e) {
             var text = $("#srch-term").val();
-            if(text.length >= 3){
+            if(text.length >= 3 && e.which !== 8){
                 var that = this;
-                this.autocompleteCollection = new AutocompleteCollection(text);
+                this.autocompleteCollection = new AutocompleteCollection(text.substring(0, text.length - 1));
                 this.autocompleteCollection.fetch({
                     dataType:"JSONP",
                     success: function (response) {
