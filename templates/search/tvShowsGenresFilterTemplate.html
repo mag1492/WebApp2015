@@ -1,0 +1,12 @@
+<div class="col-md-12 col-sm-12" style="background-color: #2B2B2B">
+    <h4 class="white-text">Filter TV shows by the genres you prefer:</h4>
+    <div class="btn-group">
+        <% _.each(genres, function(genre) {%>
+        <div class ="col-md-2 col-sm-2">
+            <label class="white-text" >
+                <input id="<%= genre.id %>" class="tvshows-genre-chk" type="checkbox" autocomplete="off"><%= genre.name %></button>
+            </label>
+        </div>
+        <% });%>
+    </div>
+</div>

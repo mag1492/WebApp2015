@@ -13,11 +13,7 @@ define([
 
         initialize: function(options){
             this.movies = new MovieResult(options);
-            if(options.isGeneral == true){
                 this.setElement(options.el);
-            }else{
-                this.setElement(".content");
-            }
         },
 
         render: function(){
