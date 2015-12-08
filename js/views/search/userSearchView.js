@@ -2,12 +2,12 @@ define([
     'jquery',
     'underscore',
     'backbone',
-
+    'sweetalarm',
     'text!templates/search/userResultTemplate.html',
     'models/tokenInfo',
     'collections/searchResult/userResult',
     '../errorHandler'
-], function($, _, Backbone, UserResultTemplate, TokenInfo, UserResult){
+], function($, _, Backbone,Swal, UserResultTemplate, TokenInfo, UserResult){
     var userSearchView = Backbone.View.extend({
         template : _.template(UserResultTemplate),
 

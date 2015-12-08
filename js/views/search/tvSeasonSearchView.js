@@ -12,11 +12,8 @@ define([
 
         initialize: function(options){
             this.tvSeasons = new TvshowsSeasonResult( options);
-            if(options.isGeneral == true){
-                this.setElement(options.el);
-            }else{
-                this.setElement(".content");
-            }
+            this.setElement(options.el);
+
         },
 
         render: function(){
