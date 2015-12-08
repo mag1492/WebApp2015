@@ -7,7 +7,7 @@ define([
     'models/tokenInfo',
     'collections/searchResult/userResult',
     '../errorHandler'
-], function($, _, Backbone,Swal, UserResultTemplate, TokenInfo, UserResult){
+], function($, _, Backbone, swal, UserResultTemplate, TokenInfo, UserResult){
     var userSearchView = Backbone.View.extend({
         template : _.template(UserResultTemplate),
 
@@ -49,7 +49,9 @@ define([
 
                             });
                             that.$el.html(that.template({users: users, searchField : that.users.searchField, isGeneral : that.users.isGeneral}));
-
+                        },
+                        error: function(ret, jqXHR){
+                            showError(jqXHR.status);
                         }
                     });
                 },

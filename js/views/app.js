@@ -2,9 +2,11 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'models/tokenInfo',
-    'text!templates/menuTemplate.html'
-], function ($, _, Backbone, TokenInfo, menuTemplate) {
+    'text!templates/menuTemplate.html',
+    '../errorHandler'
+], function ($, _, Backbone, swal, TokenInfo, menuTemplate) {
     var AppView = Backbone.View.extend({
         template : _.template(menuTemplate),
         el: '.menu',
@@ -28,6 +30,9 @@ define([
                         var loggedUser = response.toJSON();
                         that.$el.html(that.template({loggedUser: loggedUser}));
                         $('#login-button').remove();
+                    },
+                    error: function(ret, jqXHR){
+                        showError(jqXHR.status);
                     }
                 });
             }

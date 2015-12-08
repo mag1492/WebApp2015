@@ -64,6 +64,9 @@ define([
 
                             var view = new UserWatchlistView(user.id);
                             that.$el.append(view.render());
+                        },
+                        error: function(ret, jqXHR){
+                            showError(jqXHR.status);
                         }
                     });
                 },
@@ -92,6 +95,9 @@ define([
 
                             document.location.replace("#/user/"+loggedUser.id);
 
+                        },
+                        error: function(ret, jqXHR){
+                            showError(jqXHR.status);
                         }
                     });
                 },
@@ -134,6 +140,9 @@ define([
                                     showError(jqXHR.status);
                                 }
                             })
+                        },
+                        error: function(ret, jqXHR){
+                            showError(jqXHR.status);
                         }
                     });
                 },
