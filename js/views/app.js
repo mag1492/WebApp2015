@@ -3,14 +3,18 @@ define([
     'underscore',
     'backbone',
     'models/tokenInfo',
-    'awesomplete',
-    'text!templates/menuTemplate.html'
-], function ($, _, Backbone, TokenInfo, awesomplete, menuTemplate) {
+    'text!templates/menuTemplate.html',
+    'collections/searchResult/autocompleteCollection',
+    'awesomplete'
+], function ($, _, Backbone, TokenInfo, menuTemplate, AutocompleteCollection) {
     var AppView = Backbone.View.extend({
         template : _.template(menuTemplate),
         el: '.menu',
         initialize: function(){
             this.tokenInfo = new TokenInfo();
+        },
+        events:{
+            "input #srch-term" : "autocomplete"
         },
         render: function () {
             var that = this;
@@ -32,14 +36,28 @@ define([
                     }
                 });
             }
+        },
+        autocomplete : function () {
+            var text = $("#srch-term").val();
+            var that = this;
+            this.autocompleteCollection = new AutocompleteCollection(text);
+            this.autocompleteCollection.fetch({
+                dataType:"JSONP",
+                success: function (response) {
+                    var input = document.getElementById("srch-term");
+                    var awesomplete = new Awesomplete(input);
+                    that.list = [];
+                    response.forEach(function(result) {
+                        that.list.push(result.attributes.artistName);
+                    });
+                    awesomplete.list = that.list;
+                }
+            });
+
         }
     });
     return AppView;
 });
-
-var input = document.getElementById("srch-term");
-var awesomplete = new Awesomplete(input);
-awesomplete.list = ["Ada", "Java", "JavaScript", "Brainfuck", "LOLCODE", "Node.js", "Ruby on Rails"];
 
 function goToHome(){
     document.location.href="index.html";
