@@ -39,19 +39,21 @@ define([
         },
         autocomplete : function (e) {
             var text = $("#srch-term").val();
+            this.list = [];
             if(text.length >= 3 && e.which !== 8){
                 var that = this;
-                this.autocompleteCollection = new AutocompleteCollection(text.substring(0, text.length - 1));
+                this.autocompleteCollection = new AutocompleteCollection(text);
                 this.autocompleteCollection.fetch({
                     dataType:"JSONP",
                     success: function (response) {
                         var input = document.getElementById("srch-term");
-                        that.awesomplete = new Awesomplete(input);
-                        that.list = [];
+                        var awesomplete = new Awesomplete(input);
+
                         response.forEach(function(result) {
                             that.list.push(result.attributes.trackName);
                         });
-                        that.awesomplete.list = that.list;
+                        awesomplete.list = that.list;
+                        awesomplete.evaluate();
                     }
                 });
 
