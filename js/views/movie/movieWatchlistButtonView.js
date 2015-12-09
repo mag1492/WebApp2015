@@ -7,7 +7,8 @@ define([
     'models/watchlist',
     'models/watchlistAddMovie',
     'models/movie',
-    'models/tokenInfo'
+    'models/tokenInfo',
+    '../errorHandler'
 ], function($, _, Backbone, swal, MovieWatchlistButtonTemplate, Watchlist, WatchlistAddMovie, Movie, TokenInfo){
     var MovieWatchlistButtonView = Backbone.View.extend({
         template : _.template(MovieWatchlistButtonTemplate),
@@ -46,6 +47,9 @@ define([
                             var retour = {"movieId" : that.movieId, "response" : loggedUserWatchlists};
                             that.$el.html(that.template({watchlists: retour}));
                             $('#myModal'+that.movieId).appendTo("body");
+                        },
+                        error: function(ret, jqXHR){
+                            showError(jqXHR.status);
                         }
                     });
                 },
