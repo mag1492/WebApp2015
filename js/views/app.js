@@ -5,13 +5,17 @@ define([
     'sweetalarm',
     'models/tokenInfo',
     'text!templates/menuTemplate.html',
-    '../../js/views/errorHandler'
-], function ($, _, Backbone, swal, TokenInfo, menuTemplate) {
+    'collections/searchResult/autocompleteCollection',
+    'awesomplete'
+], function ($, _, Backbone, swal, TokenInfo, menuTemplate, AutocompleteCollection) {
     var AppView = Backbone.View.extend({
         template : _.template(menuTemplate),
         el: '.menu',
         initialize: function(){
             this.tokenInfo = new TokenInfo();
+        },
+        events:{
+            "input #srch-term" : "autocomplete"
         },
         render: function () {
             var that = this;
@@ -36,6 +40,33 @@ define([
                     }
                 });
             }
+        },
+        autocomplete : function () {
+            var text = $("#srch-term").val();
+            var input = document.getElementById("srch-term");
+            this.awesomplete = new Awesomplete(input);
+            if(text.length >= 3){
+                var that = this;
+                this.autocompleteCollection = new AutocompleteCollection(text);
+                this.autocompleteCollection.fetch({
+                    dataType:"JSONP",
+                    success: function (response) {
+                        that.list = [];
+                        response.forEach(function(result) {
+                            if(result.attributes.kind === "feature-movie")
+                                that.list.push(result.attributes.trackName);
+                            if(result.attributes.kind === "tv-episode" || result.attributes.kind === "artist")
+                                that.list.push(result.attributes.artistName);
+                        });
+                        var uniqueArray = that.list.filter(function(elem, pos,arr) {
+                            return arr.indexOf(elem) == pos;
+                        });
+                        that.awesomplete.list = uniqueArray;
+                        that.awesomplete.evaluate();
+                    }
+                });
+            }
+            input.focus();
         }
     });
     return AppView;

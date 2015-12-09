@@ -104,3 +104,6 @@ h6{
     overflow:hidden;
     text-overflow:ellipsis;
 }
+.menuSearch {
+    height: 38px;
+}
