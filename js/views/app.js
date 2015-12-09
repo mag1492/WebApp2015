@@ -53,9 +53,15 @@ define([
                     success: function (response) {
                         that.list = [];
                         response.forEach(function(result) {
-                            that.list.push(result.attributes.trackName);
+                            if(result.attributes.kind === "feature-movie")
+                                that.list.push(result.attributes.trackName);
+                            if(result.attributes.kind === "tv-episode" || result.attributes.kind === "artist")
+                                that.list.push(result.attributes.artistName);
                         });
-                        that.awesomplete.list = that.list;
+                        var uniqueArray = that.list.filter(function(elem, pos,arr) {
+                            return arr.indexOf(elem) == pos;
+                        });
+                        that.awesomplete.list = uniqueArray;
                         that.awesomplete.evaluate();
                     }
                 });
