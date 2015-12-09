@@ -5,7 +5,7 @@ define([
     'sweetalarm',
     'models/tokenInfo',
     'text!templates/menuTemplate.html',
-    '../errorHandler'
+    '../../js/views/errorHandler'
 ], function ($, _, Backbone, swal, TokenInfo, menuTemplate) {
     var AppView = Backbone.View.extend({
         template : _.template(menuTemplate),
