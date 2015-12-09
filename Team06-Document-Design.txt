@@ -73,7 +73,7 @@ pour acceder a la liste de ses films. Lorsque la watchlist n'est pas nulle, il s
 Page Resultats (Recherche) ---------------------------------------------------
 
 A partir de la barre de recherche du menu, il est possible de rechercher des films, des tvshows, des acteurs ou des utilisateurs. 
-Lorsqu'on lance la recherche, on est redirige vers une page des resultats globale qui montre les premiers resultats pour chacune des categories. Il est possible d'ajouter des films a une watchlist a partir de cette page. S'il y a plus de resultats disponibles dans une categorie, il suffit de cliquer sur "More results" au bas d'une categorie pour lancer une recherche specifique qui nous redirige sur une page avec plus de resultats pour la categorie concernee.
+Lorsqu'on lance la recherche, on est redirige vers une page des resultats globale qui montre les premiers resultats pour chacune des categories. Il est possible d'ajouter des films a une watchlist a partir de cette page (bouton Add to watchlist) et de follow/unfollow des utilisateurs (bouton Follow/Unfollow). S'il y a plus de resultats disponibles dans une categorie, il suffit de cliquer sur "More results" au bas d'une categorie pour lancer une recherche specifique qui nous redirige sur une page avec plus de resultats pour la categorie concernee.
 
 Pour la page des films et des tvshows, une section en haut de la page permet de filtrer les resultats par genre (un ou plusieurs) selon les preferences de l'utilisateur.
 
