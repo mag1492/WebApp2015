@@ -14,7 +14,7 @@ define([
             this.tokenInfo = new TokenInfo();
         },
         events:{
-            "keydown #srch-term" : "autocomplete"
+            "input #srch-term" : "autocomplete"
         },
         render: function () {
             var that = this;
@@ -37,27 +37,27 @@ define([
                 });
             }
         },
-        autocomplete : function (e) {
+        autocomplete : function () {
             var text = $("#srch-term").val();
-            this.list = [];
-            if(text.length >= 3 && e.which !== 8){
+            var input = document.getElementById("srch-term");
+            this.awesomplete = new Awesomplete(input);
+            if(text.length >= 3){
                 var that = this;
                 this.autocompleteCollection = new AutocompleteCollection(text);
                 this.autocompleteCollection.fetch({
                     dataType:"JSONP",
                     success: function (response) {
-                        var input = document.getElementById("srch-term");
-                        var awesomplete = new Awesomplete(input);
-
+                        that.list = [];
                         response.forEach(function(result) {
                             that.list.push(result.attributes.trackName);
                         });
-                        awesomplete.list = that.list;
-                        awesomplete.evaluate();
+                        that.awesomplete.list = that.list;
+                        that.awesomplete.evaluate();
+                        //that.awesomplete.list = [];
                     }
                 });
-
             }
+            input.focus();
         }
     });
     return AppView;
