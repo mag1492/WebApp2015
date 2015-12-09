@@ -29,7 +29,6 @@ require([
     'router',
     'vm',
     'bootstrap',
-    'owl',
     'cookie'
 ], function(AppView, Router, Vm){
     var appView = Vm.create({}, 'AppView', AppView);
