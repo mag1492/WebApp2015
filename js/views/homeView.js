@@ -2,7 +2,8 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'text!templates/homeTemplate.html'
+    'text!templates/homeTemplate.html',
+    'owl'
 ], function($, _, Backbone, homeTemplate){
 
     var HomeView = Backbone.View.extend({
