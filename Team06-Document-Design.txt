@@ -10,7 +10,7 @@ Antoine Simard - Ansim163 - 111 062 018
 
 Document de design. 
 
-On lance l'application en cliquant sur index.html.
+On lance l'application dans Webstorm  en cliquant sur Run 'index.html' sur le fichier index.html.
 
 ------------------------------------------------------------------------------
 
