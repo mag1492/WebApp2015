@@ -28,7 +28,7 @@ Il est possible d'aller à la page de Sign Up pour se creer un compte en cliquan
 
 Page Accueil ----------------------------------------------------------------- 
 
-index.html, on retrouve les choix de films, de tvshows et d'acteurs. Il est possible de retourner à la page d'accueil en cliquant sur uMovie à gauche dans la barre de menu. 
+index.html, on retrouve des suggestions de films, de tvshows et d'acteurs. Il est possible de retourner à la page d'accueil en cliquant sur uMovie à gauche dans la barre de menu. 
 
 Page Movie ------------------------------------------------------------------
 
