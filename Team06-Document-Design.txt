@@ -87,4 +87,4 @@ Dans la page d'un utilisateur est affiche son gravatar à gauche, et celui des "
 
 Fonctionnalite avancee 2: Autocompletion  ---------------------------------------------------
 
-La fonctionnalite d'autocompletion est attachee a la barre de recherche du menu, et suggère dans un menu deroulant sous la barre de recherche des suggestions de films et de tvshows en lien avec les caracteres entres. Cela fonctionne a partir des trois premiers caracteres entres. 
+La fonctionnalite d'autocompletion est attachee a la barre de recherche du menu, et suggere dans un menu deroulant sous la barre de recherche des suggestions de films, de tvshows et d'acteurs en lien avec les caracteres entres. Cela fonctionne a partir des trois premiers caracteres entres. 
