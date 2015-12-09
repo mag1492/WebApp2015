@@ -43,6 +43,9 @@ define([
                                 }
 
                                 that.$el.html(that.template({watchlistMovie: watchlist}));
+                            },
+                            error: function(ret, jqXHR){
+                                showError(jqXHR.status);
                             }
                         });
                     }

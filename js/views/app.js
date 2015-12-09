@@ -2,11 +2,13 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'sweetalarm',
     'models/tokenInfo',
     'text!templates/menuTemplate.html',
     'collections/searchResult/autocompleteCollection',
-    'awesomplete'
-], function ($, _, Backbone, TokenInfo, menuTemplate, AutocompleteCollection) {
+    'awesomplete',
+    'js/views/errorHandler'
+], function ($, _, Backbone, swal, TokenInfo, menuTemplate, AutocompleteCollection) {
     var AppView = Backbone.View.extend({
         template : _.template(menuTemplate),
         el: '.menu',
@@ -33,6 +35,9 @@ define([
                         var loggedUser = response.toJSON();
                         that.$el.html(that.template({loggedUser: loggedUser}));
                         $('#login-button').remove();
+                    },
+                    error: function(ret, jqXHR){
+                        showError(jqXHR.status);
                     }
                 });
             }
