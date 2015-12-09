@@ -6,8 +6,7 @@ define([
     'models/tokenInfo',
     'text!templates/menuTemplate.html',
     'collections/searchResult/autocompleteCollection',
-    'awesomplete',
-    'js/views/errorHandler'
+    'awesomplete'
 ], function ($, _, Backbone, swal, TokenInfo, menuTemplate, AutocompleteCollection) {
     var AppView = Backbone.View.extend({
         template : _.template(menuTemplate),
