@@ -53,7 +53,6 @@ define([
                         });
                         that.awesomplete.list = that.list;
                         that.awesomplete.evaluate();
-                        //that.awesomplete.list = [];
                     }
                 });
             }
