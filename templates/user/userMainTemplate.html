@@ -29,9 +29,9 @@
         </header>
         <div class="followers">
             <% _.each(user.following, function(follower) { %>
-            <div id="follower<%= follower._id %>"class ="col-md-2 col-sm-3 container-follower">
+            <div id="follower<%= follower.id %>"class ="col-md-2 col-sm-3 container-follower">
                 <div class="wrapper">
-                    <a class="banner-follower" >
+                    <a class="banner-follower" href="#user/<%= follower.id %>">
                         <div class="avatar-img-follower"></div>
                     </a>
                     <br>

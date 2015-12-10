@@ -59,7 +59,7 @@ define([
 
                             user.following.forEach( function(follower){
                                 var avatarFollower = that.getGravatar(follower.email, 100);
-                                $("#follower"+follower._id).find(".avatar-img-follower").css("background", "url("+ avatarFollower+") no-repeat");
+                                $("#follower"+follower.id).find(".avatar-img-follower").css("background", "url("+ avatarFollower+") no-repeat");
                             });
 
                             var view = new UserWatchlistView(user.id);
@@ -121,13 +121,8 @@ define([
                         },
                         success: function (response) {
                             var loggedUser = response.toJSON();
-                            var id;
-                            loggedUser.following.forEach(function(follower){
-                                if(user.name == follower.name && user.email == follower.email){
-                                    id = follower._id;
-                                }
-                            });
-                            var unfollowing = new Unfollow({"id":user.id, "followerId":id});
+
+                            var unfollowing = new Unfollow({"id":user.id, "followerId":user.id});
                             console.log(unfollowing);
                             unfollowing.destroy({
                                 beforeSend: function(xhr) {
