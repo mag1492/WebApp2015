@@ -86,8 +86,6 @@ define([
                     that.awesomplete.list = uniqueArray;
                     that.awesomplete.evaluate();
                 });
-
-
             }
             input.focus();
         }
