@@ -51,22 +51,20 @@ define([
             if(text.length >= 3){
                 var that = this;
                 this.autocompleteCollection = new AutocompleteCollection(text);
-                this.usersCollection = new Users({searchField: text, limit:5});
-                this.actorsCollection = new Actors({searchField: text, limit:5});
+                this.usersCollection = new Users({searchField: text});
+                this.actorsCollection = new Actors(text);
 
                 var deferreds = [];
                 deferreds.push(this.usersCollection.fetch({
                     beforeSend: function (xhr) {
                         xhr.setRequestHeader('Authorization', $.cookie('token'));
-                    }
-                }), this.actorsCollection.fetch({
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', $.cookie('token'));
-                    }
-                }),
+                    }}),
+                    this.actorsCollection.fetch({
+                        dataType:"JSONP"
+                    }),
                     this.autocompleteCollection.fetch({
-                    dataType:"JSONP"})
-                );
+                        dataType:"JSONP"
+                    }));
 
                 $.when(deferreds[0], deferreds[1], deferreds[2]).done(function(response1, response2, response3){
                     that.list = [];
