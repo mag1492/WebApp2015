@@ -6,8 +6,11 @@ define([
     'models/tokenInfo',
     'text!templates/menuTemplate.html',
     'collections/searchResult/autocompleteCollection',
-    'awesomplete'
-], function ($, _, Backbone, swal, TokenInfo, menuTemplate, AutocompleteCollection) {
+    'collections/searchResult/userResult',
+    'collections/searchResult/actorITunes',
+    'awesomplete',
+    'views/errorHandler'
+], function ($, _, Backbone, swal, TokenInfo, menuTemplate, AutocompleteCollection, Users, Actors) {
     var AppView = Backbone.View.extend({
         template : _.template(menuTemplate),
         el: '.menu',
@@ -48,23 +51,45 @@ define([
             if(text.length >= 3){
                 var that = this;
                 this.autocompleteCollection = new AutocompleteCollection(text);
-                this.autocompleteCollection.fetch({
-                    dataType:"JSONP",
-                    success: function (response) {
-                        that.list = [];
-                        response.forEach(function(result) {
-                            if(result.attributes.kind === "feature-movie")
-                                that.list.push(result.attributes.trackName);
-                            if(result.attributes.kind === "tv-episode" || result.attributes.kind === "artist")
-                                that.list.push(result.attributes.artistName);
-                        });
-                        var uniqueArray = that.list.filter(function(elem, pos,arr) {
-                            return arr.indexOf(elem) == pos;
-                        });
-                        that.awesomplete.list = uniqueArray;
-                        that.awesomplete.evaluate();
+                this.usersCollection = new Users({searchField: text, limit:5});
+                this.actorsCollection = new Actors({searchField: text, limit:5});
+
+                var deferreds = [];
+                deferreds.push(this.usersCollection.fetch({
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Authorization', $.cookie('token'));
                     }
+                }), this.actorsCollection.fetch({
+                    beforeSend: function (xhr) {
+                        xhr.setRequestHeader('Authorization', $.cookie('token'));
+                    }
+                }),
+                    this.autocompleteCollection.fetch({
+                    dataType:"JSONP"})
+                );
+
+                $.when(deferreds[0], deferreds[1], deferreds[2]).done(function(response1, response2, response3){
+                    that.list = [];
+                    response3[0].results.forEach(function(result) {
+                        if(result.kind === "feature-movie")
+                            that.list.push(result.trackName);
+                        if(result.kind === "tv-episode")
+                            that.list.push(result.artistName);
+                    });
+                    response1[0].forEach(function(result) {
+                        that.list.push(result.name);
+                    });
+                    response2[0].results.forEach(function(result) {
+                        that.list.push(result.artistName);
+                    });
+                    var uniqueArray = that.list.filter(function(elem, pos, arr) {
+                        return arr.indexOf(elem) == pos;
+                    });
+                    that.awesomplete.list = uniqueArray;
+                    that.awesomplete.evaluate();
                 });
+
+
             }
             input.focus();
         }
