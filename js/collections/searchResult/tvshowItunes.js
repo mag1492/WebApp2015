@@ -3,13 +3,13 @@ define([
     'underscore',
     'backbone'
 ], function($, _, Backbone){
-    var AutocompleteCollection = Backbone.Collection.extend({
+    var ActorItunes = Backbone.Collection.extend({
         initialize: function(text){
-                this.url = 'https://itunes.apple.com/search?term=' + text + '&media=movie&limit=10';
+            this.url = 'https://itunes.apple.com/search?term=' + text +'&media=tvShow&limit=10';
         },
         parse: function(response) {
             return response.results;
         }
     });
-    return AutocompleteCollection;
+    return ActorItunes;
 });

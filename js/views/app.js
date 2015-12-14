@@ -8,9 +8,10 @@ define([
     'collections/searchResult/autocompleteCollection',
     'collections/searchResult/userResult',
     'collections/searchResult/actorItunes',
+    'collections/searchResult/tvshowItunes',
     'awesomplete',
     'views/errorHandler'
-], function ($, _, Backbone, swal, TokenInfo, menuTemplate, AutocompleteCollection, Users, Actors) {
+], function ($, _, Backbone, swal, TokenInfo, menuTemplate, AutocompleteCollection, Users, Actors, TvShows) {
     var AppView = Backbone.View.extend({
         template : _.template(menuTemplate),
         el: '.menu',
@@ -53,6 +54,7 @@ define([
                 this.autocompleteCollection = new AutocompleteCollection(text);
                 this.usersCollection = new Users({searchField: text});
                 this.actorsCollection = new Actors(text);
+                this.tvShowCollection = new TvShows(text);
 
                 var deferreds = [];
                 deferreds.push(this.usersCollection.fetch({
@@ -64,15 +66,19 @@ define([
                     }),
                     this.autocompleteCollection.fetch({
                         dataType:"JSONP"
-                    }));
+                    }),
+                    this.tvShowCollection.fetch({
+                        dataType:"JSONP"
+                    })
+                );
 
-                $.when(deferreds[0], deferreds[1], deferreds[2]).done(function(response1, response2, response3){
+                $.when(deferreds[0], deferreds[1], deferreds[2], deferreds[3]).done(function(response1, response2, response3, response4){
                     that.list = [];
                     response3[0].results.forEach(function(result) {
-                        if(result.kind === "feature-movie")
-                            that.list.push(result.trackName);
-                        if(result.kind === "tv-episode")
-                            that.list.push(result.artistName);
+                        that.list.push(result.trackName);
+                    });
+                    response4[0].results.forEach(function(result) {
+                        that.list.push(result.artistName);
                     });
                     response1[0].forEach(function(result) {
                         that.list.push(result.name);
