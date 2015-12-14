@@ -5,7 +5,7 @@ define([
 ], function($, _, Backbone){
     var AutocompleteCollection = Backbone.Collection.extend({
         initialize: function(text){
-                this.url = 'https://itunes.apple.com/search?term=' + text +'&limit=10';
+                this.url = 'https://itunes.apple.com/search?term=' + text;
         },
         parse: function(response) {
             return response.results;
