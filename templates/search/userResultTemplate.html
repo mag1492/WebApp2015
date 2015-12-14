@@ -6,7 +6,7 @@
     var counter = 0;
     var maxResult = 6;
     if(isGeneral== false){
-    maxResult = 60;
+    maxResult = users.length;
     }%>
     <% _.each(users, function(user) {
     if(counter < maxResult){%>
@@ -22,7 +22,7 @@
     <% counter++;
     }});
     if(users.length > maxResult){%>
-    <button type="button"  onclick="document.location.href='#/userSearch/<%- searchField %>';"  class="btn btn-default btn-line">More results</button>
+    <button type="button" onclick="document.location.href='#/userSearch/<%- searchField %>';"  class="btn btn-default btn-line">More results</button>
 
     <% }} %>
 </div>
