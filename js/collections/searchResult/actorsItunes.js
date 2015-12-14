@@ -3,7 +3,7 @@ define([
     'underscore',
     'backbone'
 ], function($, _, Backbone){
-    var ActorITunes = Backbone.Collection.extend({
+    var ActorItunes = Backbone.Collection.extend({
         initialize: function(text){
             this.url = 'https://itunes.apple.com/search?term=' + text +'&entity=movieArtist&limit=3';
         },
@@ -11,5 +11,5 @@ define([
             return response.results;
         }
     });
-    return ActorITunes;
+    return ActorItunes;
 });

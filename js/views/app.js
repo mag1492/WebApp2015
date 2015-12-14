@@ -7,7 +7,7 @@ define([
     'text!templates/menuTemplate.html',
     'collections/searchResult/autocompleteCollection',
     'collections/searchResult/userResult',
-    'collections/searchResult/actorITunes',
+    'collections/searchResult/actorItunes',
     'awesomplete',
     'views/errorHandler'
 ], function ($, _, Backbone, swal, TokenInfo, menuTemplate, AutocompleteCollection, Users, Actors) {
