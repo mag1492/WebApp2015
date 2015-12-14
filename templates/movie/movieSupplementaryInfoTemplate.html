@@ -1,11 +1,11 @@
 <div id="info">
     <div id="info-background" class="tab-background">
         <div id="movie-info">
-            <h3 class="info-title"><%= movie[0].trackCensoredName %></h3>
+            <h3 class="info-title"><%- movie[0].trackCensoredName %></h3>
             <div>
-                <h5 class="bold">Director: <%= movie[0].artistName%></h5>
+                <h5 class="bold">Director: <%- movie[0].artistName%></h5>
                 <div class="row">
-                    <p class="paragraphs col-md-8 col-sm-9 col-xs-12"><%= movie[0].longDescription%></p>
+                    <p class="paragraphs col-md-8 col-sm-9 col-xs-12"><%- movie[0].longDescription%></p>
                     <div id="cover" class="col-md-4 col-sm-3 col-xs-12" ></div>
                 </div>
             </div>

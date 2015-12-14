@@ -14,16 +14,16 @@
     if(counter < maxResult){%>
 
     <div class ="col-md-2 col-sm-3 result-item">
-        <p class ="controlled-length"><%= movie.trackName %></p>
+        <p class ="controlled-length"><%- movie.trackName %></p>
         <% var artworkUrl = movie.artworkUrl100.replace("100x100", "150x150"); %>
-        <div><a href="#/movie/<%= movie.trackId %>"><img src="<%= artworkUrl %>"></a></div>
-        <div class="watchlist-button<%= movie.trackId %> result-item-fit"></div>
+        <div><a href="#/movie/<%- movie.trackId %>"><img src="<%- artworkUrl %>"></a></div>
+        <div class="watchlist-button<%- movie.trackId %> result-item-fit"></div>
     </div>
     <% counter++;
     }});
     if(movies.length > maxResult){%>
 
-    <button type="button" onclick="document.location.href='#/movieSearch/<%= searchField %>';"  class="btn btn-default btn-line">More results</button>
+    <button type="button" onclick="document.location.href='#/movieSearch/<%- searchField %>';"  class="btn btn-default btn-line">More results</button>
 
     <% }} %>
 

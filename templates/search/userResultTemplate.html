@@ -11,18 +11,18 @@
     <% _.each(users, function(user) {
     if(counter < maxResult){%>
     <div class ="col-md-2 col-sm-3 result-item">
-        <p class ="controlled-length"><%= user.name %></p>
-        <div><a href="#/user/<%= user.id %>"><img src="Images\logoOpaque150.gif"></a></div>
+        <p class ="controlled-length"><%- user.name %></p>
+        <div><a href="#/user/<%- user.id %>"><img src="Images\logoOpaque150.gif"></a></div>
         <% if(user.isFollowing == false){ %>
-        <button type="button" onclick="document.location.href='#/follow/<%= user.id %>';" class="btn btn-follow">Follow</button>
+        <button type="button" onclick="document.location.href='#/follow/<%- user.id %>';" class="btn btn-follow">Follow</button>
         <% }else if(user.isFollowing == true){ %>
-        <button type="button" onclick="document.location.href='#/unfollow/<%= user.id %>';" class="btn btn-follow">Unfollow</button>
+        <button type="button" onclick="document.location.href='#/unfollow/<%- user.id %>';" class="btn btn-follow">Unfollow</button>
         <% }else{} %>
     </div>
     <% counter++;
     }});
     if(users.length > maxResult){%>
-    <button type="button"  onclick="document.location.href='#/userSearch/<%= searchField %>';"  class="btn btn-default btn-line">More results</button>
+    <button type="button"  onclick="document.location.href='#/userSearch/<%- searchField %>';"  class="btn btn-default btn-line">More results</button>
 
     <% }} %>
 </div>

@@ -1,6 +1,6 @@
 <div>
 
-    <div class="col-md-12" style='background-image: url(<%= (watchlistMovie.movies[0].artworkUrl100).replace("100x100", "600x600") %>);width:100%;height:auto;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
+    <div class="col-md-12" style='background-image: url(<%- (watchlistMovie.movies[0].artworkUrl100).replace("100x100", "600x600") %>);width:100%;height:auto;  background-size: cover; background-repeat: no-repeat; background-position: center;'>
 
         <div class="row" >
             <div class="col-md-12 movies-list min-height-row">
@@ -8,22 +8,22 @@
 
                     <div class="col-xs-8 col-sm-2 col-md-4">
 
-                        <img class="side-movie-display" src='<%= (watchlistMovie.movies[0].artworkUrl100).replace("100x100", "600x600") %>'>
+                        <img class="side-movie-display" src='<%- (watchlistMovie.movies[0].artworkUrl100).replace("100x100", "600x600") %>'>
 
                     </div>
                     <div class="col-xs-8 col-sm-10 col-md-8">
-                        <h1><%=watchlistMovie.name%></h1>
-                        <h1><%=_.size(watchlistMovie.movies)%> Movies</h1>
+                        <h1><%-watchlistMovie.name%></h1>
+                        <h1><%-_.size(watchlistMovie.movies)%> Movies</h1>
                         <ol >
                             <% _.each(watchlistMovie.movies, function(movie) { %>
                                 <% if(!_.isNull(movie.trackId)) { %>
                                     <li class="movie-watchlist">
-                                        <a class="movie-icon" href="#/movie/<%=movie.trackId%>"><img src="<%=movie.artworkUrl100 %>" > </a>
-                                        <a class="name-length" href="#/movie/<%=movie.trackId%>" >
-                                            <%= movie.trackName %>
+                                        <a class="movie-icon" href="#/movie/<%-movie.trackId%>"><img src="<%-movie.artworkUrl100 %>" > </a>
+                                        <a class="name-length" href="#/movie/<%-movie.trackId%>" >
+                                            <%- movie.trackName %>
                                         </a>
                                         <% if(watchlistMovie.isMine == true){ %>
-                                        <a href="#/watchlist/<%= watchlistMovie.watchlistId %>/deleteMovie/<%= movie.trackId %>"><span class="remove-icon glyphicon glyphicon-remove"></span></a>
+                                        <a href="#/watchlist/<%- watchlistMovie.watchlistId %>/deleteMovie/<%- movie.trackId %>"><span class="remove-icon glyphicon glyphicon-remove"></span></a>
                                         <% } %>
                                     </li>
                                 <% }%>

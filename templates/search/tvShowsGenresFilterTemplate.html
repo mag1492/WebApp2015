@@ -4,7 +4,7 @@
         <% _.each(genres, function(genre) {%>
         <div class ="col-md-2 col-sm-3">
             <label class="white-text" >
-                <input id="<%= genre.id %>" class="tvshows-genre-chk" type="checkbox" autocomplete="off"><%= genre.name %></button>
+                <input id="<%- genre.id %>" class="tvshows-genre-chk" type="checkbox" autocomplete="off"><%- genre.name %></button>
             </label>
         </div>
         <% });%>
