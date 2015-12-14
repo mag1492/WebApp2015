@@ -123,7 +123,6 @@ define([
                             var loggedUser = response.toJSON();
 
                             var unfollowing = new Unfollow({"id":user.id, "followerId":user.id});
-                            console.log(unfollowing);
                             unfollowing.destroy({
                                 beforeSend: function(xhr) {
                                     xhr.setRequestHeader('Authorization', $.cookie('token'));
