@@ -3,9 +3,8 @@
 Open in webstorm and run index.html
 
 ###Contributors
-
-> Camille Béland
->Bruno C. Coulombe
->Magalie Caouette
->Antoine Simard
->Gabriel Simard
+- Camille Béland
+- Bruno C. Coulombe
+- Magalie Caouette
+- Antoine Simard
+- Gabriel Simard
