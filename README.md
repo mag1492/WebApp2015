@@ -1,8 +1,8 @@
-WebApp2015
+##WebApp2015
 
 Open in webstorm and run index.html
 
-Contributors : 
+##Contributors
 
 Camille Béland
 Bruno C. Coulombe
