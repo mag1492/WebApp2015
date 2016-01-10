@@ -4,7 +4,7 @@ Open in webstorm and run index.html
 
 ##Contributors
 
-Camille Béland
+  Camille Béland
 Bruno C. Coulombe
 Magalie Caouette
 Antoine Simard
